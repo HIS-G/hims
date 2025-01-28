@@ -7,10 +7,10 @@ const fs = require("fs");
 
 const app = express();
 
-/* const options = {
+const options = {
   key: fs.readFileSync("./private.key"),
   cert: fs.readFileSync("./certificate.crt"),
-}; */
+};
 
 const file = fs.readFileSync("./DBE36D85EE856E805997FAD9F0105A8A.txt");
 
@@ -45,16 +45,16 @@ mongoose
     console.log(error);
   });
 
-/* const server = https.createServer(options, app).listen(process.env.PORT, () => {
+const server = https.createServer(options, app).listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
-}); 
+});
 
 const shutdown = () => {
   server.close;
 };
 
-app.get("/api/v1/server/shutdown", shutdown); */
+app.get("/api/v1/server/shutdown", shutdown);
 
-app.listen(process.env.PORT, () => {
+/* app.listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
-});
+}); */
