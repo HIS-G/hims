@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { owners } = require("./vins");
 
 const User_Schema = new mongoose.Schema(
   {
@@ -7,12 +6,24 @@ const User_Schema = new mongoose.Schema(
     lastname: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     phone: { type: String, required: true },
-    role: { type: String, enum: owners, required: true },
-    country: { type: String, required: true },
-    state: { type: String, required: true },
-    zip_code: { type: String, required: true },
-    address: { type: String, required: true },
-    password: { type: String, required: true },
+    role: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "roles",
+      required: true,
+    },
+    country: { type: String },
+    state: { type: String },
+    province: { type: String },
+    zip_code: { type: String },
+    address: { type: String },
+    verified: { type: Boolean, default: false, required: false },
+    password: {
+      type: String,
+      minlength: [16, "Password cannot be less than 16 characters in length!"],
+    },
+    approvedAt: { type: String },
+    activated: { type: Boolean, default: false, required: true },
+    approvedBy: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
   },
   { timestamps: true }
 );

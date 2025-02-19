@@ -1,28 +1,25 @@
 const mongoose = require("mongoose");
 
-const owners = [
-  "DISTRIBUTOR",
-  "RETAILER",
-  "CUSTOMER",
-  "SCHOOL",
-  "STUDENT",
-  "TEACHER",
-];
-
-const vin_types = ["VIN", "HIN", "SCH_VIN", "DIN", "FIN"];
+const vin_types = ["VIN", "SUB_VIN", "HIN", "DIN", "SUB_DIN", "FIN"];
 
 const Vin_Schema = new mongoose.Schema(
   {
     type: { type: String, enum: vin_types, required: true },
-    owner: { type: String, enum: owners, required: true },
     school: { type: mongoose.Schema.Types.ObjectId, ref: "schools" },
     customer: { type: mongoose.Schema.Types.ObjectId, ref: "customers" },
+    student: { type: mongoose.Schema.Types.ObjectId, ref: "students" },
     distributor: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
-    vin: { type: String, required: true, minLength: 16, unique: true },
+    supplier: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    vin: {
+      type: String,
+      required: true,
+      minlength: [16, "Vin must be at least 16 characters long"],
+      unique: true,
+    },
   },
   { timestamps: true }
 );
 
 const vins = mongoose.model("vins", Vin_Schema);
 
-module.exports = { Vin_Schema, vins, vin_types, owners };
+module.exports = { vins, Vin_Schema, vin_types };
