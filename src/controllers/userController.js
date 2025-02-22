@@ -84,7 +84,7 @@ const create_user = async (req, res) => {
     console.log(error);
     return res.status(500).send({
       status: false,
-      message: error
+      message: error,
     });
   }
 };
@@ -152,6 +152,37 @@ const get_users_by_role = async (req, res) => {
   }
 };
 
+const search_users = async (req, res) => {
+  var found_role;
+  const { role } = req.body;
+
+  try {
+    if (role) {
+      found_role = await roles.findOne({
+        $or: [{ role: role }],
+      });
+    }
+
+    const found_users = await users.find({
+      $or: [{ role: found_role._id }],
+    });
+
+    console.log(found_users);
+
+    return res.status(200).send({
+      status: true,
+      message: `List of available distributors!`,
+      users: found_users,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      status: false,
+      message: error,
+    });
+  }
+};
+
 const update_user = async (req, res) => {};
 
 const suspend_user = async (req, res) => {};
@@ -161,6 +192,7 @@ const delete_user = async (req, res) => {};
 module.exports = {
   get_all_users,
   get_users_by_role,
+  search_users,
   create_user,
   update_user,
   suspend_user,

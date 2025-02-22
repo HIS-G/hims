@@ -1,14 +1,15 @@
 const { customers } = require("../models/Customers");
+const { roles } = require("../models/Roles");
 const { vins, vin_types, owners } = require("../models/vins");
 const { generateVin } = require("../utils/helpers");
 
 const get_customers = async (req, res) => {
   try {
-    const all_customers = await customers.find();
+    const all_customers = await customers.find().populate("device").exec();
 
     return res.status(200).send({
       status: true,
-      message: ``,
+      message: `List of customers!`,
       customers: all_customers,
     });
   } catch (error) {
@@ -43,31 +44,37 @@ const create_customer = async (req, res) => {
     password,
     country,
     state,
+    username,
     address,
     zip_code,
-    vin,
-    sub_vin,
-    fin,
-    hin,
+    device,
   } = req.body;
 
   try {
     const customer = new customers();
     const new_vin = new vins();
 
+    const role = await roles.findOne({ role: "CUSTOMER" });
+
+    if (!role) {
+      return res.status(404).send({
+        status: false,
+        message: "Role not found! Kindly contact an administrator",
+      });
+    }
+
     customer.firstname = firstname;
     customer.lastname = lastname;
     customer.email = email;
     customer.phone = phone;
+    customer.role = role._id;
+    if (device) customer.device.push(device);
+    if (username) customer.username = username;
     if (password) customer.password = password;
-    customer.country = country;
+    if (country) customer.country = country;
     if (state) customer.state = state;
     if (zip_code) customer.zip_code = zip_code;
     if (address) customer.address = address;
-    /* if (hin) customer.hin = hin;
-    if (vin) customer.vin = vin;
-    if (fin) customer.fin = fin;
-    if (sub_vin) customer.sub_vin = sub_vin; */
 
     const new_customer = await customer.save();
 
@@ -86,9 +93,10 @@ const create_customer = async (req, res) => {
       }
     }
   } catch (error) {
+    console.log(error);
     return res.status(500).send({
       status: false,
-      errorMsg: "",
+      message: error,
     });
   }
 };

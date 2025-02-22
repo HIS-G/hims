@@ -6,7 +6,7 @@ const Customer_Schema = new mongoose.Schema({
   email: { type: String, required: true },
   phone: { type: String, required: true },
   username: { type: String, unique: true },
-  country: { type: String, required: true },
+  country: { type: String },
   state: { type: String },
   province: { type: String },
   zip_code: { type: String },

@@ -1,5 +1,6 @@
 const { devices, deviceModels, model_types } = require("../models/Devices");
 const { buyers } = require("../models/Buyers");
+const { vins } = require("../models/vins");
 
 const create_device = async (req, res) => {
   const { device_name, device_model, serial_no, imei, build_no } = req.body;
@@ -78,7 +79,23 @@ const fetch_device_models = async (req, res) => {
 
 const fetch_devices = async (req, res) => {
   try {
-    const device_list = await devices.find().populate("device_model").exec();
+    const device_list = await devices
+      .find()
+      .populate([
+        "customer",
+        "device_model",
+        "sub_din",
+        "buyer",
+        "vin",
+        "sub_vin",
+        "fin",
+        "hin",
+      ])
+      .populate({
+        path: "din",
+        populate: { path: "distributor" },
+      })
+      .exec();
 
     if (devices.length < 1) {
       return res.status(404).send({
@@ -101,43 +118,38 @@ const fetch_devices = async (req, res) => {
 };
 
 const search_devices = async (req, res) => {
-  const { imei, serial_no } = req.body;
-
-  if (!imei && !serial_no) {
-    return res.status(400).send({
-      status: false,
-      message: "",
-    });
-  }
+  const { imei, serial_no, distributor, supplier } = req.body;
 
   try {
-    const device = await devices
-      .findOne({
-        $or: [{ imei: imei }, { serial_no: serial_no }],
+    const vin = await vins.findOne({ $or: [{ distributor: distributor }] });
+    const found_devices = await devices
+      .find({
+        $or: [{ imei: imei }, { serial_no: serial_no }, { din: vin._id }],
       })
       .populate([
-        "device-models",
-        "din",
+        "customer",
+        "device_model",
         "sub_din",
         "buyer",
         "vin",
         "sub_vin",
         "fin",
-        "hin",
       ])
+      .populate({ path: "din", populate: { path: "distributor" } })
+      .populate({ path: "hin", populate: { path: "customer" } })
       .exec();
 
-    if (!device) {
+    if (found_devices.length <= 0) {
       return res.status(404).send({
         status: true,
-        message: "kindly provide the right imei or serial no for your device",
+        message: "No available device found!",
       });
     }
 
     return res.status(200).send({
       status: true,
       message: "Congratulations on purchasing your Device!",
-      device: device,
+      devices: found_devices,
     });
   } catch (error) {
     return res.status(500).send({
@@ -278,10 +290,40 @@ const device_purchase = async (req, res) => {
   }
 };
 
+const assign_distributor_to_product = async (req, res) => {
+  const { device, distributor } = req.body;
+
+  try {
+    const vin = await vins.findOne({ $or: [{ distributor: distributor }] });
+    const updated = await devices
+      .findByIdAndUpdate(device, { din: vin._id }, { upsert: true, new: true })
+      .populate({ path: "din", populate: { path: "distributor" } })
+      .exec();
+
+    return res.status(200).send({
+      status: true,
+      message: `Congratulations! You have successfully assigned ${
+        updated.device_name
+      } to ${
+        updated.din.distributor.firstname +
+        " " +
+        updated.din.distributor.lastname
+      }`,
+      device: updated._id,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      status: false,
+      message: error,
+    });
+  }
+};
+
 module.exports = {
   create_device,
   create_device_models,
   fetch_device_models,
+  assign_distributor_to_product,
   fetch_devices,
   get_device,
   search_devices,
