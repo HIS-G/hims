@@ -2,6 +2,7 @@ const { customers } = require("../models/Customers");
 const { roles } = require("../models/Roles");
 const { vins, vin_types, owners } = require("../models/vins");
 const { generateVin } = require("../utils/helpers");
+const bcrypt = require("bcryptjs");
 
 const get_customers = async (req, res) => {
   try {
@@ -18,7 +19,7 @@ const get_customers = async (req, res) => {
   }
 };
 
-const get_customer = async (req, res) => {
+const get_single_customer = async (req, res) => {
   const { customer_id } = req.params;
 
   try {
@@ -35,10 +36,13 @@ const get_customer = async (req, res) => {
   }
 };
 
+const my_profile = async (req, res) => {};
+
 const create_customer = async (req, res) => {
   const {
     firstname,
     lastname,
+    middlename,
     email,
     phone,
     password,
@@ -53,6 +57,7 @@ const create_customer = async (req, res) => {
   try {
     const customer = new customers();
     const new_vin = new vins();
+    const new_fin = new vins();
 
     const role = await roles.findOne({ role: "CUSTOMER" });
 
@@ -68,13 +73,17 @@ const create_customer = async (req, res) => {
     customer.email = email;
     customer.phone = phone;
     customer.role = role._id;
+    if (middlename) customer.middlename = middlename;
     if (device) customer.device.push(device);
     if (username) customer.username = username;
-    if (password) customer.password = password;
     if (country) customer.country = country;
     if (state) customer.state = state;
     if (zip_code) customer.zip_code = zip_code;
     if (address) customer.address = address;
+
+    if (password) {
+      customer.password = await bcrypt.hash(password, 10);
+    }
 
     const new_customer = await customer.save();
 
@@ -83,11 +92,20 @@ const create_customer = async (req, res) => {
       new_vin.customer = new_customer._id;
       new_vin.vin = await generateVin(vin_types[0]);
 
+      new_fin.type = vin_types[5];
+      new_fin.customer = new_customer._id;
+      new_fin.vin = await generateVin(vin_types[5]);
+
+      const saved_fin = await new_fin.save();
       const saved_vin = await new_vin.save();
 
-      if (saved_vin) {
+      if (saved_fin && saved_vin) {
         return res.status(200).send({
           status: true,
+          message:
+            "Congratulations! Your account has been created successfully.",
+          vin: saved_vin._id,
+          fin: saved_fin._id,
           customer_id: new_customer._id,
         });
       }
@@ -107,7 +125,8 @@ const delete_customer = async (req, res) => {};
 
 module.exports = {
   get_customers,
-  get_customer,
+  get_single_customer,
+  my_profile,
   create_customer,
   update_customer,
   delete_customer,

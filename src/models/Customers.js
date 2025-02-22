@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Customer_Schema = new mongoose.Schema({
   firstname: { type: String, required: true },
+  middlename: { type: String },
   lastname: { type: String, required: true },
   email: { type: String, required: true },
   phone: { type: String, required: true },
@@ -18,6 +19,8 @@ const Customer_Schema = new mongoose.Schema({
     ref: "roles",
     required: true,
   },
+  verified: { type: Boolean, default: false, required: true },
+  activated: { type: Boolean, default: false, required: true },
 });
 
 const customers = mongoose.model("customers", Customer_Schema);

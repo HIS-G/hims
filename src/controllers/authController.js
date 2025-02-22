@@ -4,7 +4,67 @@ const { users } = require("../models/Users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-const customer_login = async (req, res) => {};
+const customer_login = async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).send({
+      status: 400,
+      message: `Invalid login credentials!`,
+    });
+  }
+
+  try {
+    const user = await customers
+      .findOne({ $or: [{ email: email }, { username: email }] })
+      .populate("role", "role")
+      .exec();
+
+    if (!user) {
+      return res.status(400).send({
+        status: false,
+        message: "email and password is incorrect!",
+      });
+    }
+
+    const match = await bcrypt.compare(password, user.password);
+
+    if (match) {
+      const access_token = await jwt.sign(
+        { email: user.email, sub: user._id },
+        process.env.SECRET_KEY,
+        { algorithm: "HS512", expiresIn: "7d" }
+      );
+
+      return res.status(200).send({
+        status: true,
+        message: `Welcome back ${user.firstname}!`,
+        user: {
+          id: user._id,
+          firstname: user.firstname,
+          lastname: user.lastname,
+          email: user.email,
+          phone: user.phone,
+          verified: user.verified,
+          active: user.activated,
+          role: user.role,
+        },
+        access_token: access_token,
+      });
+    } else {
+      return res.status(400).send({
+        status: false,
+        message: "email and password is incorrect!",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      status: false,
+      message: error,
+    });
+  }
+};
 
 const admin_login = async (req, res) => {
   const { email, password } = req.body;
