@@ -1,7 +1,8 @@
 const { users } = require("../models/Users");
 const bcryptjs = require("bcryptjs");
 const { generateVin } = require("../utils/helpers");
-const { vins, vin_types, owners } = require("../models/vins");
+const { vins, vin_types } = require("../models/vins");
+const { roles } = require("../models/Roles");
 
 const create_user = async (req, res) => {
   const {
@@ -17,20 +18,7 @@ const create_user = async (req, res) => {
     password,
   } = req.body;
 
-  console.log(req.body);
-
-  if (
-    !firstname ||
-    !lastname ||
-    !email ||
-    !phone ||
-    !country ||
-    !state ||
-    !zip_code ||
-    !address ||
-    !role ||
-    !password
-  ) {
+  if (!firstname || !lastname || !email || !phone || !country || !role) {
     return res.status(400).send({
       errorCode: 400,
       errorMsg: "All fields are required!",
@@ -40,6 +28,8 @@ const create_user = async (req, res) => {
   try {
     const user = users();
     const vin = vins();
+
+    const selected_role = await roles.findById(role);
 
     user.firstname = firstname;
     user.lastname = lastname;
@@ -51,8 +41,10 @@ const create_user = async (req, res) => {
     user.zip_code = zip_code;
     user.role = role;
 
-    const hashed_password = await bcryptjs.hash(password, 10);
-    user.password = hashed_password;
+    if (password) {
+      const hashed_password = await bcryptjs.hash(password, 10);
+      user.password = hashed_password;
+    }
 
     const saved_user = await user.save();
 
@@ -64,17 +56,23 @@ const create_user = async (req, res) => {
     }
 
     vin.type = vin_types[3];
-    vin.owner = owners[0];
-    vin.distributor = saved_user._id;
-    vin.vin = generateVin();
+    if (selected_role.role == "DISTRIBUTOR") {
+      vin.distributor = saved_user._id;
+      vin.vin = await generateVin(vin_types[3]);
+    } else if (selected_role.role == "SUPPLIER") {
+      vin.supplier = saved_user._id;
+      vin.vin = await generateVin(vin_types[4]);
+    }
 
-    const saved_vin = await vin.save();
+    if (selected_role !== "SUPER_ADMIN") {
+      const saved_vin = await vin.save();
 
-    if (!saved_vin) {
-      return res.status(400).send({
-        errorCode: 400,
-        errorMsg: "",
-      });
+      if (saved_vin)
+        return res.status(200).send({
+          status: true,
+          statusCode: 200,
+          message: "Account created successfully!",
+        });
     }
 
     return res.status(200).send({
@@ -84,6 +82,104 @@ const create_user = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+    return res.status(500).send({
+      status: false,
+      message: error,
+    });
+  }
+};
+
+const get_all_users = async (req, res) => {
+  var { page, size } = req.query;
+
+  if (!page) {
+    page = 1;
+  }
+
+  if (!size) {
+    size = 15;
+  }
+
+  const skip = (page - 1) * size;
+
+  try {
+    const all_users = await users
+      .find()
+      .skip(skip)
+      .limit(size)
+      .populate("role", "role active permission type")
+      .exec();
+
+    return res
+      .status(200)
+      .send({ status: true, message: ``, users: all_users });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ status: false, message: `` });
+  }
+};
+
+const get_users_by_role = async (req, res) => {
+  const role = req.params;
+  var { page, size } = req.query;
+
+  console.log(role);
+
+  if (!page) {
+    page = 1;
+  }
+
+  if (!size) {
+    size = 15;
+  }
+
+  const skip = (page - 1) * size;
+
+  try {
+    const selected_users = await users
+      .find({ "role.role": role })
+      .skip(skip)
+      .limit(size)
+      .exec();
+
+    console.log(selected_users);
+    return res
+      .status(200)
+      .send({ status: true, message: ``, users: selected_users });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ status: false, message: `` });
+  }
+};
+
+const search_users = async (req, res) => {
+  var found_role;
+  const { role } = req.body;
+
+  try {
+    if (role) {
+      found_role = await roles.findOne({
+        $or: [{ role: role }],
+      });
+    }
+
+    const found_users = await users.find({
+      $or: [{ role: found_role._id }],
+    });
+
+    console.log(found_users);
+
+    return res.status(200).send({
+      status: true,
+      message: `List of available distributors!`,
+      users: found_users,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      status: false,
+      message: error,
+    });
   }
 };
 
@@ -94,6 +190,9 @@ const suspend_user = async (req, res) => {};
 const delete_user = async (req, res) => {};
 
 module.exports = {
+  get_all_users,
+  get_users_by_role,
+  search_users,
   create_user,
   update_user,
   suspend_user,

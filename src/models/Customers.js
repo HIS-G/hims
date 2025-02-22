@@ -2,18 +2,25 @@ const mongoose = require("mongoose");
 
 const Customer_Schema = new mongoose.Schema({
   firstname: { type: String, required: true },
+  middlename: { type: String },
   lastname: { type: String, required: true },
   email: { type: String, required: true },
   phone: { type: String, required: true },
-  country: { type: String, required: true },
-  state: { type: String, required: true },
-  zip_code: { type: String, required: true },
-  address: { type: String, required: true },
+  username: { type: String, unique: true },
+  country: { type: String },
+  state: { type: String },
+  province: { type: String },
+  zip_code: { type: String },
+  address: { type: String },
   password: { type: String },
-  vin: { type: mongoose.Schema.Types.ObjectId, ref: "vin" },
-  sub_vin: { type: mongoose.Schema.Types.ObjectId, ref: "vin" },
-  fin: { type: mongoose.Schema.Types.ObjectId, ref: "vin" },
-  hin: { type: mongoose.Schema.Types.ObjectId, ref: "vin" },
+  device: [{ type: mongoose.Schema.Types.ObjectId, ref: "devices" }],
+  role: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "roles",
+    required: true,
+  },
+  verified: { type: Boolean, default: false, required: true },
+  activated: { type: Boolean, default: false, required: true },
 });
 
 const customers = mongoose.model("customers", Customer_Schema);
