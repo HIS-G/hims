@@ -26,10 +26,18 @@ const customer_login = async (req, res) => {
         message: "email and password is incorrect!",
       });
     }
+    console.log(user);
 
     const match = await bcrypt.compare(password, user.password);
+    console.log(match);
 
-    if (match) {
+    if(!match) {
+       return res.status(400).send({
+         status: true,
+         message: 'Email and password is incorrect!'
+       });
+    }
+
       const access_token = await jwt.sign(
         { email: user.email, sub: user._id },
         process.env.SECRET_KEY,
@@ -51,12 +59,7 @@ const customer_login = async (req, res) => {
         },
         access_token: access_token,
       });
-    } else {
-      return res.status(400).send({
-        status: false,
-        message: "email and password is incorrect!",
-      });
-    }
+    
   } catch (error) {
     console.log(error);
     return res.status(500).send({
