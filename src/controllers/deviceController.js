@@ -118,13 +118,25 @@ const fetch_devices = async (req, res) => {
 };
 
 const search_devices = async (req, res) => {
-  const { imei, serial_no, distributor, supplier } = req.body;
+  const { imei, serial_no, distributor, supplier, customer } = req.body;
 
   try {
-    const vin = await vins.findOne({ $or: [{ distributor: distributor }] });
+    const vin = await vins.findOne({
+      $or: [
+        { distributor: distributor },
+        { customer: customer },
+        { supplier: supplier },
+      ],
+    });
     const found_devices = await devices
       .find({
-        $or: [{ imei: imei }, { serial_no: serial_no }, { din: vin._id }],
+        $or: [
+          { imei: imei },
+          { serial_no: serial_no },
+          { din: vin._id },
+          { vin: vin._id },
+          { hin: vin._id },
+        ],
       })
       .populate([
         "customer",
@@ -137,6 +149,7 @@ const search_devices = async (req, res) => {
       ])
       .populate({ path: "din", populate: { path: "distributor" } })
       .populate({ path: "hin", populate: { path: "customer" } })
+      .populate({ path: "vin", populate: { path: "school" } })
       .exec();
 
     if (found_devices.length <= 0) {

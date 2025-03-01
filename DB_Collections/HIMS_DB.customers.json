@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "67b9471c3c4171819d2ff5dc"
+  },
+  "device": [
+    {
+      "$oid": "67b5073845783124f963c80c"
+    }
+  ],
+  "firstname": "Ochael",
+  "lastname": "Okoisor",
+  "email": "okoisorjr@gmail.com",
+  "phone": "+2349077934077",
+  "role": {
+    "$oid": "67ab36b25589ee5fe60340ad"
+  },
+  "username": "okoisorjr",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b96255d7ed98b907e1bbf2"
+  },
+  "device": [],
+  "verified": false,
+  "activated": false,
+  "firstname": "Dennis",
+  "lastname": "Achimi",
+  "email": "achimidennis@gmail.com",
+  "phone": "+2347036617166",
+  "role": {
+    "$oid": "67ab36b25589ee5fe60340ad"
+  },
+  "password": "$2a$10$L0W36CruM0FKNgZl18SIr.70HpV25TGaspcrpOqfYTWorRq8Pw4bi",
+  "__v": 0
+}]

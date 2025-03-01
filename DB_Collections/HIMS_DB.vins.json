@@ -1,0 +1,221 @@
+[{
+  "_id": {
+    "$oid": "67b132b3dde901ecd5a63ef5"
+  },
+  "type": "DIN",
+  "distributor": {
+    "$oid": "67b132b3dde901ecd5a63ef4"
+  },
+  "vin": "DIN-4803337226775699",
+  "createdAt": {
+    "$date": "2025-02-16T00:34:59.201Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-16T00:34:59.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b45a1099a8c17ce21a7f5d"
+  },
+  "type": "DIN",
+  "supplier": {
+    "$oid": "67b45a1099a8c17ce21a7f5c"
+  },
+  "vin": "SUB_DIN-4627184963240314",
+  "createdAt": {
+    "$date": "2025-02-18T09:59:44.606Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T09:59:44.606Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b464ad7e6a0a801bb0bc84"
+  },
+  "type": "HIN",
+  "school": {
+    "$oid": "67b464ad7e6a0a801bb0bc83"
+  },
+  "vin": "HIN-4066397453007333",
+  "createdAt": {
+    "$date": "2025-02-18T10:45:01.456Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T10:45:01.456Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b5881c560d7df3a7a05f64"
+  },
+  "type": "DIN",
+  "distributor": {
+    "$oid": "67b5881c560d7df3a7a05f63"
+  },
+  "vin": "DIN-4874079745340518",
+  "createdAt": {
+    "$date": "2025-02-19T07:28:28.375Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-19T07:28:28.375Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b9429a78427fb79d617c85"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b9429a78427fb79d617c84"
+  },
+  "vin": "VIN-8501378037928380",
+  "createdAt": {
+    "$date": "2025-02-22T03:20:58.908Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T03:20:58.908Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b943b63c4171819d2ff5b7"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b943b63c4171819d2ff5b6"
+  },
+  "vin": "VIN-1995701232002431",
+  "createdAt": {
+    "$date": "2025-02-22T03:25:42.702Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T03:25:42.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b9463f3c4171819d2ff5cb"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b9463f3c4171819d2ff5ca"
+  },
+  "vin": "VIN-1778201094843676",
+  "createdAt": {
+    "$date": "2025-02-22T03:36:31.860Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T03:36:31.860Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b9471c3c4171819d2ff5dd"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b9471c3c4171819d2ff5dc"
+  },
+  "vin": "VIN-5675200893791239",
+  "createdAt": {
+    "$date": "2025-02-22T03:40:12.481Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T03:40:12.481Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b95d884a6cea65581868a3"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b95d884a6cea65581868a2"
+  },
+  "vin": "VIN-982452530896798",
+  "createdAt": {
+    "$date": "2025-02-22T05:15:52.471Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T05:15:52.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b95eb7846fee33c6a44ebc"
+  },
+  "type": "FIN",
+  "customer": {
+    "$oid": "67b95eb7846fee33c6a44eba"
+  },
+  "vin": "FIN-8309341815795599",
+  "createdAt": {
+    "$date": "2025-02-22T05:20:55.121Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T05:20:55.121Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b95eb7846fee33c6a44ebb"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b95eb7846fee33c6a44eba"
+  },
+  "vin": "VIN-4354161942344201",
+  "createdAt": {
+    "$date": "2025-02-22T05:20:55.127Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T05:20:55.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b96255d7ed98b907e1bbf4"
+  },
+  "type": "FIN",
+  "customer": {
+    "$oid": "67b96255d7ed98b907e1bbf2"
+  },
+  "vin": "FIN-118559772956190",
+  "createdAt": {
+    "$date": "2025-02-22T05:36:21.386Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T05:36:21.386Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b96255d7ed98b907e1bbf3"
+  },
+  "type": "VIN",
+  "customer": {
+    "$oid": "67b96255d7ed98b907e1bbf2"
+  },
+  "vin": "VIN-7809535924079489",
+  "createdAt": {
+    "$date": "2025-02-22T05:36:21.392Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T05:36:21.392Z"
+  },
+  "__v": 0
+}]

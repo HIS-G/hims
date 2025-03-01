@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "67b5073845783124f963c80c"
+  },
+  "device_name": "HIS-Eki",
+  "device_model": {
+    "$oid": "67b502109525ee98c563b2f4"
+  },
+  "serial_no": "8628902789909998",
+  "imei": "8782989389023098",
+  "build_no": "51602354UP18975",
+  "createdAt": {
+    "$date": "2025-02-18T22:18:32.934Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T01:36:09.869Z"
+  },
+  "__v": 0,
+  "din": {
+    "$oid": "67b132b3dde901ecd5a63ef5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b58a96560d7df3a7a05f7a"
+  },
+  "device_name": "HIS-Owei 1",
+  "device_model": {
+    "$oid": "67b58982560d7df3a7a05f70"
+  },
+  "serial_no": "0123456789ABCDEF",
+  "imei": "354368099615125",
+  "build_no": "786355624EE-HIS",
+  "createdAt": {
+    "$date": "2025-02-19T07:39:02.600Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T11:20:09.859Z"
+  },
+  "__v": 0,
+  "din": {
+    "$oid": "67b5881c560d7df3a7a05f64"
+  }
+}]
