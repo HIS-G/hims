@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "67b502109525ee98c563b2f4"
+  },
+  "model_name": "A10",
+  "type": "MOBILE",
+  "createdAt": {
+    "$date": "2025-02-18T21:56:32.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T21:56:32.650Z"
+  },
+  "__v": 0,
+  "colors": [
+    "BLACK",
+    "WHITE",
+    "PINK"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67b58982560d7df3a7a05f70"
+  },
+  "colors": [
+    "BLACK",
+    "WHITE",
+    "BLUE",
+    "YELLOW"
+  ],
+  "model_name": "S19 Max Pro S 108MP",
+  "type": "MOBILE",
+  "createdAt": {
+    "$date": "2025-02-19T07:34:26.594Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-19T07:34:26.594Z"
+  },
+  "__v": 0
+}]

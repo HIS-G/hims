@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "67aa2406874a620cf69a904a"
+  },
+  "active": true,
+  "permission": "UNRESTRICTED",
+  "role": "SUPER_ADMIN",
+  "createdAt": {
+    "$date": "2025-02-10T16:06:30.346Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-10T16:06:30.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67aa244f303881a609a768c2"
+  },
+  "active": false,
+  "permission": "RESTRICTED",
+  "role": "ADMIN",
+  "createdAt": {
+    "$date": "2025-02-10T16:07:43.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-10T16:07:43.977Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67aa25de303881a609a768c4"
+  },
+  "active": false,
+  "permission": "RESTRICTED",
+  "role": "SCHOOL_ADMIN",
+  "createdAt": {
+    "$date": "2025-02-10T16:14:22.037Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-10T16:14:22.037Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ab31735589ee5fe6034072"
+  },
+  "active": true,
+  "permission": "RESTRICTED",
+  "role": "SUPPLIER",
+  "createdAt": {
+    "$date": "2025-02-11T11:16:03.449Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-11T11:16:03.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ab318f5589ee5fe6034074"
+  },
+  "active": true,
+  "permission": "RESTRICTED",
+  "role": "DISTRIBUTOR",
+  "createdAt": {
+    "$date": "2025-02-11T11:16:31.873Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-11T11:16:31.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ab36b25589ee5fe60340ad"
+  },
+  "active": true,
+  "permission": "RESTRICTED",
+  "role": "CUSTOMER",
+  "createdAt": {
+    "$date": "2025-02-11T11:38:26.287Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-11T11:38:26.287Z"
+  },
+  "__v": 0
+}]

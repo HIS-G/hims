@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "67b464ad7e6a0a801bb0bc83"
+  },
+  "quiz_host": false,
+  "school_name": "Junior Secondary School Tudun Wada",
+  "school_email": "tudunwadaz4@gmail.com",
+  "school_phone": "+2349909092132",
+  "principal_name": "Mrs. Khanisari",
+  "principal_email": "khanisari@gmail.com",
+  "principal_phone": "+2348074638278",
+  "school_type": "SECONDARY_SCHOOL",
+  "country": "Nigeria",
+  "address": "Wuse zone 4",
+  "zip_code": "900109",
+  "state": "Federal Capital Territory",
+  "total_students": 1800,
+  "province": "Zone 4",
+  "role": {
+    "$oid": "67aa25de303881a609a768c4"
+  },
+  "__v": 0
+}]

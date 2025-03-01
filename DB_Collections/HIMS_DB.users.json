@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "67b132b3dde901ecd5a63ef4"
+  },
+  "firstname": "Simon",
+  "lastname": "Sinek",
+  "email": "simonsinek@gmail.com",
+  "phone": "+4479277392",
+  "country": "Nigeria",
+  "role": {
+    "$oid": "67ab318f5589ee5fe6034074"
+  },
+  "createdAt": {
+    "$date": "2025-02-16T00:34:59.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T13:34:13.068Z"
+  },
+  "__v": 0,
+  "password": "$2a$10$LmJIqtgl.HkptA9sMW9uVegWv5CghSa1cqeNsH4QufOrRy7KZUrAS"
+},
+{
+  "_id": {
+    "$oid": "67b45a1099a8c17ce21a7f5c"
+  },
+  "verified": true,
+  "activated": true,
+  "firstname": "Mamman",
+  "lastname": "Rubise",
+  "email": "rubisemamman@gmail.com",
+  "phone": "08186489001",
+  "country": "Nigeria",
+  "role": {
+    "$oid": "67ab31735589ee5fe6034072"
+  },
+  "createdAt": {
+    "$date": "2025-02-18T09:59:44.555Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-22T02:16:24.301Z"
+  },
+  "__v": 0,
+  "password": "$2a$10$CBHD87ZtgnPKm7uuxonVeu0xdKdHkTBUc2qLx11Xc0Pvzd3fbiPGm"
+},
+{
+  "_id": {
+    "$oid": "67b45b3999a8c17ce21a7f67"
+  },
+  "verified": false,
+  "activated": false,
+  "firstname": "Ochael",
+  "lastname": "Okoisor",
+  "email": "okoisorjr@gmail.com",
+  "phone": "+2349077934077",
+  "country": "Nigeria",
+  "role": {
+    "$oid": "67aa2406874a620cf69a904a"
+  },
+  "createdAt": {
+    "$date": "2025-02-18T10:04:41.168Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T19:23:02.111Z"
+  },
+  "__v": 0,
+  "password": "$2a$10$XvXk5eBxZBaVPG8RSLu7V.QtjPdZsi8y8NmFUjuLTx5kvxkz4jwbe"
+},
+{
+  "_id": {
+    "$oid": "67b5881c560d7df3a7a05f63"
+  },
+  "verified": true,
+  "activated": true,
+  "firstname": "Distributor",
+  "lastname": "UK",
+  "email": "distributor@yahoomail.com",
+  "phone": "+4492879397",
+  "country": "Ghana",
+  "role": {
+    "$oid": "67ab318f5589ee5fe6034074"
+  },
+  "createdAt": {
+    "$date": "2025-02-19T07:28:28.356Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-19T07:28:28.356Z"
+  },
+  "__v": 0
+}]
