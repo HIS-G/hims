@@ -38,11 +38,7 @@ const Device_Schema = new mongoose.Schema(
 const Device_Model_Schema = new mongoose.Schema(
   {
     model_name: { type: String, required: true },
-    colors: {
-      type: [String],
-      required: true,
-      minLength: [1, "You must provide at least one color!"],
-    },
+    color: { type: String, required: true },
     type: { type: String, required: true, enum: model_types },
   },
   { timestamps: true }
