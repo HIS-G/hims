@@ -1,8 +1,11 @@
 const { customers } = require("../models/Customers");
 const { roles } = require("../models/Roles");
-const { vins, vin_types, owners } = require("../models/vins");
+const { vins, vin_types } = require("../models/vins");
 const { generateVin } = require("../utils/helpers");
 const bcrypt = require("bcryptjs");
+const { logger } = require("../utils/logger");
+const crypto = require("crypto");
+const { mail } = require('../utils/nodemailerConfig');
 
 const get_customers = async (req, res) => {
   try {
@@ -14,7 +17,7 @@ const get_customers = async (req, res) => {
       customers: all_customers,
     });
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({ status: false, message: `` });
   }
 };
@@ -31,7 +34,7 @@ const get_single_customer = async (req, res) => {
       customer: customer,
     });
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({ status: false, message: `` });
   }
 };
@@ -56,7 +59,7 @@ const create_customer = async (req, res) => {
 
   try {
     const customer = new customers();
-    const new_vin = new vins();
+    //const new_vin = new vins();
     const new_fin = new vins();
 
     const role = await roles.findOne({ role: "CUSTOMER" });
@@ -82,36 +85,53 @@ const create_customer = async (req, res) => {
     if (address) customer.address = address;
 
     if (password) {
-      customer.password = await bcrypt.hash(password, 10);
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+
+      let salt = await bcrypt.genSalt();
+      customer.password = await bcrypt.hash(password, salt);
     }
 
     const new_customer = await customer.save();
 
     if (new_customer) {
-      new_vin.type = vin_types[0];
+      /* new_vin.type = vin_types[0];
       new_vin.customer = new_customer._id;
-      new_vin.vin = await generateVin(vin_types[0]);
+      new_vin.vin = await generateVin(vin_types[0]); */
 
       new_fin.type = vin_types[5];
       new_fin.customer = new_customer._id;
       new_fin.vin = await generateVin(vin_types[5]);
 
       const saved_fin = await new_fin.save();
-      const saved_vin = await new_vin.save();
+      //const saved_vin = await new_vin.save();
 
-      if (saved_fin && saved_vin) {
-        return res.status(200).send({
-          status: true,
-          message:
-            "Congratulations! Your account has been created successfully.",
-          vin: saved_vin._id,
-          fin: saved_fin._id,
-          customer_id: new_customer._id,
+      if (saved_fin /* && saved_vin */) {
+        mail.sendMail({
+          from: 'his-quiz@edspare.com',
+          to: `${new_customer.email}`, // list of receivers
+          subject: "Account Creation with HIS!!!✔", // Subject line
+          text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`,
+          html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`, // html body
+        }, (err, result) => {
+          if(err) {
+            logger.error(err);
+            res.status(500).json({ status: true, message: err });
+          }
+          
+          return res.status(200).send({
+            status: true,
+            message:
+              "Congratulations! Kindly, check your email to verify your account",
+            //vin: saved_vin._id,
+            fin: saved_fin._id,
+            customer_id: new_customer._id,
+          });
         });
       }
     }
   } catch (error) {
     console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,

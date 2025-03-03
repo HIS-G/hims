@@ -1,0 +1,45 @@
+2025-03-03T09:37:27.581Z info: This is an info message
+2025-03-03T09:37:27.584Z warn: This is a warning
+2025-03-03T09:37:27.585Z error: This is an error
+2025-03-03T09:37:27.585Z info: User data:
+2025-03-03T09:37:57.639Z error: Invalid string / salt: Not a string
+2025-03-03T09:40:12.852Z error: Invalid string / salt: Not a string
+2025-03-03T09:48:47.687Z error: Neither WebCryptoAPI nor a crypto module is available. Use bcrypt.setRandomFallback to set an alternative
+2025-03-03T09:49:28.918Z error: Neither WebCryptoAPI nor a crypto module is available. Use bcrypt.setRandomFallback to set an alternative
+2025-03-03T09:50:09.073Z error: Neither WebCryptoAPI nor a crypto module is available. Use bcrypt.setRandomFallback to set an alternative
+2025-03-03T09:50:47.778Z error: Neither WebCryptoAPI nor a crypto module is available. Use bcrypt.setRandomFallback to set an alternative
+2025-03-03T09:52:57.629Z error: Neither WebCryptoAPI nor a crypto module is available. Use bcrypt.setRandomFallback to set an alternative
+2025-03-03T09:57:34.063Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: null }
+2025-03-03T10:00:30.447Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "garry_s" }
+2025-03-03T15:36:40.188Z error: Cannot access 'users' before initialization
+2025-03-03T15:36:40.193Z error: Cannot access 'users' before initialization
+2025-03-03T15:37:11.339Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2025-03-03T15:37:11.345Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2025-03-03T15:37:46.339Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2025-03-03T15:37:46.345Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2025-03-03T15:38:15.767Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+2025-03-03T15:38:15.774Z error: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
