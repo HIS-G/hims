@@ -282,7 +282,7 @@ const create_customer_password = async (req, res) => {
 
 const create_school_password = async (req, res) => {
   const { school_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { verification_token, password, confirmation } = req.body;
 
   if (!school_id) {
     return res.status(401).send({
@@ -305,7 +305,7 @@ const create_school_password = async (req, res) => {
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await schools.findByIdAndUpdate(
         school_id,
-        { password: hashed_password },
+        { $set: { password: hashed_password, verified: true, activated: true }, $unset: { verificationToken: verification_token } },
         { upsert: true, new: true }
       );
 

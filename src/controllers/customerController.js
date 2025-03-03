@@ -109,7 +109,7 @@ const create_customer = async (req, res) => {
         mail.sendMail({
           from: 'his-quiz@edspare.com',
           to: `${new_customer.email}`, // list of receivers
-          subject: "Account Creation with HIS!!!✔", // Subject line
+          subject: "Welcome to HIS!!!✔", // Subject line
           text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`,
           html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`, // html body
         }, (err, result) => {

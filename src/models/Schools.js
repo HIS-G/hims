@@ -32,6 +32,7 @@ const School_Schema = new mongoose.Schema({
     ref: "roles",
     required: true,
   },
+  verificationToken: { type: String },
   vin: { type: mongoose.Schema.Types.ObjectId, ref: "vins" },
 });
 
