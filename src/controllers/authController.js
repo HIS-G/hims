@@ -4,6 +4,8 @@ const { schools } = require("../models/Schools");
 const { users } = require("../models/Users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
+const { logger } = require("../utils/logger");
 
 const customer_login = async (req, res) => {
   const { is_school, email, password } = req.body;
@@ -188,7 +190,7 @@ const admin_login = async (req, res) => {
 
 const create_admin_password = async (req, res) => {
   const { user_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { verification_token, password, confirmation } = req.body;
 
   if (!user_id) {
     return res.status(401).send({
@@ -206,10 +208,12 @@ const create_admin_password = async (req, res) => {
 
   try {
     if (password == confirmation) {
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await users.findByIdAndUpdate(
         user_id,
-        { password: hashed_password },
+        { $set: { password: hashed_password, verified: true, activated: true }, $unset: { verificationToken: verification_token } },
         { upsert: true, new: true }
       );
 
@@ -222,6 +226,7 @@ const create_admin_password = async (req, res) => {
       }
     }
   } catch (error) {
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -249,6 +254,8 @@ const create_customer_password = async (req, res) => {
 
   try {
     if (password == confirmation) {
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await customers.findByIdAndUpdate(
         customer_id,
@@ -265,6 +272,7 @@ const create_customer_password = async (req, res) => {
       }
     }
   } catch (error) {
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -274,7 +282,7 @@ const create_customer_password = async (req, res) => {
 
 const create_school_password = async (req, res) => {
   const { school_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { verification_token, password, confirmation } = req.body;
 
   if (!school_id) {
     return res.status(401).send({
@@ -292,10 +300,12 @@ const create_school_password = async (req, res) => {
 
   try {
     if (password == confirmation) {
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+      
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await schools.findByIdAndUpdate(
         school_id,
-        { password: hashed_password },
+        { $set: { password: hashed_password, verified: true, activated: true }, $unset: { verificationToken: verification_token } },
         { upsert: true, new: true }
       );
 
@@ -308,7 +318,7 @@ const create_school_password = async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,

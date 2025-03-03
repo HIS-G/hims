@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const vin_types = ["VIN", "SUB_VIN", "HIN", "DIN", "SUB_DIN", "FIN"];
+const vin_types = ["VIN", "SUB_VIN", "HIN", "DIN", "SUB_DIN", "FIN", "MIN"];
 
 const Vin_Schema = new mongoose.Schema(
   {
@@ -13,7 +13,7 @@ const Vin_Schema = new mongoose.Schema(
     vin: {
       type: String,
       required: true,
-      minlength: [16, "Vin must be at least 16 characters long"],
+      //minlength: [16, "Vin must be at least 16 characters long"],
       unique: true,
     },
   },

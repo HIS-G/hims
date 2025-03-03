@@ -21,6 +21,7 @@ const User_Schema = new mongoose.Schema(
       type: String,
       minlength: [16, "Password cannot be less than 16 characters in length!"],
     },
+    verificationToken: { type: String },
     approvedAt: { type: String },
     activated: { type: Boolean, default: false, required: true },
     approvedBy: { type: mongoose.Schema.Types.ObjectId, ref: "users" },

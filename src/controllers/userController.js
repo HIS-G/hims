@@ -1,8 +1,10 @@
 const { users } = require("../models/Users");
 const bcryptjs = require("bcryptjs");
-const { generateVin } = require("../utils/helpers");
+const { generateVin, generateVerificationToken } = require("../utils/helpers");
 const { vins, vin_types } = require("../models/vins");
 const { roles } = require("../models/Roles");
+const { mail } = require("../utils/nodemailerConfig");
+const { logger } = require("../utils/logger");
 
 const create_user = async (req, res) => {
   const {
@@ -46,32 +48,48 @@ const create_user = async (req, res) => {
       user.password = hashed_password;
     }
 
+    user.verificationToken = await generateVerificationToken();
+
     const saved_user = await user.save();
 
     if (!saved_user) {
       return res.status().send({
-        errorCode: 400,
-        errorMsg: "",
+        status: false,
+        message: error,
       });
     }
 
-    vin.type = vin_types[3];
     if (selected_role.role == "DISTRIBUTOR") {
+      vin.type = vin_types[3];
       vin.distributor = saved_user._id;
       vin.vin = await generateVin(vin_types[3]);
     } else if (selected_role.role == "SUPPLIER") {
+      vin.type = vin_types[6]
       vin.supplier = saved_user._id;
-      vin.vin = await generateVin(vin_types[4]);
+      vin.vin = await generateVin(vin_types[6]);
     }
 
     if (selected_role !== "SUPER_ADMIN") {
       const saved_vin = await vin.save();
 
       if (saved_vin)
-        return res.status(200).send({
-          status: true,
-          statusCode: 200,
-          message: "Account created successfully!",
+        mail.sendMail({
+          from: 'his-quiz@edspare.com',
+          to: `${user.email}`, // list of receivers
+          subject: "Welcome to HIS!!!✔", // Subject line
+          text: `Congratulations!!!<br/><br/> Your <b>${selected_role.role}</b> account has been created successfully.<br/> <b>HIS</b>, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b><br/><br/>Follow this link to complete your registration <a href=https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}>https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}</a>`,
+          html: `Congratulations!!!<br/><br/> Your <b>${selected_role.role}</b> account has been created successfully.<br/> <b>HIS</b>, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b><br/><br/>Follow this link to complete your registration <a href=https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}>https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}</a>`, // html body
+        }, () => {
+          if(err) {
+            logger.error(err);
+            res.status(500).json({ status: true, message: err });
+          }
+
+          return res.status(200).send({
+            status: true,
+            statusCode: 200,
+            message: "Account created successfully!",
+          });
         });
     }
 
@@ -85,6 +103,27 @@ const create_user = async (req, res) => {
     return res.status(500).send({
       status: false,
       message: error,
+    });
+  }
+};
+
+const get_single_user = async (req, res) => {
+  //const { } = req.params;
+  const { id } = req.body;
+
+  try{
+    const user = await users.find({ $or: [{_id: id}] }).populate("role", "role").exec();
+
+    return res.status(200).send({
+      status: true,
+      message: `User information`,
+      users: user
+    });
+  } catch(error){
+    logger.error(error);
+    return res.status(500).send({
+      status: false,
+      message: error
     });
   }
 };
@@ -191,6 +230,7 @@ const delete_user = async (req, res) => {};
 
 module.exports = {
   get_all_users,
+  get_single_user,
   get_users_by_role,
   search_users,
   create_user,
