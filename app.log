@@ -43,3 +43,4 @@
     |     property 's' -> object with constructor 'Object'
     |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
     --- property 'client' closes the circle
+2025-03-03T19:56:22.493Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "pina" }
