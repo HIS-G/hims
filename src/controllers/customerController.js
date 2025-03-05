@@ -9,7 +9,7 @@ const { mail } = require('../utils/nodemailerConfig');
 
 const get_customers = async (req, res) => {
   try {
-    const all_customers = await customers.find().populate("device").exec();
+    const all_customers = await customers.find().select("-password").populate("device").exec();
 
     return res.status(200).send({
       status: true,

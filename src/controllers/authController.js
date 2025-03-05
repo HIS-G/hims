@@ -6,8 +6,10 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const { logger } = require("../utils/logger");
+const { vins } = require("../models/vins");
 
 const customer_login = async (req, res) => {
+  var vin;
   const { is_school, email, password } = req.body;
 
   if (!email || !password) {
@@ -49,6 +51,8 @@ const customer_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
+      vin = await vins.findOne({ school: school._id }).select("type vin");
+
       return res.status(200).send({
         status: true,
         school: {
@@ -57,6 +61,7 @@ const customer_login = async (req, res) => {
           email: school.school_email,
           phone: school.school_phone,
           role: school.role,
+          vin: vin
         },
         access_token: access_token,
       });
@@ -73,7 +78,6 @@ const customer_login = async (req, res) => {
         message: "email and password is incorrect!",
       });
     }
-    console.log(user);
 
     if (user && !user.password) {
       return res.status(400).send({
@@ -84,7 +88,6 @@ const customer_login = async (req, res) => {
     }
 
     const match = await bcrypt.compare(password, user.password);
-    console.log(match);
 
     if(!match) {
        return res.status(400).send({
@@ -93,30 +96,33 @@ const customer_login = async (req, res) => {
        });
     }
 
-      const access_token = await jwt.sign(
-        { email: user.email, sub: user._id },
-        process.env.SECRET_KEY,
-        { algorithm: "HS512", expiresIn: "7d" }
-      );
+    const access_token = await jwt.sign(
+      { email: user.email, sub: user._id },
+      process.env.SECRET_KEY,
+      { algorithm: "HS512", expiresIn: "7d" }
+    );
 
-      return res.status(200).send({
-        status: true,
-        message: `Welcome back ${user.firstname}!`,
-        user: {
-          id: user._id,
-          firstname: user.firstname,
-          lastname: user.lastname,
-          email: user.email,
-          phone: user.phone,
-          verified: user.verified,
-          active: user.activated,
-          role: user.role,
-        },
-        access_token: access_token,
-      });
+    vin = await vins.findOne({ customer: user }).select("type vin");
+
+    return res.status(200).send({
+      status: true,
+      message: `Welcome back ${user.firstname}!`,
+      user: {
+        id: user._id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+        phone: user.phone,
+        verified: user.verified,
+        active: user.activated,
+        role: user.role,
+        vin: vin
+      },
+      access_token: access_token,
+    });
     
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -125,6 +131,7 @@ const customer_login = async (req, res) => {
 };
 
 const admin_login = async (req, res) => {
+  var vin;
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -156,6 +163,12 @@ const admin_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
+      if(user.role.role == "SUPPLIER") {
+        vin = await vins.findOne({ supplier: user.id }).select("type vin");
+      } else if(user.role.role == "DISTRIBUTOR") {
+        vin = await vins.findOne({ distributor: user.id }).select("type vin");
+      }
+      
       return res.status(200).send({
         status: true,
         message: `Welcome back ${user.name}!`,
@@ -170,6 +183,7 @@ const admin_login = async (req, res) => {
           approvedBy: user.approvedBy,
           active: user.activated,
           role: user.role,
+          vin: vin
         },
         access_token: access_token,
       });
@@ -180,7 +194,7 @@ const admin_login = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,

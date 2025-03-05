@@ -43,4 +43,194 @@
     |     property 's' -> object with constructor 'Object'
     |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
     --- property 'client' closes the circle
+<<<<<<< HEAD
 2025-03-03T19:56:22.493Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "pina" }
+=======
+2025-03-04T14:25:58.432Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/src/controllers/uploads/67b45a1099a8c17ce21a7f5c-1741098358431.xlsx'
+2025-03-04T14:34:10.202Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741098850201.xlsx'
+2025-03-04T14:37:06.599Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741099026598.xlsx'
+2025-03-04T14:40:36.189Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741099236187.xlsx'
+2025-03-04T14:41:44.145Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741099304142.xlsx'
+2025-03-04T14:53:22.688Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741100002686.xlsx'
+2025-03-04T14:53:42.713Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741100022709.xlsx'
+2025-03-04T14:56:26.220Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741100186219.xlsx'
+2025-03-04T15:00:05.640Z error: ENOENT: no such file or directory, open '/home/ubuntu/hims-latest/hims-copy/uploads/67b45a1099a8c17ce21a7f5c-1741100405635.xlsx'
+2025-03-04T21:18:50.462Z error: devices validation failed: createdBy: Path `createdBy` is required., color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:28:06.779Z error: devices validation failed: min: Cast to ObjectId failed for value "MIN-6451" (type string) at path "min" because of "BSONError", color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:34:37.785Z error: devices validation failed: createdBy: Path `createdBy` is required., color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:36:41.251Z error: devices validation failed: min: Cast to ObjectId failed for value "MIN-6451" (type string) at path "min" because of "BSONError", color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:39:18.883Z error: devices validation failed: min: Cast to ObjectId failed for value "MIN-6451" (type string) at path "min" because of "BSONError", color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:40:39.299Z error: devices validation failed: min: Cast to ObjectId failed for value "MIN-6451" (type string) at path "min" because of "BSONError", color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:49:13.402Z error: devices validation failed: color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:52:37.831Z error: devices validation failed: color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-03-04T21:54:14.677Z error: saved_devices is not defined
+2025-03-04T22:01:35.933Z error: devices validation failed: min: Cast to ObjectId failed for value "Query {
+  _mongooseOptions: {},
+  _transforms: [],
+  _hooks: Kareem { _pres: Map(0) {}, _posts: Map(0) {} },
+  _executionStack: null,
+  mongooseCollection: Collection {
+    collection: Collection { s: [Object], client: [MongoClient] },
+    Promise: [Function: Promise],
+    modelName: 'vins',
+    _closed: false,
+    opts: {
+      autoIndex: true,
+      autoCreate: true,
+      autoSearchIndex: false,
+      schemaUserProvidedOptions: [Object],
+      capped: false,
+      Promise: undefined,
+      '$wasForceClosed': undefined
+    },
+    name: 'vins',
+    collectionName: 'vins',
+    conn: NativeConnection {
+      base: [Mongoose],
+      collections: [Object],
+      models: [Object],
+      config: {},
+      replica: false,
+      options: null,
+      otherDbs: [],
+      relatedDbs: {},
+      states: [Object: null prototype],
+      _readyState: 1,
+      _closeCalled: undefined,
+      _hasOpened: true,
+      plugins: [],
+      id: 0,
+      _queue: [],
+      _listening: false,
+      _lastHeartbeatAt: 1741125695303,
+      _connectionOptions: [Object],
+      _connectionString: 'mongodb+srv://rootadmin:test1234@hims.6jlmt.mongodb.net/HIMS_DB',
+      client: [MongoClient],
+      '$initialConnection': [Promise],
+      db: [Db],
+      host: 'hims-shard-00-00.6jlmt.mongodb.net',
+      port: 27017,
+      name: 'HIMS_DB',
+      [Symbol(mongoose:defaultConnection)]: true
+    },
+    queue: [],
+    buffer: false,
+    emitter: EventEmitter {
+      _events: [Object: null prototype] {},
+      _eventsCount: 0,
+      _maxListeners: undefined,
+      [Symbol(kCapture)]: false
+    }
+  },
+  model: Model { vins },
+  schema: Schema {
+    obj: {
+      type: [Object],
+      school: [Object],
+      customer: [Object],
+      student: [Object],
+      distributor: [Object],
+      supplier: [Object],
+      vin: [Object]
+    },
+    paths: {
+      type: [SchemaString],
+      school: [SchemaObjectId],
+      customer: [SchemaObjectId],
+      student: [SchemaObjectId],
+      distributor: [SchemaObjectId],
+      supplier: [SchemaObjectId],
+      vin: [SchemaString],
+      _id: [SchemaObjectId],
+      createdAt: [SchemaDate],
+      updatedAt: [SchemaDate],
+      __v: [SchemaNumber]
+    },
+    aliases: {},
+    subpaths: {},
+    virtuals: { id: [VirtualType] },
+    singleNestedPaths: {},
+    nested: {},
+    inherits: {},
+    callQueue: [],
+    _indexes: [],
+    _searchIndexes: [],
+    methods: { initializeTimestamps: [Function (anonymous)] },
+    methodOptions: {},
+    statics: {},
+    tree: {
+      type: [Object],
+      school: [Object],
+      customer: [Object],
+      student: [Object],
+      distributor: [Object],
+      supplier: [Object],
+      vin: [Object],
+      _id: [Object],
+      createdAt: [Object],
+      updatedAt: [Function: Date],
+      __v: [Function: Number],
+      id: [VirtualType]
+    },
+    query: {},
+    childSchemas: [],
+    plugins: [ [Object], [Object], [Object], [Object], [Object] ],
+    '$id': 4,
+    mapPaths: [],
+    s: { hooks: [Kareem] },
+    _userProvidedOptions: { timestamps: true },
+    options: {
+      strict: true,
+      strictQuery: false,
+      bufferCommands: true,
+      capped: false,
+      versionKey: '__v',
+      optimisticConcurrency: false,
+      minimize: true,
+      autoIndex: null,
+      discriminatorKey: '__t',
+      shardKey: null,
+      read: null,
+      validateBeforeSave: true,
+      validateModifiedOnly: false,
+      _id: true,
+      id: true,
+      typeKey: 'type',
+      timestamps: true,
+      pluralization: true
+    },
+    '$timestamps': { createdAt: 'createdAt', updatedAt: 'updatedAt' },
+    '$globalPluginsApplied': true
+  },
+  op: 'findOne',
+  options: {},
+  _conditions: { min: 'MIN-6451' },
+  _fields: undefined,
+  _updateDoc: undefined,
+  _path: undefined,
+  _distinctDoc: undefined,
+  _collection: NodeCollection {
+    collection: Collection {
+      collection: [Collection],
+      Promise: [Function: Promise],
+      modelName: 'vins',
+      _closed: false,
+      opts: [Object],
+      name: 'vins',
+      collectionName: 'vins',
+      conn: [NativeConnection],
+      queue: [],
+      buffer: false,
+      emitter: [EventEmitter]
+    },
+    collectionName: 'vins'
+  },
+  _traceFunction: undefined,
+  '$useProjection': true
+}" (type Query) at path "min" because of "BSONError"
+2025-03-04T22:15:52.038Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-04T22:26:19.988Z error: user_vin_id is not defined
+2025-03-04T23:11:02.978Z error: device.remove is not a function
+2025-03-04T23:17:54.630Z error: deleted is not defined
+2025-03-04T23:29:59.783Z error: customers.find(...).populate(...).exec(...).select is not a function
+>>>>>>> af99e13582bd895f59a4afee1ee48fee27f0e637
