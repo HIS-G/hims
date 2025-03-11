@@ -13,7 +13,7 @@ const options = {
 };
 
 const corsOptions = {
-  origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"], // Allow requests only from this domain
+  origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5174", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,
   //allowedHeaders: 'Content-Type,Authorization', // Allow only specific headers

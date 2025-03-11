@@ -8,7 +8,7 @@ const { logger } = require("../utils/logger");
 const process = require("process");
 
 const create_device = async (req, res) => {
-  const { user, vin, device_name, device_model, serial_no, imei, build_no } = req.body;
+  const { user, vin, device_name, device_model, serial_no, imei, build_no, color } = req.body;
 
   if(!user) {
     return res.status(400).send({
@@ -22,6 +22,7 @@ const create_device = async (req, res) => {
 
     device.device_name = device_name;
     device.device_model = device_model;
+    device.color = color;
     device.serial_no = serial_no;
     device.imei = imei;
     device.build_no = build_no;
@@ -29,6 +30,7 @@ const create_device = async (req, res) => {
     device.createdBy = user;
 
     const saved_device = await device.save();
+    console.log(saved_device);
 
     if (!saved_device) {
       return res.status(400).send({
@@ -42,6 +44,8 @@ const create_device = async (req, res) => {
       device_id: saved_device._id,
     });
   } catch (error) {
+    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
