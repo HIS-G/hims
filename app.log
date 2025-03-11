@@ -234,3 +234,5 @@
 2025-03-04T23:17:54.630Z error: deleted is not defined
 2025-03-04T23:29:59.783Z error: customers.find(...).populate(...).exec(...).select is not a function
 >>>>>>> af99e13582bd895f59a4afee1ee48fee27f0e637
+2025-03-10T07:00:46.822Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "test" }
+2025-03-10T07:00:52.143Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "test" }

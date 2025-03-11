@@ -74,12 +74,6 @@ const shutdown = () => {
 
 app.get("/api/v1/server/shutdown", shutdown);
 
-<<<<<<< HEAD
-/*app.listen(process.env.PORT, () => {
-  console.log(`Server listening on PORT: ${process.env.PORT}`);
-});*/
-=======
 /* app.listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
 }); */
->>>>>>> af99e13582bd895f59a4afee1ee48fee27f0e637
