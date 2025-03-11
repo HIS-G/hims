@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const vin_types = ["VIN", "SUB_VIN", "HIN", "DIN", "SUB_DIN", "FIN", "MIN"];
+const vin_types = ["VIN", "SUB_VIN", "HIN", "DIN", "SUB_DIN", "FIN", "MIN", "SID"];
 
 const Vin_Schema = new mongoose.Schema(
   {
@@ -10,6 +10,7 @@ const Vin_Schema = new mongoose.Schema(
     student: { type: mongoose.Schema.Types.ObjectId, ref: "students" },
     distributor: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     supplier: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     vin: {
       type: String,
       required: true,

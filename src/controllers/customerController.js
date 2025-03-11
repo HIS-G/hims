@@ -1,11 +1,13 @@
 const { customers } = require("../models/Customers");
 const { roles } = require("../models/Roles");
 const { vins, vin_types } = require("../models/vins");
+const { devices } = require("../models/Devices");
 const { generateVin } = require("../utils/helpers");
 const bcrypt = require("bcryptjs");
 const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require('../utils/nodemailerConfig');
+const { populate } = require("dotenv");
 
 const get_customers = async (req, res) => {
   try {
@@ -26,7 +28,14 @@ const get_single_customer = async (req, res) => {
   const { customer_id } = req.params;
 
   try {
-    const customer = await customers.findById(customer_id);
+    const customer = await customers
+                          .findById(customer_id)
+                          .populate({
+                            path: "device", 
+                            populate: { path: "device_model", select: 'model_name type' }
+                          })
+                          .populate({ path: "role"})
+                          .exec();
 
     return res.status(200).send({
       status: true,
@@ -143,9 +152,44 @@ const update_customer = async (req, res) => {};
 
 const delete_customer = async (req, res) => {};
 
+const submit_sla = async (req, res) => {
+  const { email, device } = req.body;
+
+  try{
+    const customer = await customers.findOne({ email: email });
+    const device_found = await devices.findById(device);
+    console.log(customer);
+    if(device_found && device_found.customer) {
+      return res.status(400).send({
+        status: false,
+        message: `This device already has a signed SLA!`
+      });
+    }
+    
+    device_found.customer = customer._id;
+    customer.device.push(device_found._id);
+
+    const updated_device = await device_found.save();
+    const updated_customer = await customer.save();
+    
+    return res.status(200).send({
+      status: true,
+      message: `Congratulations on submitting your SLA!`,
+    }); 
+  }catch(error) {
+    console.log(error)
+    logger.error(error);
+    return res.status(500).send({
+      status: false,
+      message: error
+    });
+  }
+};
+
 module.exports = {
   get_customers,
   get_single_customer,
+  submit_sla,
   my_profile,
   create_customer,
   update_customer,

@@ -8,6 +8,9 @@ const { logger } = require("../utils/logger");
 
 const create_user = async (req, res) => {
   const {
+    companyName,
+    companyEmail,
+    companyPhone,
     firstname,
     lastname,
     email,
@@ -20,7 +23,7 @@ const create_user = async (req, res) => {
     password,
   } = req.body;
 
-  if (!firstname || !lastname || !email || !phone || !country || !role) {
+  if (!firstname && !lastname && !companyName && !companyEmail && !email && !phone && !companyPhone && !country && !role) {
     return res.status(400).send({
       errorCode: 400,
       errorMsg: "All fields are required!",
@@ -33,10 +36,13 @@ const create_user = async (req, res) => {
 
     const selected_role = await roles.findById(role);
 
-    user.firstname = firstname;
+    if(companyName) user.companyName = companyName;
+    if(companyEmail) user.companyEmail = companyEmail;
+    if(companyPhone) user.companyPhone = companyPhone;
+    user.firstname = companyName ? companyName : firstname;
     user.lastname = lastname;
-    user.email = email;
-    user.phone = phone;
+    user.email = companyEmail ? companyEmail : email;
+    user.phone = companyPhone ? companyPhone : phone;
     user.country = country;
     user.address = address;
     user.state = state;
@@ -67,9 +73,37 @@ const create_user = async (req, res) => {
       vin.type = vin_types[6]
       vin.supplier = saved_user._id;
       vin.vin = await generateVin(vin_types[6]);
+    } else if (selected_role.role == "ADMIN" || selected_role.role == "SUPER_ADMIN") {
+      vin.type = vin_types[7]
+      vin.user = saved_user._id;
+      vin.vin = await generateVin(vin_types[7]);
     }
+    console.log(vin)
+    const saved_vin = await vin.save();
 
-    if (selected_role !== "SUPER_ADMIN") {
+    console.log(saved_vin);
+
+    if (saved_vin)
+      mail.sendMail({
+        from: 'his-quiz@edspare.com',
+        to: `${user.email}`, // list of receivers
+        subject: "Welcome to HIS!!!✔", // Subject line
+        text: `Congratulations!!!<br/><br/> Your <b>${selected_role.role}</b> account has been created successfully.<br/> <b>HIS</b>, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b><br/><br/>Follow this link to complete your registration <a href=https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}>https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}</a>`,
+        html: `Congratulations!!!<br/><br/> Your <b>${selected_role.role}</b> account has been created successfully.<br/> <b>HIS</b>, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b><br/><br/>Follow this link to complete your registration <a href=https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}>https://hism.hismobiles.com/auth/password_setup?verification_token=${user.verificationToken}&uid=${user._id}</a>`, // html body
+      }, () => {
+        if(err) {
+          logger.error(err);
+          res.status(500).json({ status: true, message: err });
+        }
+
+        return res.status(200).send({
+          status: true,
+          statusCode: 200,
+          message: "Account created successfully!",
+        });
+      });
+
+    /* if (selected_role !== "SUPER_ADMIN") {
       const saved_vin = await vin.save();
 
       if (saved_vin)
@@ -91,13 +125,13 @@ const create_user = async (req, res) => {
             message: "Account created successfully!",
           });
         });
-    }
+    } */
 
-    return res.status(200).send({
+    /* return res.status(200).send({
       status: true,
       statusCode: 200,
       message: "Account created successfully!",
-    });
+    }); */
   } catch (error) {
     console.log(error);
     return res.status(500).send({

@@ -4,9 +4,9 @@ const Customer_Schema = new mongoose.Schema({
   firstname: { type: String, required: true },
   middlename: { type: String },
   lastname: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
   phone: { type: String, required: true },
-  username: { type: String, unique: true },
+  username: { type: String, required: true, unique: true },
   country: { type: String },
   state: { type: String },
   province: { type: String },
@@ -21,6 +21,7 @@ const Customer_Schema = new mongoose.Schema({
   },
   verified: { type: Boolean, default: false, required: true },
   activated: { type: Boolean, default: false, required: true },
+  test: { type: Boolean, required: true, default: false },
 });
 
 const customers = mongoose.model("customers", Customer_Schema);
