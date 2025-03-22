@@ -10,7 +10,7 @@ const Buyer_Schema = new mongoose.Schema({
   province: { type: String },
   zip_code: { type: String },
   address: { type: String, required: true },
-});
+}, {timestamps: true});
 
 const buyers = mongoose.model("buyers", Buyer_Schema);
 

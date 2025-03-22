@@ -34,7 +34,7 @@ const School_Schema = new mongoose.Schema({
   },
   verificationToken: { type: String },
   vin: { type: mongoose.Schema.Types.ObjectId, ref: "vins" },
-});
+}, {timestamps: true});
 
 const schools = mongoose.model("schools", School_Schema);
 

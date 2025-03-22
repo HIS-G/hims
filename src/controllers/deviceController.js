@@ -280,6 +280,7 @@ const update_device = async (req, res) => {
     color,
     imei,
     build_no,
+    destination,
     vin,
     din,
     sch_vin,
@@ -296,6 +297,7 @@ const update_device = async (req, res) => {
         color,
         imei,
         build_no,
+        destination,
         vin,
         din,
         sch_vin,
@@ -309,6 +311,7 @@ const update_device = async (req, res) => {
       .status(200)
       .send({ status: true, device_id: updated_device._id });
   } catch (error) {
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,

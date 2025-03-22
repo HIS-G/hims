@@ -19,10 +19,13 @@ const Customer_Schema = new mongoose.Schema({
     ref: "roles",
     required: true,
   },
+  referrer: { type: mongoose.Schema.Types.ObjectId, ref: "vins" },
+  referrerLink: { type: String },
+  announcement: { type: mongoose.Schema.Types.ObjectId, ref: "announcements" },
   verified: { type: Boolean, default: false, required: true },
   activated: { type: Boolean, default: false, required: true },
   test: { type: Boolean, required: true, default: false },
-});
+}, {timestamps: true});
 
 const customers = mongoose.model("customers", Customer_Schema);
 
