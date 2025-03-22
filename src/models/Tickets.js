@@ -13,14 +13,14 @@ const Ticket_Schema = new mongoose.Schema(
       required: true,
       default: ticket_status[0],
     },
-    complaint_category: { type: String, required: true },
-    custom_category: { type: String },
-    treated_by: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    complaintCategory: { type: String, required: true },
+    treatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
   },
   { timestamps: true }
 );
 
-const tickets = mongoose.model("tickets", TicketSchema);
+const tickets = mongoose.model("tickets", Ticket_Schema);
 
 module.exports = {
   tickets,

@@ -9,7 +9,7 @@ router.post("/create_device", deviceController.create_device);
 router.post("/search", deviceController.search_devices);
 router.post("/upload", deviceController.upload_devices);
 router.post("/delete", deviceController.delete_device);
-router.put("/:id/update_device", deviceController.update_device);
+router.patch("/:id/update_device", deviceController.update_device);
 router.patch(
   "/:id/assign_distributor",
   deviceController.assign_distributor_to_product

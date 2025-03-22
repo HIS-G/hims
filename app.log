@@ -293,3 +293,65 @@
 2025-03-10T23:49:33.073Z error: Cannot read properties of null (reading '_id')
 2025-03-10T23:51:34.725Z error: Cannot read properties of null (reading '_id')
 2025-03-10T23:52:53.548Z error: Cannot read properties of null (reading '_id')
+2025-03-11T10:25:50.279Z error: Cannot read properties of null (reading '_id')
+2025-03-11T10:27:29.689Z error: Cannot read properties of null (reading '_id')
+2025-03-11T10:27:29.705Z error: devices validation failed: createdBy: Path `createdBy` is required.
+2025-03-11T10:31:11.849Z error: Cannot read properties of null (reading '_id')
+2025-03-11T10:51:42.527Z error: Cannot read properties of null (reading '_id')
+2025-03-11T15:15:07.181Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T15:15:34.421Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T15:15:48.331Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T16:02:36.979Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T16:04:47.133Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T16:07:21.141Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T16:08:46.231Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T16:12:56.390Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T17:52:53.794Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T17:58:51.497Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T18:00:49.845Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T18:03:03.455Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T18:03:43.522Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T18:04:51.940Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-11T18:06:28.100Z error: E11000 duplicate key error collection: HIMS_DB.devices index: serial_no_1 dup key: { serial_no: "873657576134136000" }
+2025-03-15T07:12:16.554Z error: announcements.save is not a function
+2025-03-16T08:19:58.741Z error: user is not defined
+2025-03-16T08:21:17.254Z error: user is not defined
+2025-03-16T08:38:07.462Z error: undefined is not a function
+2025-03-16T08:38:37.961Z error: found_user.role.role.toLowercase is not a function
+2025-03-17T10:43:33.054Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [LO4P265CA0122.GBRP265.PROD.OUTLOOK.COM 2025-03-17T10:43:33.051Z 08DD650D195C31B9]
+2025-03-18T01:22:36.205Z error: comments validation failed: announcement: Path `announcement` is required.
+2025-03-18T01:24:25.059Z error: comments validation failed: announcement: Path `announcement` is required.
+2025-03-18T11:03:21.301Z error: users.findOneById is not a function
+2025-03-18T11:03:21.307Z error: users.findOneById is not a function
+2025-03-18T11:04:03.455Z error: Cannot read properties of null (reading 'role')
+2025-03-18T11:04:04.537Z error: Cannot read properties of null (reading 'role')
+2025-03-18T11:04:41.471Z error: Cannot access 'devices' before initialization
+2025-03-18T11:05:04.859Z error: Cannot access 'devices' before initialization
+2025-03-18T11:05:04.860Z error: Cannot access 'devices' before initialization
+2025-03-18T11:06:48.116Z error: cutsomer is not defined
+2025-03-18T11:06:48.119Z error: cutsomer is not defined
+2025-03-18T12:27:08.536Z error: Cannot read properties of null (reading 'role')
+2025-03-18T12:27:08.552Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:05:38.927Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:05:38.934Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:07:21.399Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:07:21.414Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:09:19.628Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:09:19.634Z error: Cannot read properties of null (reading 'role')
+2025-03-18T17:30:51.622Z error: cutsomer is not defined
+2025-03-18T17:30:51.623Z error: cutsomer is not defined
+2025-03-18T17:31:17.287Z error: cutsomer is not defined
+2025-03-18T17:31:17.541Z error: cutsomer is not defined
+2025-03-18T17:33:53.608Z error: cutsomer is not defined
+2025-03-18T17:33:53.613Z error: cutsomer is not defined
+2025-03-18T17:34:39.930Z error: cutsomer is not defined
+2025-03-18T17:34:39.934Z error: cutsomer is not defined
+2025-03-18T19:02:35.110Z error: Cannot read properties of null (reading 'role')
+2025-03-18T19:03:41.812Z error: Cannot read properties of null (reading 'role')
+2025-03-18T19:04:44.255Z error: Cannot read properties of undefined (reading 'role')
+2025-03-18T19:06:10.792Z error: Cannot read properties of undefined (reading 'role')
+2025-03-18T19:08:59.922Z error: Cannot read properties of undefined (reading 'role')
+2025-03-18T19:10:13.608Z error: Cannot read properties of undefined (reading 'role')
+2025-03-18T19:10:38.330Z error: Cannot read properties of undefined (reading 'role')
+2025-03-18T19:13:04.278Z error: Cannot read properties of undefined (reading 'role')
+2025-03-20T00:38:50.086Z error: Cast to ObjectId failed for value "undefined" (type string) at path "announcement" for model "comments"

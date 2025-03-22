@@ -23,6 +23,7 @@ const Device_Schema = new mongoose.Schema(
     color: { type: String, required: true },
     buyer: { type: mongoose.Schema.Types.ObjectId, ref: "buyers" },
     customer: { type: mongoose.Schema.Types.ObjectId, ref: "customers" },
+    destination: { type: String, required: true },
     /* distributor: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     supplier: { type: mongoose.Schema.Types.ObjectId, ref: "users" }, */
     din: { type: mongoose.Schema.Types.ObjectId, ref: "vins" }, // For distributors and wholesalers
