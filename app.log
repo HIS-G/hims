@@ -355,3 +355,13 @@
 2025-03-18T19:10:38.330Z error: Cannot read properties of undefined (reading 'role')
 2025-03-18T19:13:04.278Z error: Cannot read properties of undefined (reading 'role')
 2025-03-20T00:38:50.086Z error: Cast to ObjectId failed for value "undefined" (type string) at path "announcement" for model "comments"
+2025-03-22T10:56:53.133Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:56:53.411Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:59:38.782Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:59:39.037Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T15:07:41.389Z error: endDate is not defined
+2025-03-22T15:07:41.392Z error: endDate is not defined
+2025-03-22T16:12:23.264Z error: endDate is not defined
+2025-03-22T16:12:23.266Z error: endDate is not defined
+2025-03-22T16:12:32.103Z error: endDate is not defined
+2025-03-22T16:12:32.111Z error: endDate is not defined
