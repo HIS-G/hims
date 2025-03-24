@@ -137,6 +137,7 @@ const delete_announcement = async (req, res) => {
     }
 
     try {
+        await comments.deleteMany({ announcement: id }); // Delete related comments
         const announcement = await announcements.findByIdAndDelete(id);
         
         if(!announcement) {

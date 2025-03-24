@@ -86,7 +86,7 @@ const dashboard_data = async (req, res) => {
             const comments_list = await comments.countDocuments({ customer: customer._id });
             const ticket_list = await tickets.countDocuments({ customer: customer._id });
 
-            const ticket_data = await tickets.find(
+            /* const ticket_data = await tickets.find(
                 [
                     // 1. Filter records within the date range
                     {
@@ -111,7 +111,7 @@ const dashboard_data = async (req, res) => {
                     // 3. Sort by date (ascending)
                     { $sort: { _id: 1 } }
                 ]
-            );
+            ); */
 
             return res.status(200).send({
                 status: true,

@@ -365,3 +365,8 @@
 2025-03-22T16:12:23.266Z error: endDate is not defined
 2025-03-22T16:12:32.103Z error: endDate is not defined
 2025-03-22T16:12:32.111Z error: endDate is not defined
+2025-03-23T14:34:05.898Z error: endDate is not defined
+2025-03-23T14:34:05.902Z error: endDate is not defined
+2025-03-24T10:11:43.401Z error: Path "id" is not in schema, strict mode is `true`, and upsert is `true`.
+2025-03-24T10:13:16.502Z error: user_id is not defined
+2025-03-24T10:14:16.241Z error: user_id is not defined
