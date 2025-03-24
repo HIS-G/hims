@@ -619,3 +619,507 @@
 2025-03-18T19:13:04.278Z error: Cannot read properties of undefined (reading 'role')
 2025-03-20T00:38:50.086Z error: Cast to ObjectId failed for value "undefined" (type string) at path "announcement" for model "comments"
 >>>>>>> 27521ad559ed2ac43ad5fdcabdd4f899d5b99874
+2025-03-22T12:24:00.429Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-03-22T12:24:00.769Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
+2025-03-22T12:25:53.723Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-03-22T12:25:53.879Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
+2025-03-22T12:50:55.104Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Pathairways " }
+2025-03-22T16:12:39.977Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T16:12:40.289Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T16:28:56.539Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T16:49:15.292Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:49:28.246Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:49:52.220Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:49:52.964Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:16.149Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:18.211Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:19.264Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:23.647Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:23.727Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.090Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.261Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.341Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.535Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.708Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:24.788Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:25.384Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:25.463Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:45.761Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:46.168Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:46.576Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:46.750Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:46.829Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:48.879Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:49.070Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:49.342Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:49.517Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:49.596Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:49.934Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T16:59:50.014Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Increase " }
+2025-03-22T17:03:17.011Z error: Cannot read properties of null (reading 'password')
+2025-03-22T17:03:17.059Z error: Cannot read properties of null (reading 'password')
+2025-03-22T17:03:17.105Z error: Cannot read properties of null (reading 'password')
+2025-03-22T17:03:17.189Z error: Cannot read properties of null (reading 'password')
+2025-03-22T17:06:33.765Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T19:01:08.221Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T19:09:54.001Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T19:42:10.137Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:11.429Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:14.639Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:26.057Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:27.741Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:28.721Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:42:54.808Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:01.770Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:02.050Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:02.334Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:02.432Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:02.513Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:02.871Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:03.044Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:03.124Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:03.300Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:03.474Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:21.524Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:24.730Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:25.265Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:25.615Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:25.808Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:25.888Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:26.066Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:43:26.478Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:15.574Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:26.933Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:37.752Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:38.132Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:38.304Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:38.653Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:38.731Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:38.976Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:39.271Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:39.520Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:39.839Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:40.098Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:40.296Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:40.627Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:40.827Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:41.068Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:41.258Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:56.770Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:57.131Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:57.211Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:57.487Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:57.833Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:57.914Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:44:58.206Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:00.031Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:00.385Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:00.559Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:00.806Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:00.886Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:01.060Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:01.234Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:01.428Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:01.623Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:01.942Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:02.021Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:02.217Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:07.624Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:07.983Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:08.064Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:08.300Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:08.380Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:09.299Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:09.624Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:09.703Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:10.100Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:10.701Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:10.904Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:11.287Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:35.981Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:36.282Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:36.361Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:36.669Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:36.938Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:37.017Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:37.280Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:37.483Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:40.529Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:40.869Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:40.949Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:41.328Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:41.501Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:41.581Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:41.754Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:41.986Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:42.162Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:42.374Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:42.592Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:42.816Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:43.006Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:43.289Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:43.575Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:44.074Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:44.279Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:44.515Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:44.739Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:44.971Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:45.220Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:45.419Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:45.835Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T19:45:46.046Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "wakilo2002@yahoo.com" }
+2025-03-22T20:45:21.858Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:28.142Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:35.034Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:36.148Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:42.362Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:42.935Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:44.238Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:45.895Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:46.792Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:48.934Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:49.563Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:50.692Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:51.492Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:53.198Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:53.850Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:54.354Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:54.433Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:54.873Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:45:54.953Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:46:57.414Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:05.986Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:16.431Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:18.167Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:18.598Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:19.926Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:20.332Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favor " }
+2025-03-22T20:47:48.477Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:47:51.690Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:47:52.160Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:47:52.241Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:47:53.293Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nuella" }
+2025-03-22T20:48:11.024Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "okehfavor65@gmail.com" }
+2025-03-22T20:48:11.531Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "okehfavor65@gmail.com" }
+2025-03-22T20:48:17.673Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "okehfavor65@gmail.com" }
+2025-03-22T20:51:58.405Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T20:57:38.353Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:38.431Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:38.433Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:41.313Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:41.485Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:42.012Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:43.438Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:43.518Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:45.529Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:45.608Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:45.610Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:46.441Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:47.396Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:49.171Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:49.804Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:50.241Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:50.484Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:50.890Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:51.228Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:51.649Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:52.041Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:52.319Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:52.968Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:52.970Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:53.144Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:53.145Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T20:57:53.224Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.524Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.807Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.905Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.906Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.907Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:04:59.987Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.548Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.648Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.650Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.651Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.748Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:00.828Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.190Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.292Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.293Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.483Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.659Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.661Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.759Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:01.838Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.293Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.467Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.468Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.660Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.835Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:02.836Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.029Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.128Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.129Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.304Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.494Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.668Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.669Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.860Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:03.940Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.034Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.225Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.399Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.400Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.592Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.671Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:04.672Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:05:28.081Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:06.253Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:06.332Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:06.627Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:06.708Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:06.709Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.178Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.461Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.637Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.638Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.639Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:07.718Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.020Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.305Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.385Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.480Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.481Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.560Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:08.934Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:09.126Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:09.224Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:09.225Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:09.304Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:10.351Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:07:24.357Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Epiphany " }
+2025-03-22T21:08:01.235Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:08:41.809Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:41.983Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:42.648Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:43.051Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:43.132Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:43.648Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:44.177Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:44.368Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:44.936Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:45.498Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:45.578Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:46.226Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:08:46.669Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-03-22T21:11:40.448Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:22:55.787Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:23:02.646Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:23:04.862Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:24:19.819Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Oma" }
+2025-03-22T21:24:21.179Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Oma" }
+2025-03-22T21:24:47.305Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:27:37.284Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:27:38.630Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:27:39.544Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:27:41.231Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:27:43.782Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:27:52.348Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:28:09.306Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:28:09.615Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:28:13.961Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:31:22.914Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:22.915Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:22.997Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.001Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.500Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.785Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.863Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.864Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:23.867Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.096Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.586Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.587Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.667Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.761Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.763Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:24.841Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:25.132Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:25.309Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:25.310Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:25.405Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:31:25.487Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Kobiss" }
+2025-03-22T21:32:05.944Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:32:10.199Z error: Cannot read properties of null (reading 'password')
+2025-03-22T21:32:15.496Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:32:17.991Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:32:18.904Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:32:19.631Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:36:16.218Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny_Ella" }
+2025-03-22T21:37:20.103Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:37:22.078Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:37:22.557Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:37:32.561Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:37:33.203Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:37:36.245Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "@loui_sa18" }
+2025-03-22T21:38:19.996Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Axle1stBoss" }
+2025-03-22T21:38:22.605Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:38:23.838Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Axle1stBoss" }
+2025-03-22T21:39:00.806Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:39:22.170Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:39:48.561Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:40:50.221Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:41:09.437Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:41:12.067Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:46:58.127Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T21:49:03.187Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "ekewenuoghenetejiri@gmail.com" }
+2025-03-22T21:49:07.773Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "ekewenuoghenetejiri@gmail.com" }
+2025-03-23T03:20:24.302Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T03:22:44.145Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-03-23T03:22:44.711Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
+2025-03-23T09:32:53.917Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Miracle " }
+2025-03-23T09:33:03.163Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Miracle " }
+2025-03-23T09:33:03.596Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Miracle " }
+2025-03-23T09:33:31.204Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Miracle " }
+2025-03-23T09:33:39.772Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T10:08:32.340Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:37.724Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:40.714Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:41.414Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:43.898Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:47.905Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:52.509Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:52.927Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:53.415Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:53.594Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:08:53.826Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Marvel" }
+2025-03-23T10:33:59.325Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "johnnylakeside" }
+2025-03-23T10:34:12.125Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "johnnylakeside" }
+2025-03-23T10:34:51.341Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:34:53.778Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:34:56.892Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:34:59.085Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:35:06.364Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:35:08.000Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:35:20.797Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:38:10.030Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:38:26.870Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T10:38:49.104Z error: E11000 duplicate key error collection: HIMS_DB.customers index: email_1 dup key: { email: "johnnylakeside@yahoo.com" }
+2025-03-23T11:27:34.931Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T11:38:37.797Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T13:57:47.030Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T13:58:56.185Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:02:16.369Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:05:06.410Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:13:03.487Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Frankinero" }
+2025-03-23T14:13:22.456Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:16:36.157Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:22:30.304Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Billionseras" }
+2025-03-23T14:22:30.658Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Billionseras" }
+2025-03-23T14:23:46.599Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T14:47:32.943Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T15:42:49.798Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T15:43:12.956Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T15:46:33.108Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:34.138Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:35.211Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:38.605Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:42.323Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:42.875Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:50.135Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:46:50.411Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:04.219Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:06.934Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:07.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:07.691Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:07.989Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:08.215Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:08.411Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:15.295Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:15.692Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:15.772Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:16.188Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:16.268Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:16.441Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:16.745Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:16.979Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:24.553Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:25.760Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:26.750Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:26.969Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:27.242Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:27.417Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:53.904Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:54.398Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:54.582Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:54.876Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:55.095Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:55.494Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T15:47:55.573Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "kaidau" }
+2025-03-23T16:00:28.130Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T16:06:20.264Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T16:10:28.073Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T16:11:17.504Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T16:12:21.738Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T16:40:25.612Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T17:16:29.441Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T17:18:16.023Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T18:22:29.664Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:00:56.759Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:12:41.160Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:13:01.544Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:15:05.479Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:15:47.916Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:20:35.237Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:20:45.567Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:20:51.111Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:20:53.833Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:26:59.261Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:31:09.570Z error: Cannot read properties of null (reading 'password')
+2025-03-23T20:31:49.247Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:31:56.316Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:31:59.464Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:32:00.367Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:32:00.908Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:32:00.989Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Uzeziprecious oreva " }
+2025-03-23T20:32:20.975Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:33:38.357Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:33:44.742Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:38:25.873Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:39:33.170Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:39:46.770Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:40:15.554Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T20:40:45.017Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T21:02:59.811Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T21:09:55.705Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-23T22:43:06.123Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:22:09.521Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:22:25.964Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:22:45.212Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:33:31.599Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:47:38.534Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:54:47.818Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:54:50.719Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:55:11.440Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:55:34.937Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-03-24T06:55:35.147Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
+2025-03-24T06:55:43.264Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-03-24T06:55:43.524Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
+2025-03-24T06:55:46.407Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T06:56:16.972Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:05:00.544Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:18:58.071Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:32:10.585Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:44:57.804Z error: Cannot read properties of null (reading 'password')
+2025-03-24T07:49:58.567Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:51:02.087Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T07:51:41.882Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Netty " }
+2025-03-24T07:51:49.110Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Netty " }
+2025-03-24T07:53:51.982Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Netty" }
+2025-03-24T07:55:00.840Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T08:05:08.744Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nancy " }
+2025-03-24T08:05:09.377Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Nancy " }
+2025-03-24T08:10:35.707Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T08:42:02.468Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T08:42:07.347Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T10:04:20.913Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-24T10:04:22.513Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
