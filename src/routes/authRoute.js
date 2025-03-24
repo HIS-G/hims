@@ -8,7 +8,7 @@ router.post(
   authController.create_admin_password
 );
 router.post(
-  "/customer/:customer_id/create_password",
+  "/customer/:customer_id/reset_password",
   authController.create_customer_password
 );
 router.post(
@@ -17,5 +17,6 @@ router.post(
 );
 router.post("/admin/logout", authController.admin_logout);
 router.post("/customer/logout", authController.customer_logout);
+router.post("/reset-password", authController.send_password_reset_link);
 
 module.exports = router;

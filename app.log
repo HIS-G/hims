@@ -618,6 +618,7 @@
 2025-03-18T19:10:38.330Z error: Cannot read properties of undefined (reading 'role')
 2025-03-18T19:13:04.278Z error: Cannot read properties of undefined (reading 'role')
 2025-03-20T00:38:50.086Z error: Cast to ObjectId failed for value "undefined" (type string) at path "announcement" for model "comments"
+<<<<<<< HEAD
 >>>>>>> 27521ad559ed2ac43ad5fdcabdd4f899d5b99874
 2025-03-22T12:24:00.429Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
 2025-03-22T12:24:00.769Z error: Cast to ObjectId failed for value "notifications" (type string) at path "announcement" for model "shared_announcements"
@@ -1123,3 +1124,20 @@
 2025-03-24T08:42:07.347Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
 2025-03-24T10:04:20.913Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
 2025-03-24T10:04:22.513Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+=======
+2025-03-22T10:56:53.133Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:56:53.411Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:59:38.782Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T10:59:39.037Z error: Cast to ObjectId failed for value "leader_board" (type string) at path "_id" for model "announcements"
+2025-03-22T15:07:41.389Z error: endDate is not defined
+2025-03-22T15:07:41.392Z error: endDate is not defined
+2025-03-22T16:12:23.264Z error: endDate is not defined
+2025-03-22T16:12:23.266Z error: endDate is not defined
+2025-03-22T16:12:32.103Z error: endDate is not defined
+2025-03-22T16:12:32.111Z error: endDate is not defined
+2025-03-23T14:34:05.898Z error: endDate is not defined
+2025-03-23T14:34:05.902Z error: endDate is not defined
+2025-03-24T10:11:43.401Z error: Path "id" is not in schema, strict mode is `true`, and upsert is `true`.
+2025-03-24T10:13:16.502Z error: user_id is not defined
+2025-03-24T10:14:16.241Z error: user_id is not defined
+>>>>>>> 51ffa980da6c82d9d3491d793f2a75af8c3f3104

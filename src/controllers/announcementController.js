@@ -137,6 +137,7 @@ const delete_announcement = async (req, res) => {
     }
 
     try {
+        await comments.deleteMany({ announcement: id }); // Delete related comments
         const announcement = await announcements.findByIdAndDelete(id);
         
         if(!announcement) {
@@ -246,11 +247,38 @@ const record_shared_announcement_visit = async (req, res) => {
     }
 };
 
+const list_top_shares = async (req, res) => {
+    try {
+        const leaders = await sharedAnnouncements.find().sort({ clickCount: -1 }).limit(5).populate("announcement");
+
+        if(leaders.length == 0) {
+            return res.status(404).send({
+                status: false,
+                message: ''
+            });
+        }
+
+        return res.status(200).send({
+            status: true,
+            message: '',
+            announcement_leaderboard: leaders
+        });
+    } catch(error) {
+        logger.error(error);
+        return res.status(500).send({
+            status: false,
+            message: error
+        });
+    }
+    
+};
+
 module.exports = {
     post_announcement,
     get_announcement,
     list_announcements,
     list_announcements_comments,
+    list_top_shares,
     update_announcement,
     comment_on_announcement,
     claim_reward,

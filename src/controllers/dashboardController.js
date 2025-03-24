@@ -7,6 +7,7 @@ const { schools } = require("../models/Schools");
 const { tickets } = require("../models/Tickets");
 const { sharedAnnouncements, comments, announcements } = require("../models/Announcements");
 const { logger } = require("../utils/logger");
+const moment = require("moment");
 
 const dashboard_data = async (req, res) => {
     var vin;
@@ -85,6 +86,33 @@ const dashboard_data = async (req, res) => {
             const comments_list = await comments.countDocuments({ customer: customer._id });
             const ticket_list = await tickets.countDocuments({ customer: customer._id });
 
+            /* const ticket_data = await tickets.find(
+                [
+                    // 1. Filter records within the date range
+                    {
+                        $match: {
+                        createdAt: {
+                            $gte: new Date(), // Start date (inclusive)
+                            $lt: new Date(endDate)     // End date (exclusive)
+                        }
+                        }
+                    },
+                    // 2. Group by day (YYYY-MM-DD format)
+                    {
+                        $group: {
+                        _id: { 
+                            $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } // Convert to "YYYY-MM-DD"
+                        },
+                        totalValue: { $sum: "$value" },  // Sum up 'value' for each day
+                        count: { $sum: 1 },              // Count records per day
+                        records: { $push: "$$ROOT" }     // Store all records for the day
+                        }
+                    },
+                    // 3. Sort by date (ascending)
+                    { $sort: { _id: 1 } }
+                ]
+            ); */
+
             return res.status(200).send({
                 status: true,
                 message: "Your usage overview of HIS",
@@ -107,8 +135,38 @@ const dashboard_data = async (req, res) => {
             message: error
         });
     }
-}
+};
+
+const filtered_tickets = async (req, res) => {
+    try {
+        const ticket_list = await tickets.find(req.body);
+
+        if(ticket_list.length == 0) {
+            return res.status(404).send({
+                status: false,
+                message: 'There was no result found!'
+            });
+        }
+
+        return res.status(200).send({
+            status: true,
+            tickets: ticket_list
+        });
+    } catch(error) {
+        logger.error(error);
+        return res.status(500).send({
+            status: false,
+            message: error
+        });
+    }
+};
+
+const filtered_announcements = async (req, res) => {
+
+};
 
 module.exports = {
-    dashboard_data
+    dashboard_data,
+    filtered_tickets,
+    filtered_announcements
 };

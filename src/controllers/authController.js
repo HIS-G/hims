@@ -7,6 +7,8 @@ const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const { logger } = require("../utils/logger");
 const { vins } = require("../models/vins");
+const { mail } = require("../utils/nodemailerConfig");
+const { generateVerificationToken } = require("../utils/helpers");
 
 const customer_login = async (req, res) => {
   var vin;
@@ -79,11 +81,18 @@ const customer_login = async (req, res) => {
       });
     }
 
-    if (user && !user.password) {
+    /* if (user && !user.password) {
       return res.status(400).send({
         status: false,
         message:
           "Kindly verify your account to enable you complete the registration process!",
+      });
+    } */
+
+    if(!user.activated) {
+      return res.status(401).send({
+        status: false,
+        message: 'Account Inactive!...Kindly, contact administrator for support.'
       });
     }
 
@@ -250,7 +259,7 @@ const create_admin_password = async (req, res) => {
 
 const create_customer_password = async (req, res) => {
   const { customer_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { password, confirmation, password_reset_token } = req.body;
 
   if (!customer_id) {
     return res.status(401).send({
@@ -266,13 +275,20 @@ const create_customer_password = async (req, res) => {
     });
   }
 
+  if(!password_reset_token) {
+    return res.status(400).send({
+      status: false,
+      message: `Invalid reset token!`,
+    });
+  }
+
   try {
     if (password == confirmation) {
       bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
 
       const hashed_password = await bcrypt.hash(password, 10);
-      const password_updated = await customers.findByIdAndUpdate(
-        customer_id,
+      const password_updated = await customers.findOneAndUpdate(
+        { $and: [ { _id: customer_id }, { passwordResetToken: password_reset_token }] },
         { password: hashed_password },
         { upsert: true, new: true }
       );
@@ -281,7 +297,7 @@ const create_customer_password = async (req, res) => {
         return res.status(200).send({
           status: true,
           message: "Password updated successfully!",
-          user: user_id,
+          user: customer_id,
         });
       }
     }
@@ -289,7 +305,7 @@ const create_customer_password = async (req, res) => {
     logger.error(error);
     return res.status(500).send({
       status: false,
-      message: error,
+      message: JSON.stringify(error),
     });
   }
 };
@@ -340,6 +356,49 @@ const create_school_password = async (req, res) => {
   }
 };
 
+const send_password_reset_link = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const customer = await customers.findOne({ email: email });
+
+    if(!customer) {
+      return res.status(200).send({
+        status: true,
+        meesage: 'A password reset link has been sent to your email'
+      });
+    }
+
+    const password_reset_token = await generateVerificationToken();
+
+    customer.passwordResetToken = password_reset_token;
+
+    const updated_customer = await customer.save()
+
+    mail.sendMail({
+      from: 'his-quiz@edspare.com',
+      to: `${customer.email}`, // list of receivers
+      subject: "Password Reset✔", // Subject line
+      text: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/activate_account?password_reset=${password_reset_token}&uid=${customer._id}</a>`,
+      html: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/activate_account?password_reset=${password_reset_token}&uid=${customer._id}</a>`, // html body
+    }, (err, result) => {
+      if(err) {
+        logger.error(err);
+        res.status(500).json({ status: true, message: err });
+      }
+      
+      return res.status(200).send({
+        status: true,
+        message: 'A password reset link has been sent to your email'
+      });
+    });
+
+  } catch(error){
+    logger.error(error);
+    return res.status(500).send({ status: false, message: error });
+  }
+};
+
 const admin_logout = async (req, res) => {};
 
 const customer_logout = async (req, res) => {};
@@ -349,7 +408,9 @@ module.exports = {
   admin_login,
   create_admin_password,
   create_customer_password,
+  send_password_reset_link,
   create_school_password,
+  send_password_reset_link,
   admin_logout,
   customer_logout,
 };

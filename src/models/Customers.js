@@ -14,6 +14,8 @@ const Customer_Schema = new mongoose.Schema({
   address: { type: String },
   password: { type: String },
   device: [{ type: mongoose.Schema.Types.ObjectId, ref: "devices" }],
+  verificationToken: { type: String },
+  passwordResetToken: { type: String },
   role: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "roles",

@@ -85,6 +85,7 @@ const create_customer = async (req, res) => {
     customer.email = email;
     customer.phone = phone;
     customer.role = role._id;
+    customer.activated = true;
     if (middlename) customer.middlename = middlename;
     if (device) customer.device.push(device);
     if (username) customer.username = username;
@@ -119,8 +120,8 @@ const create_customer = async (req, res) => {
           from: 'his-quiz@edspare.com',
           to: `${new_customer.email}`, // list of receivers
           subject: "Welcome to HIS!!!✔", // Subject line
-          text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`,
-          html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b>`, // html body
+          text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`,
+          html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`, // html body
         }, (err, result) => {
           if(err) {
             logger.error(err);
