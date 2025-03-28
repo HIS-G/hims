@@ -10,11 +10,7 @@ const app = express();
 const options = {
   key: fs.readFileSync("./private.key"),
   cert: fs.readFileSync("./certificate.crt"),
-<<<<<<< HEAD
-}; 
-=======
 };
->>>>>>> 51ffa980da6c82d9d3491d793f2a75af8c3f3104
 
 const corsOptions = {
   origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5174", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"], // Allow requests only from this domain
@@ -85,12 +81,6 @@ const shutdown = () => {
 
 app.get("/api/v1/server/shutdown", shutdown);
 
-<<<<<<< HEAD
-/*app.listen(process.env.PORT, () => {
-  console.log(`Server listening on PORT: ${process.env.PORT}`);
-});*/
-=======
 /* app.listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
 }); */
->>>>>>> 51ffa980da6c82d9d3491d793f2a75af8c3f3104
