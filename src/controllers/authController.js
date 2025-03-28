@@ -81,14 +81,6 @@ const customer_login = async (req, res) => {
       });
     }
 
-    /* if (user && !user.password) {
-      return res.status(400).send({
-        status: false,
-        message:
-          "Kindly verify your account to enable you complete the registration process!",
-      });
-    } */
-
     if(!user.activated) {
       return res.status(401).send({
         status: false,
@@ -131,6 +123,7 @@ const customer_login = async (req, res) => {
     });
     
   } catch (error) {
+    console.log(error);
     logger.error(error);
     return res.status(500).send({
       status: false,
@@ -172,7 +165,10 @@ const admin_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
-      if(user.role.role == "SUPPLIER") {
+      if(user.role.role == "SUPER_ADMIN") {
+        vin = await vins.findOne({ user: user.id }).select("type vin");
+      }
+      else if(user.role.role == "SUPPLIER") {
         vin = await vins.findOne({ supplier: user.id }).select("type vin");
       } else if(user.role.role == "DISTRIBUTOR") {
         vin = await vins.findOne({ distributor: user.id }).select("type vin");
@@ -286,10 +282,12 @@ const create_customer_password = async (req, res) => {
     if (password == confirmation) {
       bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
 
-      const hashed_password = await bcrypt.hash(password, 10);
+      let salt = await bcrypt.genSalt();
+
+      const hashed_password = await bcrypt.hash(password, salt);
       const password_updated = await customers.findOneAndUpdate(
         { $and: [ { _id: customer_id }, { passwordResetToken: password_reset_token }] },
-        { password: hashed_password },
+        { password: hashed_password, $unset: { passwordResetToken: password_reset_token } },
         { upsert: true, new: true }
       );
 
@@ -379,8 +377,8 @@ const send_password_reset_link = async (req, res) => {
       from: 'his-quiz@edspare.com',
       to: `${customer.email}`, // list of receivers
       subject: "Password Reset✔", // Subject line
-      text: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/activate_account?password_reset=${password_reset_token}&uid=${customer._id}</a>`,
-      html: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/activate_account?password_reset=${password_reset_token}&uid=${customer._id}</a>`, // html body
+      text: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
+      html: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
     }, (err, result) => {
       if(err) {
         logger.error(err);

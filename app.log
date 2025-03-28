@@ -370,3 +370,5 @@
 2025-03-24T10:11:43.401Z error: Path "id" is not in schema, strict mode is `true`, and upsert is `true`.
 2025-03-24T10:13:16.502Z error: user_id is not defined
 2025-03-24T10:14:16.241Z error: user_id is not defined
+2025-03-26T06:55:26.352Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "paulinus" }
+2025-03-28T08:03:23.784Z error: customer is not defined

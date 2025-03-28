@@ -7,10 +7,10 @@ const fs = require("fs");
 
 const app = express();
 
-const options = {
+/* const options = {
   key: fs.readFileSync("./private.key"),
   cert: fs.readFileSync("./certificate.crt"),
-};
+}; */
 
 const corsOptions = {
   origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5174", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"], // Allow requests only from this domain
@@ -37,7 +37,8 @@ const dashboardRoute = require("./src/routes/dashboardRoute");
 app.options("*", cors());
 app.use(cors(corsOptions));
 
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/customers", customerRoutes);
@@ -71,7 +72,7 @@ mongoose
     console.log(error);
   });
 
-const server = https.createServer(options, app).listen(process.env.PORT, () => {
+/* const server = https.createServer(options, app).listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
 });
 
@@ -79,8 +80,8 @@ const shutdown = () => {
   server.close;
 }; 
 
-app.get("/api/v1/server/shutdown", shutdown);
+app.get("/api/v1/server/shutdown", shutdown); */
 
-/* app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
-}); */
+});

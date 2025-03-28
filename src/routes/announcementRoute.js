@@ -9,5 +9,6 @@ router.post("/delete", announcementController.delete_announcement);
 router.post("/comment", announcementController.comment_on_announcement);
 router.get("/:id/comments", announcementController.list_announcements_comments);
 router.post("/record_visit", announcementController.record_shared_announcement_visit);
+router.patch("/:id/update", announcementController.update_announcement);
 
 module.exports = router;

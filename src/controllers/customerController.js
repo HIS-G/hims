@@ -7,7 +7,8 @@ const bcrypt = require("bcryptjs");
 const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require('../utils/nodemailerConfig');
-const { populate } = require("dotenv");
+const { sharedAnnouncements } = require("../models/Announcements");
+const { upload_file } = require("../utils/uploads");
 
 const get_customers = async (req, res) => {
   try {
@@ -64,8 +65,12 @@ const create_customer = async (req, res) => {
     address,
     zip_code,
     device,
+    referral_link,
+    referedBy,
+    announcement
   } = req.body;
 
+  console.log(req.body);
   try {
     const customer = new customers();
     //const new_vin = new vins();
@@ -93,6 +98,20 @@ const create_customer = async (req, res) => {
     if (state) customer.state = state;
     if (zip_code) customer.zip_code = zip_code;
     if (address) customer.address = address;
+    if (referral_link) customer.referralLink = referral_link;
+
+    if (referedBy) {
+      const referral_vin = await vins.findOne({ vin: referedBy });
+
+      if(!referral_vin) {
+        return res.status(400).send({
+          status: false,
+          message: "Invalid Refferal ID!"
+        });
+      }
+
+      customer.referedBy = referral_vin._id;
+    }
 
     if (password) {
       bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
@@ -102,32 +121,42 @@ const create_customer = async (req, res) => {
     }
 
     const new_customer = await customer.save();
+    console.log(new_customer);
 
     if (new_customer) {
-      /* new_vin.type = vin_types[0];
-      new_vin.customer = new_customer._id;
-      new_vin.vin = await generateVin(vin_types[0]); */
-
       new_fin.type = vin_types[5];
       new_fin.customer = new_customer._id;
       new_fin.vin = await generateVin(vin_types[5]);
 
       const saved_fin = await new_fin.save();
-      //const saved_vin = await new_vin.save();
 
-      if (saved_fin /* && saved_vin */) {
+      if (saved_fin) {
         mail.sendMail({
           from: 'his-quiz@edspare.com',
           to: `${new_customer.email}`, // list of receivers
           subject: "Welcome to HIS!!!✔", // Subject line
           text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`,
           html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`, // html body
-        }, (err, result) => {
+        }, async (err, result) => {
           if(err) {
             logger.error(err);
             res.status(500).json({ status: true, message: err });
           }
           
+          if(announcement) {
+            await sharedAnnouncements.findOneAndUpdate(
+              { vin: referedBy }, 
+              { $inc: { leadConvertCount: 1 }, 
+                shareLink: referral_link, 
+                vin: referedBy, 
+                announcement: announcement 
+              }, 
+              { upsert: true, 
+                new: true 
+              }
+            );
+          }
+
           return res.status(200).send({
             status: true,
             message:
@@ -146,6 +175,41 @@ const create_customer = async (req, res) => {
       status: false,
       message: error,
     });
+  }
+};
+
+const upload_profile_pic = async (req, res) => {
+  const response = await upload_file(req, res);
+
+  console.log(response);
+};
+
+const update_user_status = async (req, res) => {
+  const customer_id = req.params.customer_id;
+
+  if(!customer_id) {
+    return res.status(400).send({
+      status: false,
+      message: "Invalid user ID!"
+    });
+  } 
+  
+  try {
+    const updated_customer = await customers.findByIdAndUpdate(customer_id, [
+        { $set: { activated: { $not: "$activated" } } } 
+      ], { upsert: true, new: true });
+
+    return res.status(200).send({
+      status: true,
+      message: `${updated_customer.firstname + " " + updated_customer.lastname}'s account has been successfully ${updated_customer.activated ? 'activated' : 'de-activated'}`,
+      activated: updated_customer.activated
+    });    
+  } catch(error) {
+    logger.error(error);
+    return res.status(500).send({
+      status: true,
+      
+    })
   }
 };
 
@@ -195,4 +259,6 @@ module.exports = {
   create_customer,
   update_customer,
   delete_customer,
+  upload_profile_pic,
+  update_user_status
 };
