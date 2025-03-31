@@ -38,7 +38,7 @@ const upload_file = async (req, res) => {
 
         if(customer_id) {
           const customer = await customers.findByIdAndUpdate(
-            fileName, 
+            customer_id, 
               {
                 photo_url: result.secure_url,
                 photo_url_id: result.public_id
@@ -52,7 +52,7 @@ const upload_file = async (req, res) => {
         
         if(user_id) {
           const user = await users.findByIdAndUpdate(
-            fileName, 
+            user_id, 
             {
               photo_url: result.secure_url, 
               photo_url_id: result.public_id

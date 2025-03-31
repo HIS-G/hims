@@ -372,3 +372,5 @@
 2025-03-24T10:14:16.241Z error: user_id is not defined
 2025-03-26T06:55:26.352Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "paulinus" }
 2025-03-28T08:03:23.784Z error: customer is not defined
+2025-03-31T23:41:00.014Z error: Cannot populate path `user` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-03-31T23:41:00.023Z error: Cannot populate path `user` because it is not in your schema. Set the `strictPopulate` option to false to override.

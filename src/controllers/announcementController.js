@@ -269,7 +269,14 @@ const record_shared_announcement_visit = async (req, res) => {
 
 const list_top_shares = async (req, res) => {
     try {
-        const leaders = await sharedAnnouncements.find().sort({ clickCount: -1 }).limit(5).populate("announcement");
+        const leaders = await sharedAnnouncements
+        .find()
+        .sort({ clickCount: -1 })
+        .limit(5)
+        .populate("announcement")
+        .populate("user")
+        .populate("customer")
+        .exec();
 
         if(leaders.length == 0) {
             return res.status(404).send({
