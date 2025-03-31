@@ -10,9 +10,11 @@ cloudinary.config({
 });
 
 const upload_file = async (req, res) => {
-  const { fileName, fileContent, contentType } = req.body;
+  const user_id = req.params.user_id;
+  const customer_id = req.params.customer_id;
+  const { fileContent, contentType } = req.body;
 
-  if(!fileName) {
+  if(!user_id && !customer_id) {
     return res.status(400).send({
       status: false,
       message: "kindly select an image."
@@ -34,29 +36,33 @@ const upload_file = async (req, res) => {
           });
         }
 
-        const customer = await customers.findByIdAndUpdate(
-          fileName, 
-          {
-            photo_url: result.secure_url,
-            photo_url_id: result.public_id
-          },
-          {
-            upsert: true,
-            new: true,
-          }
-        );
+        if(customer_id) {
+          const customer = await customers.findByIdAndUpdate(
+            fileName, 
+              {
+                photo_url: result.secure_url,
+                photo_url_id: result.public_id
+              },
+              {
+                upsert: true,
+                new: true,
+              }
+          );
+        }
         
-        const user = await users.findByIdAndUpdate(
-          fileName, 
-          {
-            photo_url: result.secure_url, 
-            photo_url_id: result.public_id
-          }, 
-          {
-            upsert: true, 
-            new: true
-          }
-        );
+        if(user_id) {
+          const user = await users.findByIdAndUpdate(
+            fileName, 
+            {
+              photo_url: result.secure_url, 
+              photo_url_id: result.public_id
+            }, 
+            {
+              upsert: true, 
+              new: true
+            }
+          );
+        }
 
         return res.send({
           status: true,
