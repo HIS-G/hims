@@ -45,7 +45,6 @@ const upload_file = async (req, res) => {
             new: true,
           }
         );
-        console.log("customer::::", customer);
         
         const user = await users.findByIdAndUpdate(
           fileName, 
@@ -58,7 +57,6 @@ const upload_file = async (req, res) => {
             new: true
           }
         );
-        console.log("admin", user);
 
         return res.send({
           status: true,

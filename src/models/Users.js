@@ -20,6 +20,8 @@ const User_Schema = new mongoose.Schema(
     province: { type: String },
     zip_code: { type: String },
     address: { type: String },
+    photo_url: { type: String },
+    photo_public_id: { type: String, },
     verified: { type: Boolean, default: false, required: false },
     password: {
       type: String,
