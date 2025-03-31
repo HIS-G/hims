@@ -178,12 +178,6 @@ const create_customer = async (req, res) => {
   }
 };
 
-const upload_profile_pic = async (req, res) => {
-  const response = await upload_file(req, res);
-
-  console.log(response);
-};
-
 const update_user_status = async (req, res) => {
   const customer_id = req.params.customer_id;
 
@@ -259,6 +253,5 @@ module.exports = {
   create_customer,
   update_customer,
   delete_customer,
-  upload_profile_pic,
   update_user_status
 };

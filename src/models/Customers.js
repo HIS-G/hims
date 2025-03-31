@@ -23,6 +23,8 @@ const Customer_Schema = new mongoose.Schema({
   },
   referedBy: { type: mongoose.Schema.Types.ObjectId, ref: "vins" },
   referralLink: { type: String },
+  photo_url: { type: String },
+  photo_url_id: { type: String },
   announcement: { type: mongoose.Schema.Types.ObjectId, ref: "announcements" },
   verified: { type: Boolean, default: false, required: true },
   activated: { type: Boolean, default: false, required: true },
