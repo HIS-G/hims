@@ -1,10 +1,11 @@
 const { users } = require("../models/Users");
-const bcryptjs = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const { generateVin, generateVerificationToken, sendCustomerVerificationMail } = require("../utils/helpers");
 const { vins, vin_types } = require("../models/vins");
 const { roles } = require("../models/Roles");
 const { mail } = require("../utils/nodemailerConfig");
 const { logger } = require("../utils/logger");
+const crypto = require("crypto");
 
 const create_user = async (req, res) => {
   const {
@@ -50,8 +51,10 @@ const create_user = async (req, res) => {
     user.role = role;
 
     if (password) {
-      const hashed_password = await bcryptjs.hash(password, 10);
-      user.password = hashed_password;
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+      
+      let salt = await bcrypt.genSalt();
+      user.password = await bcrypt.hash(password, salt);
     }
 
     user.verificationToken = await generateVerificationToken();

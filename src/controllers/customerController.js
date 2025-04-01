@@ -8,6 +8,7 @@ const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require('../utils/nodemailerConfig');
 const { sharedAnnouncements } = require("../models/Announcements");
+const { upload_file } = require("../utils/uploads");
 
 const get_customers = async (req, res) => {
   try {
@@ -69,6 +70,7 @@ const create_customer = async (req, res) => {
     announcement
   } = req.body;
 
+  console.log(req.body);
   try {
     const customer = new customers();
     //const new_vin = new vins();
@@ -99,7 +101,7 @@ const create_customer = async (req, res) => {
     if (referral_link) customer.referralLink = referral_link;
 
     if (referedBy) {
-      const referal_vin = await vins.findOne({ vin: referedBy });
+      const referral_vin = await vins.findOne({ vin: referedBy });
 
       if(!referral_vin) {
         return res.status(400).send({
@@ -108,7 +110,7 @@ const create_customer = async (req, res) => {
         });
       }
 
-      customer.referedBy = referal_vin._id;
+      customer.referedBy = referral_vin._id;
     }
 
     if (password) {
@@ -119,6 +121,7 @@ const create_customer = async (req, res) => {
     }
 
     const new_customer = await customer.save();
+    console.log(new_customer);
 
     if (new_customer) {
       new_fin.type = vin_types[5];
@@ -141,7 +144,17 @@ const create_customer = async (req, res) => {
           }
           
           if(announcement) {
-            await sharedAnnouncements.findOneAndUpdate({ vin: referedBy }, { $inc: { leadConvertCount: 1 }}, { upsert: true, new: true });
+            await sharedAnnouncements.findOneAndUpdate(
+              { vin: referedBy }, 
+              { $inc: { leadConvertCount: 1 }, 
+                shareLink: referral_link, 
+                vin: referedBy, 
+                announcement: announcement 
+              }, 
+              { upsert: true, 
+                new: true 
+              }
+            );
           }
 
           return res.status(200).send({
@@ -162,6 +175,41 @@ const create_customer = async (req, res) => {
       status: false,
       message: error,
     });
+  }
+};
+
+const upload_profile_pic = async (req, res) => {
+  const response = await upload_file(req, res);
+
+  console.log(response);
+};
+
+const update_user_status = async (req, res) => {
+  const customer_id = req.params.customer_id;
+
+  if(!customer_id) {
+    return res.status(400).send({
+      status: false,
+      message: "Invalid user ID!"
+    });
+  } 
+  
+  try {
+    const updated_customer = await customers.findByIdAndUpdate(customer_id, [
+        { $set: { activated: { $not: "$activated" } } } 
+      ], { upsert: true, new: true });
+
+    return res.status(200).send({
+      status: true,
+      message: `${updated_customer.firstname + " " + updated_customer.lastname}'s account has been successfully ${updated_customer.activated ? 'activated' : 'de-activated'}`,
+      activated: updated_customer.activated
+    });    
+  } catch(error) {
+    logger.error(error);
+    return res.status(500).send({
+      status: true,
+      
+    })
   }
 };
 
@@ -211,4 +259,6 @@ module.exports = {
   create_customer,
   update_customer,
   delete_customer,
+  upload_profile_pic,
+  update_user_status
 };

@@ -124,7 +124,26 @@ const get_announcement = async (req, res) => {
     }
 };
 
-const update_announcement = async (req, res) => {};
+const update_announcement = async (req, res) => {
+    const announcement_id = req.params.id;
+
+    try {
+        const updated_announcement = await announcements.findByIdAndUpdate(announcement_id, req.body, { upsert: true, new: true });
+
+        return res.status(200).send({
+            status: true,
+            message: "Announcement updated successfully!",
+            data: updated_announcement
+        });
+    }catch(error) {
+        logger.error(error);
+        return res.status(500).sned({
+            status: false,
+            message: "Internal Server Error",
+            error: error
+        });
+    }
+};
 
 const delete_announcement = async (req, res) => {
     const { id } = req.body;
@@ -138,6 +157,7 @@ const delete_announcement = async (req, res) => {
 
     try {
         await comments.deleteMany({ announcement: id }); // Delete related comments
+        await sharedAnnouncements.deleteMany({ announcement: id }); // Delete Shares
         const announcement = await announcements.findByIdAndDelete(id);
         
         if(!announcement) {

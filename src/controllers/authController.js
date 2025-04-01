@@ -81,14 +81,6 @@ const customer_login = async (req, res) => {
       });
     }
 
-    /* if (user && !user.password) {
-      return res.status(400).send({
-        status: false,
-        message:
-          "Kindly verify your account to enable you complete the registration process!",
-      });
-    } */
-
     if(!user.activated) {
       return res.status(401).send({
         status: false,
@@ -131,6 +123,7 @@ const customer_login = async (req, res) => {
     });
     
   } catch (error) {
+    console.log(error);
     logger.error(error);
     return res.status(500).send({
       status: false,
@@ -172,7 +165,10 @@ const admin_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
-      if(user.role.role == "SUPPLIER") {
+      if(user.role.role == "SUPER_ADMIN") {
+        vin = await vins.findOne({ user: user.id }).select("type vin");
+      }
+      else if(user.role.role == "SUPPLIER") {
         vin = await vins.findOne({ supplier: user.id }).select("type vin");
       } else if(user.role.role == "DISTRIBUTOR") {
         vin = await vins.findOne({ distributor: user.id }).select("type vin");

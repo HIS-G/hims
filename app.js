@@ -37,7 +37,8 @@ const dashboardRoute = require("./src/routes/dashboardRoute");
 app.options("*", cors());
 app.use(cors(corsOptions));
 
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/customers", customerRoutes);
