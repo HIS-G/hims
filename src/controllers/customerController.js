@@ -70,7 +70,9 @@ const create_customer = async (req, res) => {
     announcement
   } = req.body;
 
-  console.log(req.body);
+  let referrer_id;
+  let refferer_role;
+
   try {
     const customer = new customers();
     //const new_vin = new vins();
@@ -110,6 +112,13 @@ const create_customer = async (req, res) => {
         });
       }
 
+      if(referral_vin.customer) {
+        refferer_role = "customer";
+        referrer_id = vin.customer;
+      } else if(referral_vin.user) {
+        referrer_id = vin.user;
+        refferer_role = "user";
+      }
       customer.referedBy = referral_vin._id;
     }
 
@@ -148,7 +157,9 @@ const create_customer = async (req, res) => {
               { vin: referedBy }, 
               { $inc: { leadConvertCount: 1 }, 
                 shareLink: referral_link, 
-                vin: referedBy, 
+                vin: referedBy,
+                user: refferer_role === 'user' ? referrer_id : null,
+                customer: refferer_role === 'customer' ? referrer_id : null,
                 announcement: announcement 
               }, 
               { upsert: true, 
@@ -176,12 +187,6 @@ const create_customer = async (req, res) => {
       message: error,
     });
   }
-};
-
-const upload_profile_pic = async (req, res) => {
-  const response = await upload_file(req, res);
-
-  console.log(response);
 };
 
 const update_user_status = async (req, res) => {
@@ -259,6 +264,5 @@ module.exports = {
   create_customer,
   update_customer,
   delete_customer,
-  upload_profile_pic,
   update_user_status
 };

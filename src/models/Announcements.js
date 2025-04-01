@@ -22,6 +22,8 @@ const Announcement_Schema = new mongoose.Schema({
 
 const Shared_Announcement_Schema = new mongoose.Schema({
   announcement: { type: mongoose.Schema.Types.ObjectId, ref: 'announcements', required: true },
+  customer: { type: mongoose.Schema.Types.ObjectId, ref: "customers", },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "users", },
   vin: { type: String, required: true }, //{ type: mongoose.Schema.Types.ObjectId, ref: 'vins', required: true, },
   shareLink: { type: String, required: true },
   clickCount: { type: Number, required: true, default: 0 },
