@@ -74,7 +74,7 @@ const list_announcements_comments = async (req, res) => {
     const announcement_id = req.params.id;
 
     try {
-        const announcement_comments = await comments.find({ announcement: announcement_id }).sort({ createdAt: -1 });
+        const announcement_comments = await comments.find({ announcement: announcement_id }).populate("customer").populate("user").sort({ createdAt: -1 });
 
         if(announcement_comments.length == 0) {
             return res.status(404).send({

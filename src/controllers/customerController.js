@@ -277,11 +277,83 @@ const submit_sla = async (req, res) => {
   }
 };
 
+const generate_vin = async (req, res) => {
+  const id = req.params.customer_id;
+
+  try {
+    const customer = await customers.findById(id);
+
+    if(!customer) {
+      return res.status(400).send({
+        status: false,
+        message: "Invalid account!"
+      });
+    }
+
+    const existing_fin = await vins.findOne({ customer: id, });
+
+    if(existing_fin) {
+      return res.status(400).send({
+        status: false,
+        message: "This account already has a FIN"
+      });
+    }
+
+    const new_fin = new vins();
+
+    new_fin.customer = id;
+    new_fin.type = vin_types[5];
+    new_fin.vin = await generateVin(vin_types[5]);
+
+    const saved_fin = await new_fin.save();
+
+    return res.status(200).send({
+      status: true,
+      message: "FIN generated successfully!",
+    });
+
+  } catch(error) {
+    logger.error(error);
+    res.status(500).send({
+      status: false,
+      message: ""
+    });
+  }
+};
+
+const retrieve_daily_registrants = async (req, res) => {
+  const today = new Date(new Date().setHours(0, 0, 0, 0));
+  const end_of_day = new Date(new Date().setHours(23, 59, 59, 999));
+  try {
+    const customers_list = await customers.find({ createdAt: {
+      $gte: today,
+      $lt: end_of_day
+    } }).select('-password');
+
+    return res.status(200).send({
+      status: true,
+      message: "List of customers registered today",
+      customers: customers_list,
+      total: customers_list.length
+    })
+  } catch(error) {
+    console.log(error);
+    logger.error(error)
+    return res.status(500).send({
+      status: false,
+      error: error,
+      message: ""
+    });
+  }
+};
+
 module.exports = {
   get_customers,
   get_single_customer,
+  generate_vin,
   submit_sla,
   my_profile,
+  retrieve_daily_registrants,
   create_customer,
   update_customer,
   delete_customer,
