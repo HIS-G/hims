@@ -271,8 +271,8 @@ const list_top_shares = async (req, res) => {
     try {
         const leaders = await sharedAnnouncements
         .find()
-        .sort({ clickCount: -1 })
-        .limit(5)
+        .sort({ leadConvertCount: -1 })
+        .limit(10)
         .populate("announcement")
         .populate("user")
         .populate("customer")

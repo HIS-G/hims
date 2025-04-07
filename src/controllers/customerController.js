@@ -72,8 +72,17 @@ const create_customer = async (req, res) => {
 
   let referrer_id;
   let refferer_role;
+  let reffered_user;
 
   try {
+    const exists = await customers.findOne({ $or: [{email: email}, { username: username }] });
+
+    if(exists) {
+      return res.status(409).send({
+        status: false,
+        message: "The username or email already exists!"
+      });
+    }
     const customer = new customers();
     //const new_vin = new vins();
     const new_fin = new vins();
@@ -87,19 +96,19 @@ const create_customer = async (req, res) => {
       });
     }
 
-    customer.firstname = firstname;
-    customer.lastname = lastname;
-    customer.email = email;
+    customer.firstname = firstname.toLowerCase();
+    customer.lastname = lastname.toLowerCase();
+    customer.email = email.toLowerCase();
     customer.phone = phone;
     customer.role = role._id;
     customer.activated = true;
-    if (middlename) customer.middlename = middlename;
+    if (middlename) customer.middlename = middlename.toLowerCase();
     if (device) customer.device.push(device);
-    if (username) customer.username = username;
-    if (country) customer.country = country;
-    if (state) customer.state = state;
+    if (username) customer.username = username.toLowerCase();
+    if (country) customer.country = country.toLowerCase();
+    if (state) customer.state = state.toLowerCase();
     if (zip_code) customer.zip_code = zip_code;
-    if (address) customer.address = address;
+    if (address) customer.address = address.toLowerCase();
     if (referral_link) customer.referralLink = referral_link;
 
     if (referedBy) {
@@ -114,10 +123,12 @@ const create_customer = async (req, res) => {
 
       if(referral_vin.customer) {
         refferer_role = "customer";
-        referrer_id = vin.customer;
+        referrer_id = referral_vin.customer;
+        reffered_user = await customers.findOne(referral_vin.customer);
       } else if(referral_vin.user) {
-        referrer_id = vin.user;
+        referrer_id = referral_vin.user;
         refferer_role = "user";
+        reffered_user = await customers.findOne(referral_vin.user);
       }
       customer.referedBy = referral_vin._id;
     }
@@ -130,7 +141,6 @@ const create_customer = async (req, res) => {
     }
 
     const new_customer = await customer.save();
-    console.log(new_customer);
 
     if (new_customer) {
       new_fin.type = vin_types[5];
@@ -166,6 +176,18 @@ const create_customer = async (req, res) => {
                 new: true 
               }
             );
+
+            mail.sendMail({
+              from: 'his-quiz@edspare.com',
+              to: `${reffered_user.email}`, // list of receivers
+              subject: "Welcome to HIS!!!✔", // Subject line
+              text: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${new_customer.firstname + " " + new_customer.lastname}</b><br/><br/>`,
+              html: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${new_customer.firstname + " " + new_customer.lastname}</b><br/><br/>`, // html body
+            }, async(err, result) => {
+              if(err) {
+                logger.error(err);
+              }
+            });
           }
 
           return res.status(200).send({
@@ -180,7 +202,6 @@ const create_customer = async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error);
     logger.error(error);
     return res.status(500).send({
       status: false,

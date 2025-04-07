@@ -1763,3 +1763,1511 @@
 2025-03-27T17:38:53.330Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Praizy" }
 2025-03-26T06:55:26.352Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "paulinus" }
 2025-03-28T08:03:23.784Z error: customer is not defined
+2025-04-01T10:42:56.560Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T19:25:09.164Z error: Cannot read properties of null (reading 'password')
+2025-04-01T19:35:01.512Z error: Cannot read properties of null (reading 'password')
+2025-04-01T19:35:31.947Z error: Cannot read properties of null (reading 'password')
+2025-04-01T19:36:23.806Z error: Cannot read properties of null (reading 'password')
+2025-04-01T19:42:29.711Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Pamela" }
+2025-04-01T19:42:38.684Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Pamela" }
+2025-04-01T19:42:43.177Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Pamela" }
+2025-04-01T19:54:00.360Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T19:54:04.904Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T19:54:18.837Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T20:15:10.293Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T20:22:09.604Z error: Cannot read properties of null (reading 'password')
+2025-04-01T20:26:37.926Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T20:27:55.485Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-01T20:57:15.782Z error: vin is not defined
+2025-04-01T20:57:35.865Z error: vin is not defined
+2025-04-01T20:57:35.893Z error: vin is not defined
+2025-04-01T20:57:35.913Z error: vin is not defined
+2025-04-01T20:57:36.094Z error: vin is not defined
+2025-04-01T20:57:36.376Z error: vin is not defined
+2025-04-01T20:57:36.393Z error: vin is not defined
+2025-04-01T20:57:38.550Z error: vin is not defined
+2025-04-01T20:57:40.352Z error: vin is not defined
+2025-04-01T20:57:40.937Z error: vin is not defined
+2025-04-01T20:57:41.708Z error: vin is not defined
+2025-04-01T20:57:42.057Z error: vin is not defined
+2025-04-01T20:57:46.734Z error: vin is not defined
+2025-04-01T21:01:45.034Z error: vin is not defined
+2025-04-01T21:01:45.064Z error: vin is not defined
+2025-04-01T21:02:21.303Z error: vin is not defined
+2025-04-01T21:02:32.297Z error: vin is not defined
+2025-04-01T21:02:32.377Z error: vin is not defined
+2025-04-01T21:02:33.253Z error: vin is not defined
+2025-04-01T21:03:07.586Z error: vin is not defined
+2025-04-01T21:03:11.460Z error: vin is not defined
+2025-04-01T21:03:11.915Z error: vin is not defined
+2025-04-01T21:03:20.899Z error: vin is not defined
+2025-04-01T21:03:25.010Z error: vin is not defined
+2025-04-01T21:03:38.697Z error: vin is not defined
+2025-04-01T21:06:16.493Z error: vin is not defined
+2025-04-01T21:06:16.514Z error: vin is not defined
+2025-04-01T21:07:15.935Z error: vin is not defined
+2025-04-01T21:07:19.323Z error: vin is not defined
+2025-04-01T21:07:19.795Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Jimour" }
+2025-04-01T21:07:20.250Z error: vin is not defined
+2025-04-01T21:07:20.762Z error: vin is not defined
+2025-04-01T21:07:23.672Z error: vin is not defined
+2025-04-01T21:07:27.684Z error: vin is not defined
+2025-04-01T21:07:34.259Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-01T21:07:41.720Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-01T21:10:16.391Z error: vin is not defined
+2025-04-01T21:10:16.410Z error: vin is not defined
+2025-04-01T21:10:16.549Z error: vin is not defined
+2025-04-01T21:10:16.728Z error: vin is not defined
+2025-04-01T21:10:16.729Z error: vin is not defined
+2025-04-01T21:10:16.730Z error: vin is not defined
+2025-04-01T21:10:16.734Z error: vin is not defined
+2025-04-01T21:10:16.766Z error: vin is not defined
+2025-04-01T21:10:16.926Z error: vin is not defined
+2025-04-01T21:10:17.160Z error: vin is not defined
+2025-04-01T21:10:18.645Z error: vin is not defined
+2025-04-01T21:10:19.047Z error: vin is not defined
+2025-04-01T21:10:19.197Z error: vin is not defined
+2025-04-01T21:10:19.339Z error: vin is not defined
+2025-04-01T21:10:19.529Z error: vin is not defined
+2025-04-01T21:10:19.722Z error: vin is not defined
+2025-04-01T21:10:19.857Z error: vin is not defined
+2025-04-01T21:10:20.037Z error: vin is not defined
+2025-04-01T21:10:20.219Z error: vin is not defined
+2025-04-01T21:10:20.512Z error: vin is not defined
+2025-04-01T21:10:20.587Z error: vin is not defined
+2025-04-01T21:10:20.786Z error: vin is not defined
+2025-04-01T21:10:20.988Z error: vin is not defined
+2025-04-01T21:10:21.136Z error: vin is not defined
+2025-04-01T21:10:21.309Z error: vin is not defined
+2025-04-01T21:10:21.499Z error: vin is not defined
+2025-04-01T21:10:33.276Z error: vin is not defined
+2025-04-01T21:10:33.303Z error: vin is not defined
+2025-04-01T21:10:33.587Z error: vin is not defined
+2025-04-01T21:10:33.615Z error: vin is not defined
+2025-04-01T21:10:33.704Z error: vin is not defined
+2025-04-01T21:10:33.898Z error: vin is not defined
+2025-04-01T21:10:34.026Z error: vin is not defined
+2025-04-01T21:10:34.215Z error: vin is not defined
+2025-04-01T21:10:34.433Z error: vin is not defined
+2025-04-01T21:14:28.469Z error: vin is not defined
+2025-04-01T21:14:28.568Z error: vin is not defined
+2025-04-01T21:14:28.667Z error: vin is not defined
+2025-04-01T21:14:28.791Z error: vin is not defined
+2025-04-01T21:14:28.845Z error: vin is not defined
+2025-04-01T21:14:28.930Z error: vin is not defined
+2025-04-01T21:14:28.976Z error: vin is not defined
+2025-04-01T21:14:29.109Z error: vin is not defined
+2025-04-01T21:14:29.333Z error: vin is not defined
+2025-04-01T21:14:29.414Z error: vin is not defined
+2025-04-01T21:14:29.586Z error: vin is not defined
+2025-04-01T21:14:29.766Z error: vin is not defined
+2025-04-01T21:14:29.974Z error: vin is not defined
+2025-04-01T21:14:30.126Z error: vin is not defined
+2025-04-01T21:14:30.378Z error: vin is not defined
+2025-04-01T21:14:30.628Z error: vin is not defined
+2025-04-01T21:14:31.011Z error: vin is not defined
+2025-04-01T21:14:31.110Z error: vin is not defined
+2025-04-01T21:14:31.333Z error: vin is not defined
+2025-04-01T21:14:31.549Z error: vin is not defined
+2025-04-01T21:14:31.892Z error: vin is not defined
+2025-04-01T21:14:31.951Z error: vin is not defined
+2025-04-01T21:14:32.102Z error: vin is not defined
+2025-04-01T21:14:32.290Z error: vin is not defined
+2025-04-01T21:14:32.431Z error: vin is not defined
+2025-04-01T21:14:32.582Z error: vin is not defined
+2025-04-01T21:14:32.818Z error: vin is not defined
+2025-04-02T06:06:02.365Z error: Cannot read properties of null (reading 'password')
+2025-04-02T06:07:39.258Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:07:50.594Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:07:51.237Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:03.078Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:11.093Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:11.496Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:11.840Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:11.919Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:15.421Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:15.779Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:16.006Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:16.350Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:16.525Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:16.802Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:17.443Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:17.931Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:18.472Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:18.859Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:19.262Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:19.629Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:20.045Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:33.773Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:34.126Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:34.329Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:34.555Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:34.938Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:35.018Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:35.292Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:35.469Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:35.641Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:35.721Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:36.297Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:36.476Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:43.825Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:44.480Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:45.023Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:45.229Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:45.422Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:45.735Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:45.815Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:46.005Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:46.203Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:46.399Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:46.709Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:46.966Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:47.204Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:51.507Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:52.116Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:52.445Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:52.696Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:52.957Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:53.265Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:53.527Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:56.416Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:57.461Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:57.886Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:08:58.469Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:09:01.984Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:09:19.016Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:09:22.271Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:09:26.673Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:09:27.391Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Danny " }
+2025-04-02T06:51:43.202Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:51:44.718Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:51:59.948Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:02.429Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:02.829Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:03.006Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:14.014Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:15.260Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:16.541Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:16.953Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:17.242Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:52:17.324Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:53:55.683Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:53:59.146Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:00.148Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:01.519Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:02.814Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:03.479Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:03.881Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:04.193Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:04.370Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:04.732Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:04.822Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.095Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.270Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.349Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.523Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.697Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:05.870Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:06.062Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:06.236Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:06.317Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:06.814Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:06.995Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:07.247Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:07.461Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:07.777Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:07.857Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:27.301Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:28.635Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:29.042Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:29.140Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:29.222Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:29.863Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:30.230Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T06:54:31.333Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:03.077Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:03.158Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:03.507Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:04.577Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:08.177Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:23.050Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:23.417Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:23.613Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:23.818Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.013Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.204Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.378Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.457Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.649Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.747Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:24.827Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:25.259Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:25.548Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:03:25.721Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:07.401Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:07.758Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:07.839Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:08.283Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:08.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:08.777Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:09.395Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:15.306Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:15.897Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:16.300Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:16.827Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:17.339Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:17.789Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:18.330Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:18.905Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:19.115Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:19.292Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:27.243Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:36.570Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:38.153Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:38.554Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:38.973Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.150Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.248Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.349Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.432Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.628Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.726Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.916Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:39.998Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.092Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.190Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.270Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.629Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.804Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:40.978Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.151Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.249Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.350Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.447Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.526Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:41.961Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:42.060Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:42.156Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:42.331Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:04:42.409Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour" }
+2025-04-02T07:07:30.515Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:30.913Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:38.134Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:38.502Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:38.582Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:39.605Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:39.888Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:39.967Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:41.732Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:41.812Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:42.469Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:42.643Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:42.722Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:44.560Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:44.735Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:44.813Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:45.146Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:45.224Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:45.405Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.053Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.274Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.447Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.526Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.713Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:07:46.933Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:08.205Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:08.286Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:08.288Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:08.288Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:08.461Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:09.065Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:09.146Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:09.147Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:09.148Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:13.969Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:14.284Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:14.364Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:14.542Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:14.714Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:38.437Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:38.965Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:39.383Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:39.795Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:40.437Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:40.917Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:40.998Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:47.511Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:48.377Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:48.551Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:48.633Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:52.056Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:52.311Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:08:52.648Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:07.382Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:07.574Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:07.653Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:07.654Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:34.390Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:34.469Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:34.902Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.075Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.076Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.346Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.524Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.525Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.624Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.721Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.821Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:35.993Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.074Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.248Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.423Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.615Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.788Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:36.869Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:40.349Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:40.522Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:40.523Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:40.602Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:40.780Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:41.525Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:41.604Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:41.605Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:41.607Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:42.934Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.031Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.032Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.033Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.111Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.532Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.631Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.632Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.728Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:43.901Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.191Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.290Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.293Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.294Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.390Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.473Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.852Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.952Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.954Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:44.954Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.051Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.130Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.508Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.587Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.588Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:45.589Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:48.976Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.075Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.172Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.253Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.447Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.622Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.702Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:49.892Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.067Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.163Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.242Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.591Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.671Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.868Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:50.966Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:51.062Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:51.141Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:51.414Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:09:51.492Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.235Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.410Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.510Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.608Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.706Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:24.880Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.050Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.146Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.319Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.495Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.591Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.764Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.861Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:25.941Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:26.114Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:26.309Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:26.481Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:26.562Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:26.784Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:27.039Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.272Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.367Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.546Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.642Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.721Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:30.915Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.088Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.169Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.361Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.533Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.613Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.802Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:31.978Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.058Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.251Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.424Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.504Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.678Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:32.869Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.044Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.124Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.315Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.488Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.568Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.745Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:33.920Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.114Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.364Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.636Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.809Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.905Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:34.984Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:43.517Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:43.874Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:43.953Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:44.134Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:44.326Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:44.499Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:44.580Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:44.796Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:45.042Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:45.216Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:10:45.391Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:36.342Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:36.455Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:36.630Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:36.727Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:36.901Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:37.075Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:37.249Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:37.331Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:37.504Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:37.678Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:43.706Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:43.954Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:44.158Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:44.333Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:44.543Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:44.735Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:44.907Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.003Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.179Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.274Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.446Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.546Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.719Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:45.895Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.067Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.163Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.335Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.415Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.609Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.785Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:46.881Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:47.055Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:47.151Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:47.325Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:13:47.405Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:31.821Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.011Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.111Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.112Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.209Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.380Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.555Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:32.634Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:33.591Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:33.799Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.214Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.311Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.313Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.314Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.392Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.582Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.662Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:56.836Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:14:57.010Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:20.219Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:20.297Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:20.787Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:33.493Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:33.830Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:33.911Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.085Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.530Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.704Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.705Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.707Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.804Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:34.976Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.165Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.340Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.341Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.437Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.533Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.630Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.804Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:35.901Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.073Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.155Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.328Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.597Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.675Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:36.850Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:37.313Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:47.919Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.205Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.207Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.286Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.287Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.562Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.661Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.756Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:48.836Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:49.013Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:49.400Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:49.681Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:49.778Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:49.953Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:50.033Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:50.305Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:50.383Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:50.582Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:50.803Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:51.235Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:51.506Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:51.750Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:51.953Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:52.183Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:52.421Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:52.614Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:52.835Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:53.428Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:53.508Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:53.685Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:53.942Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:54.167Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:54.438Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:54.673Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:54.948Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:55.571Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:56.227Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:56.323Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:56.402Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:56.631Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:56.886Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:57.156Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:57.394Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:57.652Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:58.595Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:58.675Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:58.853Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:59.138Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:59.366Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:59.611Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:15:59.848Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:00.052Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:00.297Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:00.533Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:00.759Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:01.013Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:01.719Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:01.923Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:02.149Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:02.407Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:02.626Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:02.891Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:03.116Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:16:03.718Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T07:23:56.830Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T09:09:25.357Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:25.446Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:25.447Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:25.449Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:25.450Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.179Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.258Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.259Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.260Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.261Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.693Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:09:26.694Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Angie" }
+2025-04-02T09:45:18.534Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "tirth" }
+2025-04-02T10:04:41.027Z error: vin is not defined
+2025-04-02T10:04:43.282Z error: vin is not defined
+2025-04-02T10:04:57.893Z error: vin is not defined
+2025-04-02T10:05:05.363Z error: vin is not defined
+2025-04-02T10:05:05.663Z error: vin is not defined
+2025-04-02T10:05:07.505Z error: vin is not defined
+2025-04-02T10:05:14.224Z error: vin is not defined
+2025-04-02T10:05:14.941Z error: vin is not defined
+2025-04-02T10:05:15.233Z error: vin is not defined
+2025-04-02T10:05:15.434Z error: vin is not defined
+2025-04-02T10:05:15.519Z error: vin is not defined
+2025-04-02T10:05:15.656Z error: vin is not defined
+2025-04-02T10:05:15.833Z error: vin is not defined
+2025-04-02T10:05:15.980Z error: vin is not defined
+2025-04-02T10:05:16.149Z error: vin is not defined
+2025-04-02T10:05:16.308Z error: vin is not defined
+2025-04-02T10:05:24.628Z error: vin is not defined
+2025-04-02T10:05:36.339Z error: vin is not defined
+2025-04-02T10:05:37.141Z error: vin is not defined
+2025-04-02T10:05:59.763Z error: vin is not defined
+2025-04-02T10:06:40.164Z error: vin is not defined
+2025-04-02T10:06:43.465Z error: vin is not defined
+2025-04-02T10:06:43.842Z error: vin is not defined
+2025-04-02T10:06:44.142Z error: vin is not defined
+2025-04-02T10:06:44.365Z error: vin is not defined
+2025-04-02T10:06:44.447Z error: vin is not defined
+2025-04-02T10:06:44.610Z error: vin is not defined
+2025-04-02T10:07:21.041Z error: vin is not defined
+2025-04-02T10:07:39.704Z error: vin is not defined
+2025-04-02T10:07:40.774Z error: vin is not defined
+2025-04-02T10:07:41.183Z error: vin is not defined
+2025-04-02T10:07:55.745Z error: Cannot read properties of null (reading 'password')
+2025-04-02T10:08:59.086Z error: Cannot read properties of null (reading 'password')
+2025-04-02T12:07:10.267Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Udengseradiri" }
+2025-04-02T12:47:18.215Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:18.629Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:18.935Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:19.111Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:19.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:19.457Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:19.638Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:19.814Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:20.957Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:21.366Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:25.127Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:25.301Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:25.618Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:25.714Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:25.792Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:26.306Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:26.387Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:26.653Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:26.732Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:47:26.908Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Favour " }
+2025-04-02T12:56:57.767Z error: vin is not defined
+2025-04-02T12:57:00.077Z error: vin is not defined
+2025-04-02T12:57:00.954Z error: vin is not defined
+2025-04-02T12:57:33.951Z error: vin is not defined
+2025-04-02T12:58:20.699Z error: vin is not defined
+2025-04-02T12:58:22.057Z error: vin is not defined
+2025-04-02T12:58:22.819Z error: vin is not defined
+2025-04-02T12:58:23.428Z error: vin is not defined
+2025-04-02T12:58:23.789Z error: vin is not defined
+2025-04-02T14:25:47.078Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e57a9df5dd978092f04de2') }
+2025-04-02T14:25:52.871Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e57a9df5dd978092f04de2') }
+2025-04-02T14:25:57.675Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e57a9df5dd978092f04de2') }
+2025-04-02T14:44:19.459Z error: vin is not defined
+2025-04-02T14:44:24.075Z error: vin is not defined
+2025-04-02T14:44:28.796Z error: vin is not defined
+2025-04-02T14:44:29.903Z error: vin is not defined
+2025-04-02T14:44:30.216Z error: vin is not defined
+2025-04-02T14:44:39.317Z error: vin is not defined
+2025-04-02T14:44:42.318Z error: vin is not defined
+2025-04-02T14:44:43.352Z error: vin is not defined
+2025-04-02T14:44:45.195Z error: vin is not defined
+2025-04-02T14:44:49.785Z error: vin is not defined
+2025-04-02T14:44:50.635Z error: vin is not defined
+2025-04-02T14:44:50.940Z error: vin is not defined
+2025-04-02T14:44:51.303Z error: vin is not defined
+2025-04-02T14:45:42.357Z error: Cannot read properties of null (reading 'password')
+2025-04-02T14:46:11.005Z error: Cannot read properties of null (reading 'password')
+2025-04-02T14:46:56.278Z error: Cannot read properties of null (reading 'password')
+2025-04-02T14:49:05.899Z error: vin is not defined
+2025-04-02T14:49:06.302Z error: vin is not defined
+2025-04-02T14:49:07.060Z error: vin is not defined
+2025-04-02T14:49:08.827Z error: vin is not defined
+2025-04-02T14:49:08.988Z error: vin is not defined
+2025-04-02T14:49:09.266Z error: vin is not defined
+2025-04-02T14:49:09.381Z error: vin is not defined
+2025-04-02T14:49:10.222Z error: vin is not defined
+2025-04-02T14:49:10.390Z error: vin is not defined
+2025-04-02T14:49:10.400Z error: vin is not defined
+2025-04-02T14:49:11.704Z error: vin is not defined
+2025-04-02T14:49:11.921Z error: vin is not defined
+2025-04-02T14:49:12.463Z error: vin is not defined
+2025-04-02T14:49:22.514Z error: vin is not defined
+2025-04-02T14:49:22.761Z error: vin is not defined
+2025-04-02T14:49:23.374Z error: vin is not defined
+2025-04-02T14:49:23.553Z error: vin is not defined
+2025-04-02T14:49:23.555Z error: vin is not defined
+2025-04-02T14:49:24.497Z error: vin is not defined
+2025-04-02T14:49:24.498Z error: vin is not defined
+2025-04-02T14:49:27.113Z error: vin is not defined
+2025-04-02T14:49:27.706Z error: vin is not defined
+2025-04-02T14:49:32.429Z error: vin is not defined
+2025-04-02T14:49:33.190Z error: vin is not defined
+2025-04-02T14:49:33.496Z error: vin is not defined
+2025-04-02T14:49:33.788Z error: vin is not defined
+2025-04-02T14:49:34.060Z error: vin is not defined
+2025-04-02T14:49:34.194Z error: vin is not defined
+2025-04-02T14:49:34.431Z error: vin is not defined
+2025-04-02T14:50:55.894Z error: vin is not defined
+2025-04-02T14:50:56.274Z error: vin is not defined
+2025-04-02T14:50:56.936Z error: vin is not defined
+2025-04-02T14:50:57.085Z error: vin is not defined
+2025-04-02T14:50:57.339Z error: vin is not defined
+2025-04-02T14:50:57.458Z error: vin is not defined
+2025-04-02T14:50:57.674Z error: vin is not defined
+2025-04-02T14:50:57.817Z error: vin is not defined
+2025-04-02T14:50:58.030Z error: vin is not defined
+2025-04-02T14:50:58.185Z error: vin is not defined
+2025-04-02T14:50:58.325Z error: vin is not defined
+2025-04-02T14:50:58.493Z error: vin is not defined
+2025-04-02T14:50:58.688Z error: vin is not defined
+2025-04-02T14:50:58.901Z error: vin is not defined
+2025-04-02T14:50:59.097Z error: vin is not defined
+2025-04-02T14:50:59.296Z error: vin is not defined
+2025-04-02T14:50:59.445Z error: vin is not defined
+2025-04-02T14:51:10.158Z error: vin is not defined
+2025-04-02T14:51:10.307Z error: vin is not defined
+2025-04-02T14:51:20.570Z error: vin is not defined
+2025-04-02T14:57:48.229Z error: vin is not defined
+2025-04-02T14:57:48.840Z error: vin is not defined
+2025-04-02T14:57:49.329Z error: vin is not defined
+2025-04-02T14:57:51.851Z error: vin is not defined
+2025-04-02T14:57:52.552Z error: vin is not defined
+2025-04-02T14:57:53.049Z error: vin is not defined
+2025-04-02T14:57:53.704Z error: vin is not defined
+2025-04-02T14:57:54.464Z error: vin is not defined
+2025-04-02T14:58:00.508Z error: vin is not defined
+2025-04-02T14:58:01.298Z error: vin is not defined
+2025-04-02T14:58:02.065Z error: vin is not defined
+2025-04-02T14:58:02.212Z error: vin is not defined
+2025-04-02T14:58:04.970Z error: vin is not defined
+2025-04-02T14:58:05.204Z error: vin is not defined
+2025-04-02T14:58:05.253Z error: vin is not defined
+2025-04-02T14:58:05.333Z error: vin is not defined
+2025-04-02T14:58:05.557Z error: vin is not defined
+2025-04-02T14:58:09.128Z error: vin is not defined
+2025-04-02T14:58:09.318Z error: vin is not defined
+2025-04-02T14:58:09.477Z error: vin is not defined
+2025-04-02T14:58:09.598Z error: vin is not defined
+2025-04-02T14:59:15.977Z error: vin is not defined
+2025-04-02T14:59:17.765Z error: vin is not defined
+2025-04-02T14:59:22.447Z error: vin is not defined
+2025-04-02T14:59:23.559Z error: vin is not defined
+2025-04-02T14:59:24.304Z error: vin is not defined
+2025-04-02T14:59:25.096Z error: vin is not defined
+2025-04-02T14:59:26.105Z error: vin is not defined
+2025-04-02T14:59:26.110Z error: vin is not defined
+2025-04-02T14:59:30.185Z error: vin is not defined
+2025-04-02T14:59:30.724Z error: vin is not defined
+2025-04-02T14:59:31.540Z error: vin is not defined
+2025-04-02T14:59:31.686Z error: vin is not defined
+2025-04-02T14:59:43.653Z error: vin is not defined
+2025-04-02T14:59:43.815Z error: vin is not defined
+2025-04-02T14:59:43.965Z error: vin is not defined
+2025-04-02T18:02:08.629Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:02:19.615Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:07:25.084Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-02T18:17:48.626Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-02T18:32:45.031Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:47:25.300Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Taryllilay" }
+2025-04-02T18:50:11.303Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:52:00.135Z error: vin is not defined
+2025-04-02T18:52:00.444Z error: vin is not defined
+2025-04-02T18:52:09.495Z error: vin is not defined
+2025-04-02T18:52:10.166Z error: vin is not defined
+2025-04-02T18:52:15.135Z error: vin is not defined
+2025-04-02T18:52:18.598Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:52:22.459Z error: vin is not defined
+2025-04-02T18:52:22.770Z error: vin is not defined
+2025-04-02T18:52:23.116Z error: vin is not defined
+2025-04-02T18:52:23.318Z error: vin is not defined
+2025-04-02T18:53:26.154Z error: vin is not defined
+2025-04-02T18:53:33.481Z error: vin is not defined
+2025-04-02T18:53:55.111Z error: vin is not defined
+2025-04-02T18:54:19.751Z error: vin is not defined
+2025-04-02T18:54:26.237Z error: vin is not defined
+2025-04-02T18:54:26.544Z error: vin is not defined
+2025-04-02T18:54:40.874Z error: vin is not defined
+2025-04-02T18:54:41.018Z error: vin is not defined
+2025-04-02T18:54:41.832Z error: vin is not defined
+2025-04-02T18:54:42.438Z error: vin is not defined
+2025-04-02T18:54:43.311Z error: vin is not defined
+2025-04-02T18:54:43.577Z error: vin is not defined
+2025-04-02T18:54:43.802Z error: vin is not defined
+2025-04-02T18:54:44.165Z error: vin is not defined
+2025-04-02T18:54:44.427Z error: vin is not defined
+2025-04-02T18:54:48.725Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Mike" }
+2025-04-02T18:54:50.238Z error: vin is not defined
+2025-04-02T18:54:52.680Z error: vin is not defined
+2025-04-02T18:56:50.200Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T18:57:06.452Z error: vin is not defined
+2025-04-02T18:57:18.965Z error: vin is not defined
+2025-04-02T18:57:19.915Z error: vin is not defined
+2025-04-02T18:57:23.183Z error: vin is not defined
+2025-04-02T18:57:24.262Z error: vin is not defined
+2025-04-02T19:00:22.773Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Staneteme " }
+2025-04-02T19:00:23.872Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Staneteme " }
+2025-04-02T19:00:39.070Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Staneteme " }
+2025-04-02T19:01:42.311Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Staneteme " }
+2025-04-02T19:01:43.524Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Staneteme " }
+2025-04-02T19:07:18.375Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-02T19:08:49.881Z error: vin is not defined
+2025-04-02T19:08:49.948Z error: vin is not defined
+2025-04-02T19:09:05.419Z error: vin is not defined
+2025-04-02T19:09:05.940Z error: vin is not defined
+2025-04-02T19:09:06.690Z error: vin is not defined
+2025-04-02T19:09:06.982Z error: vin is not defined
+2025-04-02T19:09:59.280Z error: vin is not defined
+2025-04-02T19:10:09.290Z error: vin is not defined
+2025-04-02T19:10:41.616Z error: vin is not defined
+2025-04-02T19:14:16.373Z error: vin is not defined
+2025-04-02T19:14:18.942Z error: vin is not defined
+2025-04-02T19:14:30.975Z error: vin is not defined
+2025-04-02T19:14:31.343Z error: vin is not defined
+2025-04-02T20:00:35.191Z error: vin is not defined
+2025-04-02T20:00:39.707Z error: vin is not defined
+2025-04-02T20:00:49.019Z error: vin is not defined
+2025-04-02T20:00:49.426Z error: vin is not defined
+2025-04-02T20:00:52.266Z error: vin is not defined
+2025-04-02T20:00:52.425Z error: vin is not defined
+2025-04-02T20:00:52.724Z error: vin is not defined
+2025-04-02T20:00:52.865Z error: vin is not defined
+2025-04-02T20:00:52.872Z error: vin is not defined
+2025-04-02T20:00:53.138Z error: vin is not defined
+2025-04-02T20:00:53.284Z error: vin is not defined
+2025-04-02T20:00:53.295Z error: vin is not defined
+2025-04-02T20:00:53.432Z error: vin is not defined
+2025-04-02T20:00:53.584Z error: vin is not defined
+2025-04-02T20:01:00.387Z error: vin is not defined
+2025-04-02T20:01:00.689Z error: vin is not defined
+2025-04-02T20:01:00.693Z error: vin is not defined
+2025-04-02T20:01:00.761Z error: vin is not defined
+2025-04-02T20:01:00.806Z error: vin is not defined
+2025-04-02T20:01:00.923Z error: vin is not defined
+2025-04-02T20:01:01.603Z error: vin is not defined
+2025-04-02T20:01:01.822Z error: vin is not defined
+2025-04-02T20:01:01.961Z error: vin is not defined
+2025-04-02T20:01:02.343Z error: vin is not defined
+2025-04-02T20:01:02.481Z error: vin is not defined
+2025-04-02T20:01:02.643Z error: vin is not defined
+2025-04-02T20:01:02.780Z error: vin is not defined
+2025-04-02T20:01:12.722Z error: vin is not defined
+2025-04-02T20:01:13.024Z error: vin is not defined
+2025-04-02T20:01:13.027Z error: vin is not defined
+2025-04-02T20:01:13.036Z error: vin is not defined
+2025-04-02T20:01:50.246Z error: Cannot read properties of null (reading 'password')
+2025-04-02T20:02:01.680Z error: vin is not defined
+2025-04-02T20:02:02.204Z error: vin is not defined
+2025-04-02T20:02:02.206Z error: vin is not defined
+2025-04-02T20:02:02.693Z error: vin is not defined
+2025-04-02T20:02:02.818Z error: vin is not defined
+2025-04-02T20:02:09.790Z error: vin is not defined
+2025-04-02T20:02:10.282Z error: vin is not defined
+2025-04-02T20:02:11.862Z error: vin is not defined
+2025-04-02T20:02:12.361Z error: vin is not defined
+2025-04-02T20:02:12.568Z error: vin is not defined
+2025-04-02T20:02:18.523Z error: vin is not defined
+2025-04-02T20:02:18.802Z error: vin is not defined
+2025-04-02T20:02:18.842Z error: vin is not defined
+2025-04-02T20:02:18.845Z error: vin is not defined
+2025-04-02T20:02:18.860Z error: vin is not defined
+2025-04-02T20:02:20.081Z error: vin is not defined
+2025-04-02T20:02:20.261Z error: vin is not defined
+2025-04-02T20:02:20.409Z error: vin is not defined
+2025-04-02T20:02:20.548Z error: vin is not defined
+2025-04-02T20:02:20.647Z error: vin is not defined
+2025-04-02T20:02:20.870Z error: vin is not defined
+2025-04-02T20:04:03.314Z error: Cannot read properties of null (reading 'password')
+2025-04-02T20:22:40.926Z error: vin is not defined
+2025-04-02T20:26:26.003Z error: vin is not defined
+2025-04-02T20:26:42.304Z error: vin is not defined
+2025-04-02T20:26:44.934Z error: vin is not defined
+2025-04-02T20:26:45.374Z error: vin is not defined
+2025-04-02T20:26:46.124Z error: vin is not defined
+2025-04-02T20:26:46.139Z error: vin is not defined
+2025-04-02T20:26:46.238Z error: vin is not defined
+2025-04-02T20:26:46.254Z error: vin is not defined
+2025-04-02T20:26:46.330Z error: vin is not defined
+2025-04-02T20:26:46.352Z error: vin is not defined
+2025-04-02T20:26:46.446Z error: vin is not defined
+2025-04-02T20:26:46.814Z error: vin is not defined
+2025-04-02T20:26:46.935Z error: vin is not defined
+2025-04-02T20:26:47.174Z error: vin is not defined
+2025-04-02T20:26:47.483Z error: vin is not defined
+2025-04-02T20:26:47.615Z error: vin is not defined
+2025-04-02T20:26:52.724Z error: vin is not defined
+2025-04-02T20:26:53.235Z error: vin is not defined
+2025-04-02T20:26:53.282Z error: vin is not defined
+2025-04-02T20:26:53.953Z error: vin is not defined
+2025-04-02T20:26:54.015Z error: vin is not defined
+2025-04-02T20:26:54.484Z error: vin is not defined
+2025-04-02T20:26:55.285Z error: vin is not defined
+2025-04-02T20:26:55.292Z error: vin is not defined
+2025-04-02T20:26:55.327Z error: vin is not defined
+2025-04-02T20:27:00.989Z error: vin is not defined
+2025-04-02T20:27:01.389Z error: vin is not defined
+2025-04-02T20:27:01.669Z error: vin is not defined
+2025-04-02T20:27:02.088Z error: vin is not defined
+2025-04-02T20:27:02.598Z error: vin is not defined
+2025-04-02T20:27:03.127Z error: vin is not defined
+2025-04-02T20:27:03.479Z error: vin is not defined
+2025-04-02T20:27:04.089Z error: vin is not defined
+2025-04-02T20:27:09.487Z error: vin is not defined
+2025-04-02T20:27:09.542Z error: vin is not defined
+2025-04-02T20:27:09.562Z error: vin is not defined
+2025-04-02T20:27:09.625Z error: vin is not defined
+2025-04-02T20:27:09.702Z error: vin is not defined
+2025-04-02T20:27:09.763Z error: vin is not defined
+2025-04-02T20:27:10.253Z error: vin is not defined
+2025-04-02T20:27:10.262Z error: vin is not defined
+2025-04-02T20:27:10.346Z error: vin is not defined
+2025-04-02T20:27:10.555Z error: vin is not defined
+2025-04-02T20:27:15.278Z error: vin is not defined
+2025-04-02T20:27:15.282Z error: vin is not defined
+2025-04-02T20:27:15.356Z error: vin is not defined
+2025-04-02T20:27:15.685Z error: vin is not defined
+2025-04-02T20:27:15.783Z error: vin is not defined
+2025-04-02T20:27:16.123Z error: vin is not defined
+2025-04-02T20:27:17.922Z error: vin is not defined
+2025-04-02T20:27:17.944Z error: vin is not defined
+2025-04-02T20:27:18.068Z error: vin is not defined
+2025-04-02T20:27:18.379Z error: vin is not defined
+2025-04-02T20:27:18.494Z error: vin is not defined
+2025-04-02T20:27:18.743Z error: vin is not defined
+2025-04-02T20:27:18.924Z error: vin is not defined
+2025-04-02T20:27:19.275Z error: vin is not defined
+2025-04-02T20:27:19.435Z error: vin is not defined
+2025-04-02T20:27:19.665Z error: vin is not defined
+2025-04-02T20:27:19.953Z error: vin is not defined
+2025-04-02T20:27:20.056Z error: vin is not defined
+2025-04-02T20:27:20.666Z error: vin is not defined
+2025-04-02T20:27:20.672Z error: vin is not defined
+2025-04-02T20:27:20.692Z error: vin is not defined
+2025-04-02T20:27:20.982Z error: vin is not defined
+2025-04-02T20:27:21.293Z error: vin is not defined
+2025-04-02T20:27:21.354Z error: vin is not defined
+2025-04-02T20:27:21.512Z error: vin is not defined
+2025-04-02T20:27:21.775Z error: vin is not defined
+2025-04-02T20:27:22.174Z error: vin is not defined
+2025-04-02T20:27:22.214Z error: vin is not defined
+2025-04-02T20:27:22.442Z error: vin is not defined
+2025-04-02T20:27:22.564Z error: vin is not defined
+2025-04-02T20:41:30.397Z error: vin is not defined
+2025-04-02T20:41:42.745Z error: vin is not defined
+2025-04-02T21:20:01.850Z error: Cannot read properties of null (reading 'password')
+2025-04-02T21:21:17.203Z error: Cannot read properties of null (reading 'password')
+2025-04-02T21:49:45.062Z error: vin is not defined
+2025-04-02T21:50:00.580Z error: vin is not defined
+2025-04-02T21:50:09.000Z error: vin is not defined
+2025-04-02T21:50:09.291Z error: vin is not defined
+2025-04-02T21:50:10.117Z error: vin is not defined
+2025-04-02T21:50:10.802Z error: vin is not defined
+2025-04-02T21:50:21.623Z error: vin is not defined
+2025-04-02T21:50:25.144Z error: vin is not defined
+2025-04-02T21:50:57.895Z error: vin is not defined
+2025-04-02T21:50:59.580Z error: vin is not defined
+2025-04-02T21:50:59.873Z error: vin is not defined
+2025-04-02T21:52:06.120Z error: vin is not defined
+2025-04-02T21:52:33.320Z error: vin is not defined
+2025-04-02T21:52:56.328Z error: vin is not defined
+2025-04-02T21:52:56.355Z error: vin is not defined
+2025-04-02T21:52:56.365Z error: vin is not defined
+2025-04-02T21:52:56.438Z error: vin is not defined
+2025-04-02T21:52:56.469Z error: vin is not defined
+2025-04-02T21:53:07.009Z error: vin is not defined
+2025-04-02T21:53:07.331Z error: vin is not defined
+2025-04-02T21:53:07.626Z error: vin is not defined
+2025-04-02T21:53:07.844Z error: vin is not defined
+2025-04-02T21:53:08.081Z error: vin is not defined
+2025-04-02T21:53:08.322Z error: vin is not defined
+2025-04-02T21:53:08.593Z error: vin is not defined
+2025-04-02T21:53:35.231Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-02T22:05:08.500Z error: vin is not defined
+2025-04-02T22:05:20.540Z error: vin is not defined
+2025-04-02T22:05:21.815Z error: vin is not defined
+2025-04-02T22:05:33.082Z error: vin is not defined
+2025-04-02T22:05:33.658Z error: vin is not defined
+2025-04-02T22:06:14.826Z error: vin is not defined
+2025-04-02T22:06:16.825Z error: vin is not defined
+2025-04-02T22:06:17.239Z error: vin is not defined
+2025-04-02T22:06:17.688Z error: vin is not defined
+2025-04-02T22:06:17.748Z error: vin is not defined
+2025-04-02T22:06:18.122Z error: vin is not defined
+2025-04-02T22:06:18.190Z error: vin is not defined
+2025-04-02T22:06:18.237Z error: vin is not defined
+2025-04-02T22:06:18.444Z error: vin is not defined
+2025-04-02T22:06:18.704Z error: vin is not defined
+2025-04-02T22:06:25.209Z error: vin is not defined
+2025-04-02T22:06:25.531Z error: vin is not defined
+2025-04-02T22:06:25.543Z error: vin is not defined
+2025-04-02T22:23:58.848Z error: vin is not defined
+2025-04-02T22:23:59.157Z error: vin is not defined
+2025-04-02T22:24:01.461Z error: vin is not defined
+2025-04-02T22:24:02.101Z error: vin is not defined
+2025-04-02T22:24:05.575Z error: vin is not defined
+2025-04-02T22:24:06.004Z error: vin is not defined
+2025-04-02T22:24:11.700Z error: vin is not defined
+2025-04-02T22:24:12.126Z error: vin is not defined
+2025-04-02T22:24:12.566Z error: vin is not defined
+2025-04-02T22:24:19.156Z error: vin is not defined
+2025-04-02T22:24:19.478Z error: vin is not defined
+2025-04-02T22:24:19.749Z error: vin is not defined
+2025-04-02T22:24:20.428Z error: vin is not defined
+2025-04-02T22:24:20.899Z error: vin is not defined
+2025-04-02T22:24:21.447Z error: vin is not defined
+2025-04-02T22:24:22.578Z error: vin is not defined
+2025-04-02T22:24:23.047Z error: vin is not defined
+2025-04-02T22:25:32.167Z error: vin is not defined
+2025-04-02T22:25:32.249Z error: vin is not defined
+2025-04-02T22:25:32.322Z error: vin is not defined
+2025-04-02T22:25:32.431Z error: vin is not defined
+2025-04-02T22:25:33.185Z error: vin is not defined
+2025-04-02T22:25:33.520Z error: vin is not defined
+2025-04-02T22:25:33.736Z error: vin is not defined
+2025-04-02T22:25:33.923Z error: vin is not defined
+2025-04-02T22:30:23.813Z error: vin is not defined
+2025-04-02T22:30:23.815Z error: vin is not defined
+2025-04-02T22:30:23.956Z error: vin is not defined
+2025-04-02T22:30:24.243Z error: vin is not defined
+2025-04-02T22:30:24.594Z error: vin is not defined
+2025-04-02T22:30:24.827Z error: vin is not defined
+2025-04-02T22:30:25.405Z error: vin is not defined
+2025-04-02T22:30:25.490Z error: vin is not defined
+2025-04-02T22:30:25.639Z error: vin is not defined
+2025-04-02T22:30:25.720Z error: vin is not defined
+2025-04-02T22:30:28.006Z error: vin is not defined
+2025-04-02T22:30:28.403Z error: vin is not defined
+2025-04-02T22:30:28.800Z error: vin is not defined
+2025-04-02T22:30:32.933Z error: vin is not defined
+2025-04-02T22:30:33.238Z error: vin is not defined
+2025-04-02T22:30:33.478Z error: vin is not defined
+2025-04-02T22:30:35.146Z error: vin is not defined
+2025-04-02T22:30:35.312Z error: vin is not defined
+2025-04-02T22:30:35.459Z error: vin is not defined
+2025-04-02T22:31:44.543Z error: vin is not defined
+2025-04-02T22:31:44.581Z error: vin is not defined
+2025-04-02T22:31:44.738Z error: vin is not defined
+2025-04-02T22:31:44.742Z error: vin is not defined
+2025-04-02T22:31:44.852Z error: vin is not defined
+2025-04-02T22:31:44.983Z error: vin is not defined
+2025-04-02T22:31:45.140Z error: vin is not defined
+2025-04-02T22:31:51.402Z error: vin is not defined
+2025-04-02T22:31:52.018Z error: vin is not defined
+2025-04-02T22:31:52.046Z error: vin is not defined
+2025-04-02T22:32:04.997Z error: vin is not defined
+2025-04-02T22:32:05.305Z error: vin is not defined
+2025-04-02T22:32:05.650Z error: vin is not defined
+2025-04-02T22:32:05.867Z error: vin is not defined
+2025-04-02T22:32:06.030Z error: vin is not defined
+2025-04-02T22:32:06.216Z error: vin is not defined
+2025-04-03T01:37:34.649Z error: vin is not defined
+2025-04-03T01:37:35.038Z error: vin is not defined
+2025-04-03T01:37:35.677Z error: vin is not defined
+2025-04-03T01:37:36.003Z error: vin is not defined
+2025-04-03T01:37:36.256Z error: vin is not defined
+2025-04-03T01:37:36.324Z error: vin is not defined
+2025-04-03T01:37:36.777Z error: vin is not defined
+2025-04-03T01:37:42.061Z error: vin is not defined
+2025-04-03T01:37:42.062Z error: vin is not defined
+2025-04-03T01:37:42.412Z error: vin is not defined
+2025-04-03T01:37:42.440Z error: vin is not defined
+2025-04-03T01:37:43.120Z error: vin is not defined
+2025-04-03T01:37:43.360Z error: vin is not defined
+2025-04-03T01:37:43.571Z error: vin is not defined
+2025-04-03T01:37:43.781Z error: vin is not defined
+2025-04-03T01:37:50.315Z error: vin is not defined
+2025-04-03T01:37:50.562Z error: vin is not defined
+2025-04-03T01:37:50.624Z error: vin is not defined
+2025-04-03T01:37:50.905Z error: vin is not defined
+2025-04-03T01:37:51.081Z error: vin is not defined
+2025-04-03T01:37:51.303Z error: vin is not defined
+2025-04-03T01:37:57.023Z error: vin is not defined
+2025-04-03T01:37:57.030Z error: vin is not defined
+2025-04-03T01:37:57.376Z error: vin is not defined
+2025-04-03T01:37:57.453Z error: vin is not defined
+2025-04-03T01:37:57.662Z error: vin is not defined
+2025-04-03T01:37:57.862Z error: vin is not defined
+2025-04-03T01:37:58.063Z error: vin is not defined
+2025-04-03T01:38:10.102Z error: vin is not defined
+2025-04-03T01:38:10.251Z error: vin is not defined
+2025-04-03T01:38:10.255Z error: vin is not defined
+2025-04-03T01:38:10.423Z error: vin is not defined
+2025-04-03T01:38:10.424Z error: vin is not defined
+2025-04-03T01:38:10.425Z error: vin is not defined
+2025-04-03T01:38:10.988Z error: vin is not defined
+2025-04-03T01:38:10.992Z error: vin is not defined
+2025-04-03T01:38:22.073Z error: vin is not defined
+2025-04-03T01:38:22.278Z error: vin is not defined
+2025-04-03T01:38:22.373Z error: vin is not defined
+2025-04-03T01:38:22.473Z error: vin is not defined
+2025-04-03T01:38:22.593Z error: vin is not defined
+2025-04-03T01:38:22.755Z error: vin is not defined
+2025-04-03T01:38:23.154Z error: vin is not defined
+2025-04-03T01:38:24.873Z error: vin is not defined
+2025-04-03T01:38:25.173Z error: vin is not defined
+2025-04-03T01:38:25.604Z error: vin is not defined
+2025-04-03T01:38:25.782Z error: vin is not defined
+2025-04-03T01:38:25.945Z error: vin is not defined
+2025-04-03T01:39:39.646Z error: vin is not defined
+2025-04-03T01:39:39.647Z error: vin is not defined
+2025-04-03T01:39:39.664Z error: vin is not defined
+2025-04-03T01:39:39.745Z error: vin is not defined
+2025-04-03T01:39:39.985Z error: vin is not defined
+2025-04-03T01:39:40.155Z error: vin is not defined
+2025-04-03T01:39:40.176Z error: vin is not defined
+2025-04-03T01:39:40.257Z error: vin is not defined
+2025-04-03T01:39:40.473Z error: vin is not defined
+2025-04-03T01:39:40.697Z error: vin is not defined
+2025-04-03T01:39:40.902Z error: vin is not defined
+2025-04-03T01:39:41.177Z error: vin is not defined
+2025-04-03T01:39:41.388Z error: vin is not defined
+2025-04-03T01:39:42.292Z error: vin is not defined
+2025-04-03T01:39:42.512Z error: vin is not defined
+2025-04-03T01:39:42.672Z error: vin is not defined
+2025-04-03T01:39:42.873Z error: vin is not defined
+2025-04-03T01:39:55.118Z error: vin is not defined
+2025-04-03T01:39:55.423Z error: vin is not defined
+2025-04-03T01:39:55.455Z error: vin is not defined
+2025-04-03T01:39:55.705Z error: vin is not defined
+2025-04-03T01:39:55.946Z error: vin is not defined
+2025-04-03T01:39:55.951Z error: vin is not defined
+2025-04-03T01:39:56.247Z error: vin is not defined
+2025-04-03T01:39:56.405Z error: vin is not defined
+2025-04-03T01:39:56.596Z error: vin is not defined
+2025-04-03T01:39:56.905Z error: vin is not defined
+2025-04-03T01:39:57.200Z error: vin is not defined
+2025-04-03T01:39:57.375Z error: vin is not defined
+2025-04-03T01:39:57.555Z error: vin is not defined
+2025-04-03T01:39:57.840Z error: vin is not defined
+2025-04-03T01:39:58.105Z error: vin is not defined
+2025-04-03T01:39:58.314Z error: vin is not defined
+2025-04-03T01:39:58.560Z error: vin is not defined
+2025-04-03T01:39:58.814Z error: vin is not defined
+2025-04-03T01:39:59.005Z error: vin is not defined
+2025-04-03T01:39:59.225Z error: vin is not defined
+2025-04-03T01:39:59.396Z error: vin is not defined
+2025-04-03T01:40:00.029Z error: vin is not defined
+2025-04-03T01:40:00.474Z error: vin is not defined
+2025-04-03T01:40:00.536Z error: vin is not defined
+2025-04-03T01:40:00.644Z error: vin is not defined
+2025-04-03T01:40:01.694Z error: vin is not defined
+2025-04-03T01:40:01.812Z error: vin is not defined
+2025-04-03T01:40:02.007Z error: vin is not defined
+2025-04-03T01:40:02.443Z error: vin is not defined
+2025-04-03T01:40:02.877Z error: vin is not defined
+2025-04-03T01:40:03.106Z error: vin is not defined
+2025-04-03T01:40:03.235Z error: vin is not defined
+2025-04-03T04:26:31.389Z error: vin is not defined
+2025-04-03T04:27:02.902Z error: vin is not defined
+2025-04-03T04:27:32.933Z error: vin is not defined
+2025-04-03T04:27:36.114Z error: vin is not defined
+2025-04-03T04:27:37.105Z error: vin is not defined
+2025-04-03T04:27:37.396Z error: vin is not defined
+2025-04-03T04:27:37.601Z error: vin is not defined
+2025-04-03T04:27:37.872Z error: vin is not defined
+2025-04-03T04:27:38.353Z error: vin is not defined
+2025-04-03T04:27:38.463Z error: vin is not defined
+2025-04-03T04:27:38.755Z error: vin is not defined
+2025-04-03T04:27:41.342Z error: vin is not defined
+2025-04-03T04:27:42.242Z error: vin is not defined
+2025-04-03T04:27:42.630Z error: vin is not defined
+2025-04-03T04:28:00.418Z error: vin is not defined
+2025-04-03T04:28:00.967Z error: vin is not defined
+2025-04-03T04:28:01.416Z error: vin is not defined
+2025-04-03T04:28:01.787Z error: vin is not defined
+2025-04-03T04:28:04.757Z error: vin is not defined
+2025-04-03T04:28:05.345Z error: vin is not defined
+2025-04-03T04:28:06.242Z error: vin is not defined
+2025-04-03T04:28:06.947Z error: vin is not defined
+2025-04-03T04:28:07.467Z error: vin is not defined
+2025-04-03T04:28:08.026Z error: vin is not defined
+2025-04-03T04:28:08.325Z error: vin is not defined
+2025-04-03T04:28:08.483Z error: vin is not defined
+2025-04-03T04:28:08.686Z error: vin is not defined
+2025-04-03T04:28:08.895Z error: vin is not defined
+2025-04-03T04:28:09.056Z error: vin is not defined
+2025-04-03T04:28:09.214Z error: vin is not defined
+2025-04-03T04:28:09.376Z error: vin is not defined
+2025-04-03T04:28:09.585Z error: vin is not defined
+2025-04-03T04:28:09.777Z error: vin is not defined
+2025-04-03T04:28:09.945Z error: vin is not defined
+2025-04-03T04:28:10.111Z error: vin is not defined
+2025-04-03T04:28:10.274Z error: vin is not defined
+2025-04-03T04:28:10.437Z error: vin is not defined
+2025-04-03T04:28:10.594Z error: vin is not defined
+2025-04-03T04:28:10.806Z error: vin is not defined
+2025-04-03T04:28:11.004Z error: vin is not defined
+2025-04-03T04:28:11.177Z error: vin is not defined
+2025-04-03T04:28:11.622Z error: vin is not defined
+2025-04-03T04:28:11.656Z error: vin is not defined
+2025-04-03T04:28:11.816Z error: vin is not defined
+2025-04-03T04:28:13.756Z error: vin is not defined
+2025-04-03T04:28:14.257Z error: vin is not defined
+2025-04-03T04:28:14.536Z error: vin is not defined
+2025-04-03T04:28:14.856Z error: vin is not defined
+2025-04-03T04:28:15.209Z error: vin is not defined
+2025-04-03T04:28:15.388Z error: vin is not defined
+2025-04-03T04:28:16.886Z error: vin is not defined
+2025-04-03T04:28:17.003Z error: vin is not defined
+2025-04-03T04:28:17.194Z error: vin is not defined
+2025-04-03T04:28:41.779Z error: vin is not defined
+2025-04-03T04:28:42.440Z error: vin is not defined
+2025-04-03T04:28:42.795Z error: vin is not defined
+2025-04-03T04:28:43.082Z error: vin is not defined
+2025-04-03T04:28:43.296Z error: vin is not defined
+2025-04-03T04:28:53.459Z error: vin is not defined
+2025-04-03T04:28:53.495Z error: vin is not defined
+2025-04-03T04:28:53.642Z error: vin is not defined
+2025-04-03T04:28:53.756Z error: vin is not defined
+2025-04-03T04:28:54.097Z error: vin is not defined
+2025-04-03T04:28:54.377Z error: vin is not defined
+2025-04-03T04:29:06.275Z error: vin is not defined
+2025-04-03T04:29:06.562Z error: vin is not defined
+2025-04-03T04:29:06.842Z error: vin is not defined
+2025-04-03T04:29:07.083Z error: vin is not defined
+2025-04-03T04:29:08.550Z error: vin is not defined
+2025-04-03T04:29:08.868Z error: vin is not defined
+2025-04-03T04:29:09.172Z error: vin is not defined
+2025-04-03T04:29:09.456Z error: vin is not defined
+2025-04-03T04:29:09.731Z error: vin is not defined
+2025-04-03T04:29:10.070Z error: vin is not defined
+2025-04-03T04:29:10.340Z error: vin is not defined
+2025-04-03T04:29:10.579Z error: vin is not defined
+2025-04-03T04:29:10.839Z error: vin is not defined
+2025-04-03T04:29:11.070Z error: vin is not defined
+2025-04-03T04:29:11.992Z error: vin is not defined
+2025-04-03T04:29:12.109Z error: vin is not defined
+2025-04-03T04:29:22.390Z error: vin is not defined
+2025-04-03T04:29:22.470Z error: vin is not defined
+2025-04-03T04:29:22.535Z error: vin is not defined
+2025-04-03T04:29:22.538Z error: vin is not defined
+2025-04-03T04:29:22.891Z error: vin is not defined
+2025-04-03T04:29:23.040Z error: vin is not defined
+2025-04-03T04:29:24.430Z error: vin is not defined
+2025-04-03T04:29:24.652Z error: vin is not defined
+2025-04-03T04:29:24.900Z error: vin is not defined
+2025-04-03T04:29:25.153Z error: vin is not defined
+2025-04-03T04:29:25.390Z error: vin is not defined
+2025-04-03T04:29:25.633Z error: vin is not defined
+2025-04-03T04:29:25.852Z error: vin is not defined
+2025-04-03T04:29:26.909Z error: vin is not defined
+2025-04-03T04:29:27.161Z error: vin is not defined
+2025-04-03T04:29:27.440Z error: vin is not defined
+2025-04-03T07:23:34.246Z error: vin is not defined
+2025-04-03T07:23:40.509Z error: vin is not defined
+2025-04-03T07:24:14.324Z error: vin is not defined
+2025-04-03T07:24:16.829Z error: vin is not defined
+2025-04-03T07:24:18.504Z error: vin is not defined
+2025-04-03T07:24:20.470Z error: vin is not defined
+2025-04-03T07:24:20.749Z error: vin is not defined
+2025-04-03T07:24:20.885Z error: vin is not defined
+2025-04-03T07:24:41.411Z error: vin is not defined
+2025-04-03T07:24:43.021Z error: vin is not defined
+2025-04-03T07:24:43.651Z error: vin is not defined
+2025-04-03T07:24:43.975Z error: vin is not defined
+2025-04-03T07:24:44.144Z error: vin is not defined
+2025-04-03T07:24:44.275Z error: vin is not defined
+2025-04-03T07:24:44.354Z error: vin is not defined
+2025-04-03T07:24:59.375Z error: vin is not defined
+2025-04-03T07:24:59.696Z error: vin is not defined
+2025-04-03T07:24:59.760Z error: vin is not defined
+2025-04-03T07:26:40.036Z error: vin is not defined
+2025-04-03T07:27:08.415Z error: vin is not defined
+2025-04-03T07:27:10.266Z error: vin is not defined
+2025-04-03T07:27:10.694Z error: vin is not defined
+2025-04-03T07:27:11.014Z error: vin is not defined
+2025-04-03T07:28:09.414Z error: vin is not defined
+2025-04-03T07:28:26.870Z error: vin is not defined
+2025-04-03T07:28:27.295Z error: vin is not defined
+2025-04-03T07:28:27.580Z error: vin is not defined
+2025-04-03T07:28:27.761Z error: vin is not defined
+2025-04-03T07:28:27.875Z error: vin is not defined
+2025-04-03T07:28:28.029Z error: vin is not defined
+2025-04-03T07:28:28.205Z error: vin is not defined
+2025-04-03T07:28:28.370Z error: vin is not defined
+2025-04-03T07:28:28.554Z error: vin is not defined
+2025-04-03T07:28:31.341Z error: vin is not defined
+2025-04-03T07:28:31.495Z error: vin is not defined
+2025-04-03T07:28:31.660Z error: vin is not defined
+2025-04-03T07:28:31.820Z error: vin is not defined
+2025-04-03T07:28:32.140Z error: vin is not defined
+2025-04-03T07:28:32.261Z error: vin is not defined
+2025-04-03T07:28:32.455Z error: vin is not defined
+2025-04-03T07:28:32.630Z error: vin is not defined
+2025-04-03T07:28:33.491Z error: vin is not defined
+2025-04-03T07:28:33.620Z error: vin is not defined
+2025-04-03T07:28:33.811Z error: vin is not defined
+2025-04-03T07:28:33.984Z error: vin is not defined
+2025-04-03T07:28:34.150Z error: vin is not defined
+2025-04-03T07:28:34.324Z error: vin is not defined
+2025-04-03T07:28:34.481Z error: vin is not defined
+2025-04-03T07:28:51.429Z error: vin is not defined
+2025-04-03T07:28:51.734Z error: vin is not defined
+2025-04-03T07:28:51.854Z error: vin is not defined
+2025-04-03T07:28:52.055Z error: vin is not defined
+2025-04-03T07:28:52.210Z error: vin is not defined
+2025-04-03T07:28:52.374Z error: vin is not defined
+2025-04-03T07:28:52.595Z error: vin is not defined
+2025-04-03T07:28:52.780Z error: vin is not defined
+2025-04-03T07:28:52.974Z error: vin is not defined
+2025-04-03T08:00:45.808Z error: vin is not defined
+2025-04-03T08:00:46.575Z error: vin is not defined
+2025-04-03T08:00:48.566Z error: vin is not defined
+2025-04-03T08:00:49.356Z error: vin is not defined
+2025-04-03T08:00:50.035Z error: vin is not defined
+2025-04-03T08:00:51.295Z error: vin is not defined
+2025-04-03T08:00:51.795Z error: vin is not defined
+2025-04-03T08:00:52.455Z error: vin is not defined
+2025-04-03T08:00:52.929Z error: vin is not defined
+2025-04-03T08:00:53.411Z error: vin is not defined
+2025-04-03T08:00:53.551Z error: vin is not defined
+2025-04-03T08:00:53.779Z error: vin is not defined
+2025-04-03T08:00:53.899Z error: vin is not defined
+2025-04-03T08:00:53.951Z error: vin is not defined
+2025-04-03T08:00:54.124Z error: vin is not defined
+2025-04-03T08:00:54.287Z error: vin is not defined
+2025-04-03T08:00:54.443Z error: vin is not defined
+2025-04-03T08:00:54.603Z error: vin is not defined
+2025-04-03T08:00:57.039Z error: vin is not defined
+2025-04-03T08:00:57.420Z error: vin is not defined
+2025-04-03T08:00:57.499Z error: vin is not defined
+2025-04-03T08:00:57.893Z error: vin is not defined
+2025-04-03T08:00:58.083Z error: vin is not defined
+2025-04-03T08:00:58.243Z error: vin is not defined
+2025-04-03T08:00:58.544Z error: vin is not defined
+2025-04-03T08:00:58.723Z error: vin is not defined
+2025-04-03T08:01:02.203Z error: vin is not defined
+2025-04-03T08:01:02.683Z error: vin is not defined
+2025-04-03T08:01:03.035Z error: vin is not defined
+2025-04-03T08:01:08.764Z error: vin is not defined
+2025-04-03T08:01:09.959Z error: vin is not defined
+2025-04-03T08:01:11.842Z error: vin is not defined
+2025-04-03T08:01:12.527Z error: vin is not defined
+2025-04-03T08:01:21.039Z error: vin is not defined
+2025-04-03T08:01:21.712Z error: vin is not defined
+2025-04-03T08:01:22.622Z error: vin is not defined
+2025-04-03T08:01:23.344Z error: vin is not defined
+2025-04-03T08:01:25.571Z error: vin is not defined
+2025-04-03T08:01:26.211Z error: vin is not defined
+2025-04-03T08:01:26.823Z error: vin is not defined
+2025-04-03T08:01:27.163Z error: vin is not defined
+2025-04-03T08:01:27.802Z error: vin is not defined
+2025-04-03T08:01:28.676Z error: vin is not defined
+2025-04-03T08:01:41.712Z error: vin is not defined
+2025-04-03T08:01:42.652Z error: vin is not defined
+2025-04-03T08:01:52.036Z error: vin is not defined
+2025-04-03T08:01:52.527Z error: vin is not defined
+2025-04-03T08:25:38.655Z error: vin is not defined
+2025-04-03T08:26:33.269Z error: vin is not defined
+2025-04-03T08:48:50.151Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Crizx" }
+2025-04-03T08:50:12.147Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "Crizx" }
+2025-04-03T08:52:10.459Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-03T10:37:22.787Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "isaacthefirstt" }
+2025-04-03T11:50:49.545Z error: Cannot read properties of null (reading 'password')
+2025-04-03T11:52:18.534Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e2b12f2b25cfa556c816b4') }
+2025-04-03T11:52:28.563Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e2b12f2b25cfa556c816b4') }
+2025-04-03T11:52:43.622Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67e2b12f2b25cfa556c816b4') }
+2025-04-03T11:54:06.641Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-03T11:54:17.257Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "tamarakuro" }
+2025-04-03T11:54:17.339Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "tamarakuro" }
+2025-04-03T16:19:10.575Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "yungt 111" }
+2025-04-03T16:19:10.914Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "yungt 111" }
+2025-04-03T16:19:11.018Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "yungt 111" }
+2025-04-03T16:19:11.099Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "yungt 111" }
+2025-04-03T16:36:52.069Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:36:52.709Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:36:53.384Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:36:54.680Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:09.285Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:09.867Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:13.053Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:13.462Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:13.544Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:13.793Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T16:37:14.109Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "israelvictor" }
+2025-04-03T19:11:13.869Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-04-04T00:54:45.553Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "mekusnig" }
+2025-04-04T14:39:09.849Z error: Cannot read properties of null (reading 'password')
+2025-04-04T14:40:03.491Z error: Cannot read properties of null (reading 'password')
+2025-04-04T20:40:12.979Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "oruese" }
+2025-04-04T21:17:25.556Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "lembi@6073" }
+2025-04-04T21:19:36.039Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "iamkingshedy" }
+2025-04-04T21:19:36.041Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "iamkingshedy" }
+2025-04-05T01:49:07.152Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "lastborn" }
+2025-04-05T01:49:07.479Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "lastborn" }
+2025-04-05T08:41:31.618Z error: Cannot read properties of null (reading 'password')
+2025-04-05T09:53:07.999Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "elijahmvx" }
+2025-04-05T09:53:08.003Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "elijahmvx" }
+2025-04-05T09:53:08.083Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "elijahmvx" }
+2025-04-05T09:56:09.195Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-05T10:36:25.261Z error: Cannot read properties of null (reading 'password')
+2025-04-05T19:02:17.762Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joerell" }
+2025-04-05T19:35:12.123Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "bomsi26" }
+2025-04-06T09:28:16.192Z error: Cannot read properties of null (reading 'password')
+2025-04-06T09:29:03.114Z error: Cannot read properties of null (reading 'password')
+2025-04-06T09:30:43.847Z error: Cannot read properties of null (reading 'password')
+2025-04-06T09:35:33.875Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "shaunti " }
+2025-04-06T13:08:02.534Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T14:05:55.470Z error: Cannot read properties of null (reading 'password')
+2025-04-06T14:09:22.641Z error: Cannot read properties of null (reading 'password')
+2025-04-06T14:11:14.323Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67f28a25cbc178f10cc34845') }
+2025-04-06T14:11:20.227Z error: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: HIMS_DB.customers index: _id_ dup key: { _id: ObjectId('67f28a25cbc178f10cc34845') }
+2025-04-06T14:13:29.203Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "mikehenry " }
+2025-04-06T14:15:53.667Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "lovie" }
+2025-04-06T14:20:54.287Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T14:35:48.755Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "emmett01" }
+2025-04-06T14:35:48.837Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "emmett01" }
+2025-04-06T14:41:49.702Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "jagoban" }
+2025-04-06T14:41:57.694Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T14:45:30.158Z error: Cannot read properties of null (reading 'password')
+2025-04-06T14:49:27.739Z error: Cannot read properties of null (reading 'password')
+2025-04-06T15:02:30.177Z error: Cannot read properties of null (reading 'password')
+2025-04-06T15:14:20.216Z error: Cannot read properties of null (reading 'password')
+2025-04-06T15:14:39.955Z error: Cannot read properties of null (reading 'password')
+2025-04-06T15:20:23.848Z error: Cannot read properties of null (reading 'password')
+2025-04-06T15:20:58.418Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T15:21:02.212Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T15:26:49.252Z error: Cannot read properties of null (reading 'password')
+2025-04-06T16:04:46.620Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "lawrencezo " }
+2025-04-06T16:06:08.772Z error: Cannot read properties of null (reading 'password')
+2025-04-06T18:05:59.492Z error: Cannot read properties of null (reading 'password')
+2025-04-06T18:07:21.066Z error: Cannot read properties of null (reading 'password')
+2025-04-06T19:07:09.938Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "dominion12 " }
+2025-04-06T20:39:59.193Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "johnprince" }
+2025-04-06T20:44:53.510Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "believe2005" }
+2025-04-06T21:16:53.696Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ugochukwuchikezie" }
+2025-04-06T21:16:53.865Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ugochukwuchikezie" }
+2025-04-06T21:16:53.866Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ugochukwuchikezie" }
+2025-04-06T21:16:53.867Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ugochukwuchikezie" }
+2025-04-06T21:16:53.948Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ugochukwuchikezie" }
+2025-04-06T21:26:21.934Z error: Cannot read properties of null (reading 'password')
+2025-04-06T21:30:35.613Z error: Cannot read properties of null (reading 'password')
+2025-04-06T22:01:19.094Z error: Cannot read properties of null (reading 'password')
+2025-04-06T22:05:49.907Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:05:50.105Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:05:50.275Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:05:50.278Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:05:50.356Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:17.793Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:17.986Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:18.083Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:18.084Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:18.182Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:18.262Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:06:18.588Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "andrewslim" }
+2025-04-06T22:38:13.266Z error: Cast to ObjectId failed for value "notifications" (type string) at path "_id" for model "announcements"
+2025-04-06T22:58:22.593Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:58:23.968Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:58:25.064Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:58:26.131Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:59:21.427Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:59:22.838Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-06T22:59:24.124Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "joseph" }
+2025-04-07T08:31:07.708Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "victoria chinaza" }

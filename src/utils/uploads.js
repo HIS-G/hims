@@ -66,6 +66,12 @@ const upload_file = async (req, res) => {
               }
             );
           }
+
+          return res.status(200).send({
+               status: true,
+	       message: "File Uploaded Successfully",
+               result: result.secure_url
+	  }); 	
         }
     )
   } catch (error) {
