@@ -88,7 +88,31 @@ const read_one = async (req, res) => {
 };
 
 const update = async (req, res) => {
+    const { id } = req.params;
 
+    if(!id) {
+        return res.status(400).send({
+            status: false,
+            message: "Invalid job ID!"
+        });
+    }
+
+    try {
+        const updated_career = await careers.findByIdAndUpdate(id, req.body, { upsert: true, new: true });
+
+        return res.status(200).send({
+            status: true,
+            message: "Updated job successfully!",
+            career: updated_career._id
+        });
+    } catch(error) {
+        logger.error(error);
+        return res.status(500).send({
+            status: false,
+            message: "Internal Server Error",
+            error: error
+        });
+    }
 };
 
 const apply = async (req, res) => {
