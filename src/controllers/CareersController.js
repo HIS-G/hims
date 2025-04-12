@@ -1,4 +1,5 @@
 const { careers } = require("../models/Careers");
+const { customers } = require("../models/Customers");
 const logger = require("../utils/logger");
 
 const create = async (req, res) => {
@@ -90,6 +91,25 @@ const update = async (req, res) => {
 
 };
 
+const apply = async (req, res) => {
+    const { id } = req.params;
+
+    if(!id) {
+
+    }
+
+    try {
+
+    } catch (error) {
+        logger.error(error);
+        return res.status(500).send({
+            status: false,
+            message: "Internal Server Error",
+            error: error
+        });
+    }
+};
+
 const delete_career = async (req, res) => {
 
 };
@@ -99,5 +119,6 @@ module.exports = {
     read, 
     read_one,
     update, 
-    delete_career
+    delete_career,
+    apply
 };
