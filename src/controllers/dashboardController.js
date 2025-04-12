@@ -165,8 +165,234 @@ const filtered_announcements = async (req, res) => {
 
 };
 
+
+
+/**
+ * @api {post} /dashboard/growth-trends Get Growth Trends
+ * @apiName GetGrowthTrends
+ * @apiGroup Dashboard
+ * @apiDescription Retrieves growth trends data for either an admin user or a customer
+ *
+ * @apiBody {String} [user_id] ID of the admin user
+ * @apiBody {String} [customer_id] ID of the customer
+ * @apiBody {Object} timeRange Time range configuration for trend calculation
+ * @apiBody {String} timeRange.type Type of time range ('days', 'months', 'years')
+ * @apiBody {Number} timeRange.value Number of time units to look back
+ *
+ * @apiSuccess {Boolean} status Success status
+ * @apiSuccess {Object} data Trend data
+ * @apiSuccess {Object} data.customers Growth trends for customers (admin only)
+ * @apiSuccess {Object} data.products Growth trends for products (customer only)
+ * @apiSuccess {Object} data.shares Growth trends for shares (customer only)
+ * @apiSuccess {Object} data.comments Growth trends for comments (customer only)
+ * @apiSuccess {Object} data.tickets Growth trends for tickets (customer only)
+ *
+ * @apiError (404) {Boolean} status false
+ * @apiError (404) {String} message User not found
+ * @apiError (401) {Boolean} status false
+ * @apiError (401) {String} message Unauthorized access
+ * @apiError (400) {Boolean} status false
+ * @apiError (400) {String} message Invalid request parameters
+ * @apiError (500) {Boolean} status false
+ * @apiError (500) {String} message Error message
+ */
+const getGrowthTrends = async (req, res) => {
+    const { user_id, customer_id, timeRange } = req.body;
+    
+    try {
+        if (user_id) {
+            const user = await users.findById(user_id).populate("role").exec();
+            
+            if (!user) {
+                return res.status(404).send({ status: false, message: "User not found!" });
+            }
+
+            if (user.role.role == "SUPER_ADMIN" || user.role.role == "ADMIN") {
+                const trends = {
+                    customers: await calculateGrowthTrend(customers, timeRange),
+                    // products: await calculateGrowthTrend(devices, timeRange),
+                    // tickets: await calculateGrowthTrend(tickets, timeRange),
+                    // schools: await calculateGrowthTrend(schools, timeRange)
+                };
+
+                return res.status(200).send({
+                    status: true,
+                    data: trends
+                });
+            }
+        }
+
+        if (customer_id) {
+            const customer = await customers.findById(customer_id);
+            
+            if (!customer) {
+                return res.status(401).send({
+                    status: false,
+                    message: "Unauthorized! Access denied."
+                });
+            }
+
+            const trends = {
+                products: await calculateGrowthTrend(devices, timeRange, { customer: customer._id }),
+                shares: await calculateGrowthTrend(sharedAnnouncements, timeRange, { customer: customer._id }),
+                comments: await calculateGrowthTrend(comments, timeRange, { customer: customer._id }),
+                tickets: await calculateGrowthTrend(tickets, timeRange, { customer: customer._id })
+            };
+
+            return res.status(200).send({
+                status: true,
+                data: trends
+            });
+        }
+
+        return res.status(400).send({
+            status: false,
+            message: "Invalid request parameters"
+        });
+
+    } catch (error) {
+        logger.error(error);
+        return res.status(500).send({
+            status: false,
+            message: error.message || "Internal server error"
+        });
+    }
+};
+
+
+
+/**
+ * Calculates growth trends for a given model over a specified time range
+ * @function calculateGrowthTrend
+ * @async
+ * 
+ * @param {mongoose.Model} model - Mongoose model to calculate trends for
+ * @param {Object} timeRange - Time range configuration
+ * @param {String} timeRange.type - Type of time range ('days', 'months', 'years')
+ * @param {Number} timeRange.value - Number of time units to look back (default: 7 days)
+ * @param {Object} query - Additional query parameters for filtering
+ * 
+ * @returns {Object} Growth trend data
+ * @returns {Object} .timeRange - Time range information
+ * @returns {String} .timeRange.start - Start date (YYYY-MM-DD)
+ * @returns {String} .timeRange.end - End date (YYYY-MM-DD)
+ * @returns {String} .timeRange.type - Time range type
+ * @returns {Number} .timeRange.value - Time range value
+ * @returns {Number} .total - Total count of records in the period
+ * @returns {Array<Object>} .dailyCounts - Daily count data
+ * @returns {String} .dailyCounts[].date - Date (YYYY-MM-DD)
+ * @returns {Number} .dailyCounts[].count - Count for the day
+ * @returns {Array<Number>} .growthRates - Daily growth rates in percentage
+ * @returns {Number} .averageGrowth - Average growth rate for the period
+ * 
+ * @example
+ * // Get customer growth trends for last 30 days
+ * const trends = await calculateGrowthTrend(customers, { type: 'days', value: 30 });
+ * 
+ * // Get product growth trends for specific customer in last 6 months
+ * const trends = await calculateGrowthTrend(devices, 
+ *     { type: 'months', value: 6 }, 
+ *     { customer: customerId }
+ * );
+ */
+const calculateGrowthTrend = async (model, timeRange = { type: 'days', value: 7 }, query = {}) => {
+    const endDate = moment().endOf('day');
+    let startDate;
+
+    switch (timeRange.type) {
+        case 'months':
+            startDate = moment().subtract(timeRange.value, 'months').startOf('day');
+            break;
+        case 'years':
+            startDate = moment().subtract(timeRange.value, 'years').startOf('day');
+            break;
+        default:
+            startDate = moment().subtract(timeRange.value, 'days').startOf('day');
+    }
+
+    const pipeline = [
+        {
+            $match: {
+                ...query,
+                createdAt: {
+                    $gte: startDate.toDate(),
+                    $lte: endDate.toDate()
+                }
+            }
+        },
+        {
+            $facet: {
+                dailyStats: [
+                    {
+                        $group: {
+                            _id: {
+                                $dateToString: { format: "%Y-%m-%d", date: "$createdAt" }
+                            },
+                            count: { $sum: 1 }
+                        }
+                    },
+                    { $sort: { "_id": 1 } }
+                ],
+                total: [
+                    { $count: "value" }
+                ]
+            }
+        }
+    ];
+
+    const [result] = await model.aggregate(pipeline);
+    const { dailyStats, total } = result;
+    
+    // Fill in missing dates with zero counts
+    const dailyCounts = [];
+    const current = moment(startDate);
+    
+    while (current.isSameOrBefore(endDate, 'day')) {
+        const dateStr = current.format('YYYY-MM-DD');
+        const existingData = dailyStats.find(d => d._id === dateStr);
+        
+        dailyCounts.push({
+            date: dateStr,
+            count: existingData ? existingData.count : 0
+        });
+        
+        current.add(1, 'days');
+    }
+
+    // Calculate growth rates
+    const growthRates = dailyCounts.map((day, index) => {
+        if (index === 0) return 0;
+        const previousCount = dailyCounts[index - 1].count;
+        const currentCount = day.count;
+        const growthRate = previousCount === 0 ? 0 : 
+            ((currentCount - previousCount) / previousCount) * 100;
+        return parseFloat(growthRate.toFixed(2));
+    });
+
+    const daysDiff = dailyCounts.length - 1;
+    
+    return {
+        timeRange: {
+            start: startDate.format('YYYY-MM-DD'),
+            end: endDate.format('YYYY-MM-DD'),
+            type: timeRange.type,
+            value: timeRange.value
+        },
+        total: total[0]?.value || 0,
+        dailyCounts,
+        growthRates,
+        averageGrowth: daysDiff > 0 ? 
+            parseFloat((growthRates.reduce((a, b) => a + b, 0) / daysDiff).toFixed(2)) : 0
+    };
+};
+
 module.exports = {
     dashboard_data,
     filtered_tickets,
-    filtered_announcements
+    filtered_announcements,
+    getGrowthTrends,
 };
+
+
+
+
