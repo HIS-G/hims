@@ -80,4 +80,46 @@ const upload_file = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
 module.exports = { upload_file };
+=======
+const upload_qrCode = async (customer_id, pdf) => {
+  try {    
+    cloudinary.uploader.upload(
+      pdf, 
+      { folder: 'hism-qrCodes', resource_type: 'auto'}, 
+      async (error, result) => {
+        if(error) {
+          //logger.error(error);
+          console.log(error);
+          return res.status(400).send({
+            status: false,
+            error: error,
+            message: "Profile Image Upload Failed!"
+          });
+        }
+
+        const customer = await customers.findByIdAndUpdate(
+          customer_id, 
+            {
+              photo_url: result.secure_url,
+              photo_url_id: result.public_id
+            },
+            {
+              upsert: true,
+              new: true,
+            }
+        );
+        
+        if(customer) {
+          return true;
+        }
+    });
+  } catch (error) {
+    logger.error(error);
+    return false;
+  }
+};
+
+module.exports = { upload_file };
+>>>>>>> a9be13aaef61d15b7c7054baa032314814e7ca74

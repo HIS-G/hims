@@ -3278,6 +3278,7 @@
 2025-04-05T10:42:35.821Z error: Invalid status code: undefined
 2025-04-05T10:46:39.071Z error: Invalid status code: undefined
 2025-04-05T10:47:37.084Z error: Invalid status code: undefined
+<<<<<<< HEAD
 >>>>>>> 938abbd5ca4f9fa57bccbb45a483def05b201278
 2025-04-07T11:37:29.644Z error: Cannot read properties of null (reading 'password')
 2025-04-07T12:39:09.417Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "chivic" }
@@ -4681,3 +4682,7 @@
 2025-04-15T13:20:34.399Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "rubybanks" }
 2025-04-15T13:41:44.919Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "ekedayenglitter " }
 2025-04-15T13:44:58.989Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "oghenetejiri " }
+=======
+2025-04-13T13:42:20.637Z error: Cannot read properties of undefined (reading 'split')
+2025-04-13T13:59:10.865Z error: generateVerificationToken is not defined
+>>>>>>> a9be13aaef61d15b7c7054baa032314814e7ca74

@@ -26,6 +26,7 @@ const Customer_Schema = new mongoose.Schema({
   referralLink: { type: String },
   photo_url: { type: String },
   photo_url_id: { type: String },
+  qrCode: { type: String },
   announcement: { type: mongoose.Schema.Types.ObjectId, ref: "announcements" },
   verified: { type: Boolean, default: false, required: true },
   activated: { type: Boolean, default: false, required: true },

@@ -1,0 +1,52 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Updated from v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4  # Updated from v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4  # Updated from v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/hims-latest/hims
+            # Stash any local changes including untracked files
+            git stash --include-untracked
+            # Reset any unfinished merge and clean working directory
+            git reset --hard HEAD
+            git clean -f -d
+            # Remove specific conflicting files
+            rm -f app.log
+            # Pull latest changes
+            git pull origin master
+            # Use full path for npm and pm2
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            /usr/bin/npm install
+            /usr/local/bin/pm2 restart all

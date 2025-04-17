@@ -15,6 +15,7 @@ router.post(
   "/school/:school_id/create_password",
   authController.create_school_password
 );
+router.post("/customer/verify-account", authController.verify_account);
 router.post("/admin/logout", authController.admin_logout);
 router.post("/customer/logout", authController.customer_logout);
 router.post("/reset-password", authController.send_password_reset_link);

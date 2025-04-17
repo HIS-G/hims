@@ -401,6 +401,37 @@ const send_password_reset_link = async (req, res) => {
   }
 };
 
+const verify_account = async (req, res) => {
+  const { verificationToken, uid } = req.body;
+
+  if(!verificationToken && !uid) {
+    return res.status(401).send({
+      status: false,
+      message: "Unauthorized! Access denied."
+    });
+  }
+
+  try {
+    const customer = await customers.findOneAndUpdate(
+      { $and: [ { _id: uid }, { verificationToken: verificationToken }] },
+      { verified: true, $unset: { verificationToken: verificationToken } },
+      { upsert: true, new: true }
+    );
+
+    return res.status(200).send({
+      status: true,
+      message: "Account verified successfully!",
+      customer: customer._id
+    });
+  } catch(error) {
+    return res.status(500).send({
+      status: false,
+      message: "Internal Server Error",
+      error: error
+    });
+  }
+};
+
 const admin_logout = async (req, res) => {};
 
 const customer_logout = async (req, res) => {};
@@ -414,5 +445,6 @@ module.exports = {
   create_school_password,
   send_password_reset_link,
   admin_logout,
+  verify_account,
   customer_logout,
 };
