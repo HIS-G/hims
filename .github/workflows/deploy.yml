@@ -36,17 +36,15 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/hims-latest/hims
-            # Stash any local changes including untracked files
-            git stash --include-untracked
-            # Reset any unfinished merge and clean working directory
+            # Reset any unfinished merge
             git reset --hard HEAD
             git clean -f -d
-            # Remove specific conflicting files
-            rm -f app.log
             # Pull latest changes
             git pull origin master
-            # Use full path for npm and pm2
+            # Setup Node environment
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            /usr/bin/npm install
-            /usr/local/bin/pm2 restart all
+            # Use npm and pm2 from nvm installation
+            npm install
+            npm install -g pm2
+            pm2 restart all
