@@ -36,6 +36,13 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/hims-latest/hims
+            # Reset any unfinished merge
+            git reset --hard HEAD
+            git clean -f -d
+            # Pull latest changes
             git pull origin master
-            npm install
-            pm2 restart all
+            # Use full path for npm and pm2
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            /usr/bin/npm install
+            /usr/local/bin/pm2 restart all
