@@ -2,13 +2,14 @@ const { customers } = require("../models/Customers");
 const { roles } = require("../models/Roles");
 const { vins, vin_types } = require("../models/vins");
 const { devices } = require("../models/Devices");
-const { generateVin } = require("../utils/helpers");
+const { generateVin, generateVerificationToken } = require("../utils/helpers");
 const bcrypt = require("bcryptjs");
 const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require('../utils/nodemailerConfig');
 const { sharedAnnouncements } = require("../models/Announcements");
-const { upload_file } = require("../utils/uploads");
+const { generateQRCode, generatePdfWithQrCode } = require("../utils/qr_generator");
+const path = require('path');
 
 const get_customers = async (req, res) => {
   try {
@@ -128,11 +129,16 @@ const create_customer = async (req, res) => {
       let salt = await bcrypt.genSalt();
       customer.password = await bcrypt.hash(password, salt);
     }
-
+    
     const new_customer = await customer.save();
-    console.log(new_customer);
 
     if (new_customer) {
+      new_customer.verificationToken = await generateVerificationToken();
+      const qrCode = await generateQRCode(`https://hism.hismobiles.com/auth/customer/login?referral_id=${new_customer._id}`);
+      new_customer.qrCode = qrCode.split(',')[1];
+      
+      await new_customer.save();
+
       new_fin.type = vin_types[5];
       new_fin.customer = new_customer._id;
       new_fin.vin = await generateVin(vin_types[5]);
@@ -140,12 +146,17 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
+        const pdf = await generatePdfWithQrCode(new_customer, qrCode.split(',')[1]);
+
         mail.sendMail({
           from: 'his-quiz@edspare.com',
           to: `${new_customer.email}`, // list of receivers
           subject: "Welcome to HIS!!!✔", // Subject line
           text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`,
           html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`, // html body
+          attachments: [
+            { filename: "hism-referral-code.pdf", content: pdf, contentType: 'application/pdf' },
+          ]
         }, async (err, result) => {
           if(err) {
             logger.error(err);

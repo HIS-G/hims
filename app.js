@@ -32,6 +32,7 @@ const roleRoutes = require("./src/routes/roleRoute");
 const announcementRoutes = require("./src/routes/announcementRoute");
 const ticketRoutes = require("./src/routes/ticketRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
+const careerRoute = require("./src/routes/careerRoute");
 
 // middlewares
 app.options("*", cors());
@@ -49,6 +50,7 @@ app.use("/api/v1/roles", roleRoutes);
 app.use("/api/v1/announcements", announcementRoutes);
 app.use("/api/v1/tickets", ticketRoutes);
 app.use("/api/v1/dashboard", dashboardRoute);
+app.use("/api/v1/careers", careerRoute);
 
 
 app.get("/", (req, res) => {
