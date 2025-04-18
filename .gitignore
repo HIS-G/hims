@@ -1,3 +1,10 @@
 /DB_Collections/*
 /node_modules
 .env
+
+# Log files
+app.log
+*.log
+
+# Uploads directory
+uploads/

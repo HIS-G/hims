@@ -1,6 +1,7 @@
 const { schools } = require("../models/Schools");
 const { vins, vin_types } = require("../models/vins");
 const { generateVin } = require("../utils/helpers");
+const { mail } = require("../utils/nodemailerConfig");
 
 const fetch_schools = async (req, res) => {
   try {
@@ -57,6 +58,7 @@ const create_school = async (req, res) => {
     new_school.total_students = total_students;
     new_school.province = province;
     new_school.role = role;
+    new_school.verificationToken = await generateVerificationToken();
 
     const saved_school = await new_school.save();
 
@@ -68,9 +70,22 @@ const create_school = async (req, res) => {
       const saved_vin = await new_vin.save();
 
       if (saved_vin) {
-        return res.status(200).send({
-          status: true,
-          school_id: saved_school._id,
+        mail.sendMail({
+          from: 'his-quiz@edspare.com',
+          to: `${new_school.email}, ${new_school.principal_email}`, // list of receivers
+          subject: "Welcome to HIS!!!✔", // Subject line
+          text: `<b>Congratulations ${new_school.name}!!!</b><br/><br/> Your account was created successfully.<br/><br/> <b>HIS-Group</b>, Cordially welcomes you to it's community. Kindly, watch out for our emails to keep you updated on all of our newest products, services and activities in which you stand a chance to win amazing prices, through active participation and engagements.<br/><br/>Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b> ensure you keep it safe.`,
+          html: `<b>Congratulations ${new_school.name}!!!</b><br/><br/> Your account was created successfully.<br/><br/> <b>HIS-Group</b>, Cordially welcomes you to it's community. Kindly, watch out for our emails to keep you updated on all of our newest products, services and activities in which you stand a chance to win amazing prices, through active participation and engagements.<br/><br/>Meanwhile, here is your unique virtual identification number<br/><b>${saved_vin.vin}</b> ensure you keep it safe.`, // html body
+        }, (err, result) => {
+          if(err) {
+            logger.error(err);
+            res.status(500).json({ status: true, message: err });
+          }
+
+          return res.status(200).send({
+            status: true,
+            school_id: saved_school._id,
+          });
         });
       }
     }

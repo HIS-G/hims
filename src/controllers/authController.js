@@ -4,8 +4,14 @@ const { schools } = require("../models/Schools");
 const { users } = require("../models/Users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
+const { logger } = require("../utils/logger");
+const { vins } = require("../models/vins");
+const { mail } = require("../utils/nodemailerConfig");
+const { generateVerificationToken } = require("../utils/helpers");
 
 const customer_login = async (req, res) => {
+  var vin;
   const { is_school, email, password } = req.body;
 
   if (!email || !password) {
@@ -47,6 +53,8 @@ const customer_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
+      vin = await vins.findOne({ school: school._id }).select("type vin");
+
       return res.status(200).send({
         status: true,
         school: {
@@ -55,6 +63,7 @@ const customer_login = async (req, res) => {
           email: school.school_email,
           phone: school.school_phone,
           role: school.role,
+          vin: vin
         },
         access_token: access_token,
       });
@@ -72,46 +81,52 @@ const customer_login = async (req, res) => {
       });
     }
 
-    if (user && !user.password) {
-      return res.status(400).send({
+    if(!user.activated) {
+      return res.status(401).send({
         status: false,
-        message:
-          "Kindly verify your account to enable you complete the registration process!",
+        message: 'Account Inactive!...Kindly, contact administrator for support.'
       });
     }
 
     const match = await bcrypt.compare(password, user.password);
 
-    if (match) {
-      const access_token = await jwt.sign(
-        { email: user.email, sub: user._id },
-        process.env.SECRET_KEY,
-        { algorithm: "HS512", expiresIn: "7d" }
-      );
-
-      return res.status(200).send({
-        status: true,
-        message: `Welcome back ${user.firstname}!`,
-        user: {
-          id: user._id,
-          firstname: user.firstname,
-          lastname: user.lastname,
-          email: user.email,
-          phone: user.phone,
-          verified: user.verified,
-          active: user.activated,
-          role: user.role,
-        },
-        access_token: access_token,
-      });
-    } else {
-      return res.status(400).send({
-        status: false,
-        message: "email and password is incorrect!",
-      });
+    if(!match) {
+       return res.status(400).send({
+         status: true,
+         message: 'Email and password is incorrect!'
+       });
     }
+
+    const access_token = await jwt.sign(
+      { email: user.email, sub: user._id },
+      process.env.SECRET_KEY,
+      { algorithm: "HS512", expiresIn: "7d" }
+    );
+
+    vin = await vins.findOne({ customer: user }).select("type vin");
+
+    return res.status(200).send({
+      status: true,
+      message: `Welcome back ${user.firstname}!`,
+      user: {
+        id: user._id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+        phone: user.phone,
+        photo_url: user.photo_url,
+        photo_public_id: user.photo_public_id,
+        verified: user.verified,
+        active: user.activated,
+        role: user.role,
+        vin: vin
+      },
+      access_token: access_token,
+    });
+    
   } catch (error) {
     console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -120,6 +135,7 @@ const customer_login = async (req, res) => {
 };
 
 const admin_login = async (req, res) => {
+  var vin;
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -151,6 +167,15 @@ const admin_login = async (req, res) => {
         { algorithm: "HS512", expiresIn: "7d" }
       );
 
+      if(user.role.role == "SUPER_ADMIN") {
+        vin = await vins.findOne({ user: user.id }).select("type vin");
+      }
+      else if(user.role.role == "SUPPLIER") {
+        vin = await vins.findOne({ supplier: user.id }).select("type vin");
+      } else if(user.role.role == "DISTRIBUTOR") {
+        vin = await vins.findOne({ distributor: user.id }).select("type vin");
+      }
+      
       return res.status(200).send({
         status: true,
         message: `Welcome back ${user.name}!`,
@@ -160,11 +185,14 @@ const admin_login = async (req, res) => {
           lastname: user.lastname,
           email: user.email,
           phone: user.phone,
+          photo_url: user.photo_url,
+          photo_public_id: user.photo_public_id,
           verified: user.verified,
           approvedAt: user.approvedAt,
           approvedBy: user.approvedBy,
           active: user.activated,
           role: user.role,
+          vin: vin
         },
         access_token: access_token,
       });
@@ -175,7 +203,7 @@ const admin_login = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -185,7 +213,7 @@ const admin_login = async (req, res) => {
 
 const create_admin_password = async (req, res) => {
   const { user_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { verification_token, password, confirmation } = req.body;
 
   if (!user_id) {
     return res.status(401).send({
@@ -203,10 +231,12 @@ const create_admin_password = async (req, res) => {
 
   try {
     if (password == confirmation) {
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await users.findByIdAndUpdate(
         user_id,
-        { password: hashed_password },
+        { $set: { password: hashed_password, verified: true, activated: true }, $unset: { verificationToken: verification_token } },
         { upsert: true, new: true }
       );
 
@@ -219,6 +249,7 @@ const create_admin_password = async (req, res) => {
       }
     }
   } catch (error) {
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
@@ -228,7 +259,7 @@ const create_admin_password = async (req, res) => {
 
 const create_customer_password = async (req, res) => {
   const { customer_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { password, confirmation, password_reset_token } = req.body;
 
   if (!customer_id) {
     return res.status(401).send({
@@ -244,12 +275,23 @@ const create_customer_password = async (req, res) => {
     });
   }
 
+  if(!password_reset_token) {
+    return res.status(400).send({
+      status: false,
+      message: `Invalid reset token!`,
+    });
+  }
+
   try {
     if (password == confirmation) {
-      const hashed_password = await bcrypt.hash(password, 10);
-      const password_updated = await customers.findByIdAndUpdate(
-        customer_id,
-        { password: hashed_password },
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+
+      let salt = await bcrypt.genSalt();
+
+      const hashed_password = await bcrypt.hash(password, salt);
+      const password_updated = await customers.findOneAndUpdate(
+        { $and: [ { _id: customer_id }, { passwordResetToken: password_reset_token }] },
+        { password: hashed_password, $unset: { passwordResetToken: password_reset_token } },
         { upsert: true, new: true }
       );
 
@@ -257,21 +299,22 @@ const create_customer_password = async (req, res) => {
         return res.status(200).send({
           status: true,
           message: "Password updated successfully!",
-          user: user_id,
+          user: customer_id,
         });
       }
     }
   } catch (error) {
+    logger.error(error);
     return res.status(500).send({
       status: false,
-      message: error,
+      message: JSON.stringify(error),
     });
   }
 };
 
 const create_school_password = async (req, res) => {
   const { school_id } = req.params;
-  const { password, confirmation } = req.body;
+  const { verification_token, password, confirmation } = req.body;
 
   if (!school_id) {
     return res.status(401).send({
@@ -289,10 +332,12 @@ const create_school_password = async (req, res) => {
 
   try {
     if (password == confirmation) {
+      bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
+      
       const hashed_password = await bcrypt.hash(password, 10);
       const password_updated = await schools.findByIdAndUpdate(
         school_id,
-        { password: hashed_password },
+        { $set: { password: hashed_password, verified: true, activated: true }, $unset: { verificationToken: verification_token } },
         { upsert: true, new: true }
       );
 
@@ -305,10 +350,84 @@ const create_school_password = async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).send({
       status: false,
       message: error,
+    });
+  }
+};
+
+const send_password_reset_link = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const customer = await customers.findOne({ email: email });
+
+    if(!customer) {
+      return res.status(200).send({
+        status: true,
+        meesage: 'A password reset link has been sent to your email'
+      });
+    }
+
+    const password_reset_token = await generateVerificationToken();
+
+    customer.passwordResetToken = password_reset_token;
+
+    const updated_customer = await customer.save()
+
+    mail.sendMail({
+      from: 'his-quiz@edspare.com',
+      to: `${customer.email}`, // list of receivers
+      subject: "Password Reset✔", // Subject line
+      text: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
+      html: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
+    }, (err, result) => {
+      if(err) {
+        logger.error(err);
+        res.status(500).json({ status: true, message: err });
+      }
+      
+      return res.status(200).send({
+        status: true,
+        message: 'A password reset link has been sent to your email'
+      });
+    });
+
+  } catch(error){
+    logger.error(error);
+    return res.status(500).send({ status: false, message: error });
+  }
+};
+
+const verify_account = async (req, res) => {
+  const { verificationToken, uid } = req.body;
+
+  if(!verificationToken && !uid) {
+    return res.status(401).send({
+      status: false,
+      message: "Unauthorized! Access denied."
+    });
+  }
+
+  try {
+    const customer = await customers.findOneAndUpdate(
+      { $and: [ { _id: uid }, { verificationToken: verificationToken }] },
+      { verified: true, $unset: { verificationToken: verificationToken } },
+      { upsert: true, new: true }
+    );
+
+    return res.status(200).send({
+      status: true,
+      message: "Account verified successfully!",
+      customer: customer._id
+    });
+  } catch(error) {
+    return res.status(500).send({
+      status: false,
+      message: "Internal Server Error",
+      error: error
     });
   }
 };
@@ -322,7 +441,10 @@ module.exports = {
   admin_login,
   create_admin_password,
   create_customer_password,
+  send_password_reset_link,
   create_school_password,
+  send_password_reset_link,
   admin_logout,
+  verify_account,
   customer_logout,
 };

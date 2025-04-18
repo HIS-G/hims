@@ -1,12 +1,7 @@
 {
 	"folders": [
 		{
-			"uri": "vscode-remote://ssh-remote+hims-server/home/ubuntu/hims-latest/hims-copy"
-		},
-		{
-			"uri": "vscode-remote://ssh-remote+hims-server/home/ubuntu/hims-latest/hims"
+			"path": "."
 		}
-	],
-	"remoteAuthority": "ssh-remote+hims-server",
-	"settings": {}
+	]
 }
