@@ -19,5 +19,30 @@
   "role": {
     "$oid": "67aa25de303881a609a768c4"
   },
-  "__v": 0
+  "__v": 0,
+  "password": "$2a$10$qDsaLYT9PtJP2pOhAi.bvuN5GBPc9LVBfLcTKPwDWiftcVi4ZhuUO"
+},
+{
+  "_id": {
+    "$oid": "67c348ab12e12a81fe3c06c5"
+  },
+  "quiz_host": false,
+  "school_name": "Hong kong international",
+  "school_email": "hki@yahoomail.com",
+  "school_phone": "+173810812",
+  "principal_name": "Ja Han",
+  "principal_email": "jahan@gmail.com",
+  "principal_phone": "+389848902",
+  "school_type": "HIGH_SCHOOL",
+  "country": "Hong Kong S.A.R.",
+  "address": "iufhqioujf9qpojfcioqhcioqhjncoiqnhlwcioqciojqnioclknhqi.cojqiochnqjwciuhq/ojcnqwiohnqiochnqklcnhqiocj",
+  "zip_code": "892981",
+  "state": "Hong Kong",
+  "total_students": 4000,
+  "province": "",
+  "role": {
+    "$oid": "67aa25de303881a609a768c4"
+  },
+  "__v": 0,
+  "password": "$2a$10$.Q3eDRyIvQnFnoyRHHXngurvVrbhqszUiQ.PfWTB2f/wGqeSu/.Lu"
 }]
