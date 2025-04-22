@@ -12,12 +12,13 @@ const Announcement_Schema = new mongoose.Schema({
     title: { type: String, },
     instructions: { type: String },
     announcement: { type: String },
-    reward: { type: Boolean, required: true, default: false },
+    reward: { type: Boolean, default: false },
     amount: { type: Number },
     rewardTypes: { type: [String] },
     twitterShare: { type: Boolean, default: false },
     linkedInShare: { type: Boolean, default: false },
-    facebookShare: { type: Boolean, default: false }
+    facebookShare: { type: Boolean, default: false },
+    featured: { type: Boolean, default: false },
 }, { timestamps: true });
 
 const Shared_Announcement_Schema = new mongoose.Schema({

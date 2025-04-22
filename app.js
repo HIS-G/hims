@@ -13,7 +13,15 @@ const options = {
 };
 
 const corsOptions = {
-  origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5174", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"], // Allow requests only from this domain
+  origin: [
+    "https://hism.hismobiles.com",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5173",
+    "http://hism.edspare.com",
+    "https://hism.edspare.com",
+  ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,
   //allowedHeaders: 'Content-Type,Authorization', // Allow only specific headers
@@ -52,7 +60,6 @@ app.use("/api/v1/tickets", ticketRoutes);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
 
-
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
 });
@@ -80,10 +87,10 @@ const server = https.createServer(options, app).listen(process.env.PORT, () => {
 
 const shutdown = () => {
   server.close;
-}; 
+};
 
 app.get("/api/v1/server/shutdown", shutdown);
-/*
-app.listen(process.env.PORT, () => {
+
+/* app.listen(process.env.PORT, () => {
   console.log(`Server listening on PORT: ${process.env.PORT}`);
-});*/
+}); */
