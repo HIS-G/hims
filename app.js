@@ -110,9 +110,12 @@ mongoose
     console.log(error);
   });
 
+  console.log(process.env.NODE_ENV, "env")
+
 // Server Configuration
 let server;
 if (process.env.NODE_ENV === "production") {
+ 
   const options = {
     key: fs.readFileSync("./private.key"),
     cert: fs.readFileSync("./certificate.crt"),
