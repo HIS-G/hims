@@ -110,12 +110,11 @@ mongoose
     console.log(error);
   });
 
-  console.log(process.env.NODE_ENV, "env")
 
 // Server Configuration
 let server;
 if (process.env.NODE_ENV === "production") {
- 
+ console.log(process.env.NODE_ENV)
   const options = {
     key: fs.readFileSync("./private.key"),
     cert: fs.readFileSync("./certificate.crt"),
@@ -127,6 +126,7 @@ if (process.env.NODE_ENV === "production") {
   server = app.listen(process.env.PORT, () => {
     console.log(`HTTP Server listening on PORT: ${process.env.PORT}`);
   });
+  console.log(process.env.NODE_ENV)
 }
 
 const io = new Server(server, {
