@@ -112,8 +112,9 @@ mongoose
 
 
 // Server Configuration
+// todo: setup process.env for production
 let server;
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
  console.log(process.env.NODE_ENV)
   const options = {
     key: fs.readFileSync("./private.key"),
@@ -122,12 +123,14 @@ if (process.env.NODE_ENV === "production") {
   server = https.createServer(options, app).listen(process.env.PORT, () => {
     console.log(`HTTPS Server listening on PORT: ${process.env.PORT}`);
   });
-} else {
-  server = app.listen(process.env.PORT, () => {
-    console.log(`HTTP Server listening on PORT: ${process.env.PORT}`);
-  });
-  console.log(process.env.NODE_ENV)
-}
+// } 
+
+// else {
+//   server = app.listen(process.env.PORT, () => {
+//     console.log(`HTTP Server listening on PORT: ${process.env.PORT}`);
+//   });
+//   console.log(process.env.NODE_ENV)
+// }
 
 const io = new Server(server, {
   cors: {
