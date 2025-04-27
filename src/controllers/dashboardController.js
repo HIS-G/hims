@@ -81,7 +81,7 @@ const dashboard_data = async (req, res) => {
 
             vin = await vins.find({ customer: customer._id });
 
-            const announcementShares = await sharedAnnouncements.countDocuments({ vin: vin });
+            const announcementShares = await sharedAnnouncements.findOne({ vin: vin }).select("-_id leadConvertCount");
             const products = await devices.countDocuments({ customer: customer._id });
             const comments_list = await comments.countDocuments({ customer: customer._id });
             const ticket_list = await tickets.countDocuments({ customer: customer._id });

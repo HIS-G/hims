@@ -5,11 +5,11 @@ const { default: mongoose } = require("mongoose");
 const cors = require("cors");
 const fs = require("fs");
 const { Server } = require("socket.io");
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const hpp = require('hpp');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
+const mongoSanitize = require("express-mongo-sanitize");
+const xss = require("xss-clean");
 
 const app = express();
 
@@ -23,16 +23,35 @@ app.use(hpp()); // Prevent HTTP Parameter Pollution
 const limiter = rateLimit({
   max: 100, // Limit each IP to 100 requests per windowMs
   windowMs: 60 * 60 * 1000, // 1 hour
-  message: 'Too many requests from this IP, please try again in an hour!'
+  message: "Too many requests from this IP, please try again in an hour!",
 });
-app.use('/api', limiter);
+app.use("/api", limiter);
 
+// Middleware to log requests
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+  next();
+});
+
+// Middleware to log errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
 const corsOptions = {
-  origin: ["https://hism.hismobiles.com", "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5174", "http://127.0.0.1:5173", "http://hism.edspare.com", "https://hism.edspare.com"],
-  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  origin: [
+    "https://hism.hismobiles.com",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5173",
+    "http://hism.edspare.com",
+    "https://hism.edspare.com",
+  ], // Allow requests only from this domain
+  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
 };
 
 const file = fs.readFileSync("./DBE36D85EE856E805997FAD9F0105A8A.txt");
@@ -70,7 +89,6 @@ app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
 app.use("/api/v1/channels", channelRoute);
 
-
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
 });
@@ -81,8 +99,6 @@ app.get(
     res.sendFile(file);
   }
 );
-
-
 
 // Connect to Database
 mongoose
@@ -96,7 +112,7 @@ mongoose
 
 // Server Configuration
 let server;
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   const options = {
     key: fs.readFileSync("./private.key"),
     cert: fs.readFileSync("./certificate.crt"),
@@ -113,8 +129,18 @@ if (process.env.NODE_ENV === 'production') {
 const io = new Server(server, {
   cors: {
     origin: corsOptions.origin,
-    methods: ["GET", "POST"]
-  }
+    methods: ["GET", "POST"],
+  },
 });
 
 require("./src/utils/socket")(io);
+
+const shutdown = () => {
+  server.close;
+};
+
+app.get("/api/v1/server/shutdown", shutdown);
+
+/* app.listen(process.env.PORT, () => {
+  console.log(`Server listening on PORT: ${process.env.PORT}`);
+}); */

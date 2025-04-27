@@ -32,7 +32,8 @@ module.exports = (io) => {
           ...savedMessage.toObject(),
           sender: {
             ...savedMessage.sender,
-            user: messageData.sender.user 
+            user: messageData.sender.user
+          }
         });
         console.log("receive_message", savedMessage)
       } catch (error) {

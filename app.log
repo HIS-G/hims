@@ -4686,3 +4686,73 @@
 2025-04-13T13:42:20.637Z error: Cannot read properties of undefined (reading 'split')
 2025-04-13T13:59:10.865Z error: generateVerificationToken is not defined
 >>>>>>> a9be13aaef61d15b7c7054baa032314814e7ca74
+2025-04-19T07:35:46.821Z error: res is not defined
+2025-04-19T09:57:44.181Z error: read ECONNRESET
+2025-04-19T09:57:48.185Z error: read ECONNRESET
+2025-04-19T09:58:35.684Z error: Socket 'secureConnect' timed out after 30208ms (connectTimeoutMS: 30000)
+2025-04-19T09:58:35.689Z error: Socket 'secureConnect' timed out after 30208ms (connectTimeoutMS: 30000)
+2025-04-19T10:23:03.641Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T10:23:03.691Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T11:16:26.660Z error: devices validation failed: destination: Path `destination` is required., color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-04-19T11:16:33.124Z error: devices validation failed: destination: Path `destination` is required., color: Path `color` is required., imei: Path `imei` is required., build_no: Path `build_no` is required., serial_no: Path `serial_no` is required., device_model: Path `device_model` is required., device_name: Path `device_name` is required.
+2025-04-19T11:20:04.064Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T11:20:04.127Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T11:20:10.360Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T15:16:04.131Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T15:16:04.179Z error: Invalid sort() argument. Must be a string, object, array, or map.
+2025-04-19T15:40:20.503Z error: vins.delete is not a function
+2025-04-19T15:43:48.943Z error: customers is not defined
+2025-04-19T15:46:42.113Z error: users is not defined
+2025-04-19T15:53:19.013Z error: `image` must be of type `PDFImage`, but was actually of type `NaN`
+2025-04-19T15:57:12.126Z error: `image` must be of type `PDFImage`, but was actually of type `NaN`
+2025-04-19T16:07:05.411Z error: hism_logo is not a function
+2025-04-19T16:10:07.454Z error: `image` must be of type `PDFImage`, but was actually of type `NaN`
+2025-04-19T16:18:37.036Z error: font is not defined
+2025-04-19T16:20:32.444Z error: font is not defined
+2025-04-19T16:31:07.885Z error: StandardFonts is not defined
+2025-04-19T16:33:49.343Z error: textY is not defined
+2025-04-19T16:36:46.844Z error: WinAnsi cannot encode "
+" (0x000a)
+2025-04-19T16:39:01.204Z error: WinAnsi cannot encode "
+" (0x000a)
+2025-04-19T16:41:03.452Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "mitchelly_01" }
+2025-04-19T16:41:04.200Z error: WinAnsi cannot encode "
+" (0x000a)
+2025-04-19T16:44:50.878Z error: WinAnsi cannot encode "
+" (0x000a)
+2025-04-19T16:49:26.134Z error: WinAnsi cannot encode "
+" (0x000a)
+2025-04-19T16:51:57.742Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [JN3P275CA0085.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T16:51:57.060Z 08DD7F42129FB040]
+2025-04-19T16:56:57.889Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [JN3P275CA0145.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T16:56:57.713Z 08DD7F57C8144D33]
+2025-04-19T17:02:51.481Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "mitchelly_01" }
+2025-04-19T17:02:52.118Z error: E11000 duplicate key error collection: HIMS_DB.customers index: username_1 dup key: { username: "mitchelly_01" }
+2025-04-19T17:03:06.706Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [JN3P275CA0047.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T17:03:04.941Z 08DD7F6220B64F3F]
+2025-04-19T17:05:22.037Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [JN3P275CA0048.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T17:05:21.723Z 08DD7EB0E95962D1]
+2025-04-19T17:07:13.782Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [JN3P275CA0046.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T17:07:13.032Z 08DD7F10E9F9429E]
+2025-04-19T17:18:35.322Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [JN3P275CA0045.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T17:18:35.036Z 08DD7F2937CF3FCF]
+2025-04-19T17:24:25.108Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:31:01.525Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:32:31.869Z error: Invalid login: 535 5.7.139 Authentication unsuccessful, SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information. [JN3P275CA0046.ZAFP275.PROD.OUTLOOK.COM 2025-04-19T17:32:31.652Z 08DD7F10E9F95C8C]
+2025-04-19T17:40:56.821Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:45:39.404Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:50:05.642Z error: Greeting never received
+2025-04-19T17:54:09.602Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:56:08.510Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:57:41.984Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-19T17:59:25.789Z error: Greeting never received
+2025-04-19T18:11:05.535Z error: 3C230000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:355:
+
+2025-04-21T05:03:40.585Z error: F4290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:355:
+
+2025-04-21T05:06:22.841Z error: connect ETIMEDOUT 52.98.22.2:485
+2025-04-21T05:08:07.028Z error: connect ETIMEDOUT 92.204.80.1:485
+2025-04-21T05:09:42.746Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-21T05:11:19.821Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-21T05:12:28.367Z error: 104A0000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:355:
+
+2025-04-21T05:13:53.897Z error: Invalid login: 535 Authentication Failed for admin@hismobiles.com
+2025-04-21T05:36:24.318Z error: Message failed: 554 5.2.252 SendAsDenied; admin@hismobiles.com not allowed to send as his-quiz@edspare.com; STOREDRV.Submission.Exception:SendAsDeniedException.MapiExceptionSendAsDenied; Failed to process message due to a permanent exception with message [BeginDiagnosticData]Cannot submit message. 1.84300:0A000000, 1.84300:0A000000, 1.84300:0E000000, 1.84300:32000000, 1.108572:00000000, 0.117068:56000000, 1.79180:0A000000, 1.79180:0A000000, 1.79180:0E000000, 1.79180:32000000, 1.79180:FA000000, 0.73100:07000000, 5.95292:67000000446F526F70730000, 8.111356:9552F9FE86593ECC1F1F572B2F8F6BAC46000000, 0.38698:46000000, 1.41134:86000000, 1.41134:46000000, 0.37692:C4310000, 0.37948:BB310000, 5.33852:00000000534D545000000000, 7.36354:01000000000001095CFFDF8E, 1.46439:0A000000, 1.115228:00000000, 1.44903:25000000, 1.115228:00000000, 4.56248:DC040000, 7.40748:010000000000010B00000000, 7.57132:000000000000000073706F72, 4.39640:DC040000, 1.63016:32000000, 8.45434:994BC40651604944BCFA55124E221E6846000000, 0.104348:7D000000, 1.46798:04000000, 7.51330:6C1925749680DD087E000000, 5.10786:0000000031352E32302E383635352E3033313A43574C503236354D42353233343A38656466666635632D333736332D343035662D393337632D6438326261336334626533633A3237363838303A2E4E455420382E302E313400000000, 0.39570:42000100, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:12000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:56000000, 1.56562:00000000, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:56000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:FE000000, 1.56562:00000000, 1.64146:0E000000, 1.33010:0E000000, 2.54258:00000000, 1.33010:0E000000, 2.54258:00000000, 1.64146:32000000, 1.33010:32000000, 2.54258:DC040000, 1.33010:32000000, 2.54258:DC040000, 0.79500:4F000000, 0.100684:0E000000, 0.66700:9E000000, 5.95292:67000000446F526F70730000, 8.111356:9552F9FE86593ECC1F1F572B2F8F6BAC46000000, 0.38698:46000000, 1.41134:86000000, 1.41134:46000000, 0.37692:C4310000, 0.37948:BB310000, 5.33852:00000000534D545000000000, 7.36354:01000000000001095CFFDF8E, 1.46439:0A000000, 1.115228:00000000, 1.44903:25000000, 1.115228:00000000, 4.56248:DC040000, 7.40748:010000000000010B00000000, 7.57132:000000000000000073706F72, 4.39640:DC040000, 1.63016:32000000, 8.45434:994BC40651604944BCFA55124E221E6846000000, 0.104348:7D000000, 1.46798:04000000, 7.51330:6C1925749680DD087E000000, 5.10786:0000000031352E32302E383635352E3033313A43574C503236354D42353233343A38656466666635632D333736332D343035662D393337632D6438326261336334626533633A3237363838303A2E4E455420382E302E313400000000, 0.39570:42000100, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:12000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:56000000, 1.56562:00000000, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:56000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:FE000000, 1.56562:00000000, 1.64146:0E000000, 1.33010:0E000000, 2.54258:00000000, 1.33010:0E000000, 2.54258:00000000, 1.64146:32000000, 1.33010:32000000, 2.54258:DC040000, 1.33010:32000000, 2.54258:DC040000, 0.97900:00000000, 4.120460:DC040000, 1.52466:02000000, 1.52466:02000000, 1.42738:05000000, 0.37698:81000000, 1.42738:05000000, 0.37698:0A000000, 1.52466:01000000, 0.60402:02000000, 1.52466:01000000[EndDiagnosticData] [Hostname=CWLP265MB5234.GBRP265.PROD.OUTLOOK.COM]
+2025-04-21T09:07:51.794Z error: read ECONNRESET
+2025-04-21T10:57:00.045Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-21T10:57:13.167Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-21T11:02:13.968Z error: connect ETIMEDOUT 89.192.235.209:27017
