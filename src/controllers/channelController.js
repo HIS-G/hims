@@ -71,9 +71,9 @@ const joinChannel = async (req, res) => {
       .findById(channelId)
       .populate("creator", "firstname lastname photo_url")
       .populate("members.user", "firstname lastname photo_url")
-      // .populate("members.customer", "firstname lastname photo_url")
+      .populate("members.customer", "firstname lastname photo_url")
       .populate("pendingRequests.user", "firstname lastname photo_url")
-      // .populate("pendingRequests.customer", "firstname lastname photo_url");
+      .populate("pendingRequests.customer", "firstname lastname photo_url");
 
     if (!channel) {
       return res.status(404).json({
@@ -112,21 +112,21 @@ const joinChannel = async (req, res) => {
     });
 
     if (hasPendingRequest) {
-      return res.status(400).json({
+      return res.status(409).json({
         status: false,
         message: "You have already sent a join request to this channel",
       });
     }
 
-    // const memberKey = customerType === "USER" ? "user" : "customer";
+    const memberKey = customerType === "USER" ? "user" : "customer";
 
     if (channel.type === "PRIVATE") {
       channel.pendingRequests.push({
-        ['user']: userId,
+        [memberKey]: userId,
       });
     } else {
       channel.members.push({
-        ['user']: userId,
+        [memberKey]: userId,
         role: "MEMBER",
       });
     }
@@ -162,14 +162,14 @@ const approveJoinRequest = async (req, res) => {
       });
     }
 
-    // const memberKey = customerType === "USER" ? "user" : "customer";
+    const memberKey = customerType === "USER" ? "user" : "customer";
 
     channel.pendingRequests = channel.pendingRequests.filter(
       (request) => request['user'].toString() !== userId
     );
 
     channel.members.push({
-      ['user']: userId,
+      [memberKey]: userId,
       role: "MEMBER",
     });
 
@@ -229,7 +229,7 @@ const getChannelDetails = async (req, res) => {
       .findById(channelId)
       .populate("creator", "firstname lastname photo_url")
       .populate("members.user", "firstname lastname photo_url")
-      // .populate("members.customer", "firstname lastname photo_url")
+      .populate("members.customer", "firstname lastname photo_url")
       .select("-pendingRequests");
 
     if (!channel) {
@@ -259,10 +259,10 @@ const getJoinRequests = async (req, res) => {
     const channel = await channels
       .findById(channelId)
       .populate("pendingRequests.user", "firstname lastname photo_url")
-      // .populate("pendingRequests.customer", "firstname lastname photo_url")
+      .populate("pendingRequests.customer", "firstname lastname photo_url")
       .populate("creator", "firstname lastname photo_url")
       .populate("members.user", "firstname lastname photo_url")
-      // .populate("members.customer", "firstname lastname photo_url");
+      .populate("members.customer", "firstname lastname photo_url");
 
     if (!channel) {
       return res.status(404).json({
@@ -327,10 +327,11 @@ const handleJoinRequest = async (req, res) => {
       });
     }
 
-    // const memberKey = customerType === "USER" ? "user" : "customer";
+    const memberKey = customerType === "USER" ? "user" : "customer";
     
     // Find the request using requestId
     const request = channel.pendingRequests.id(requestId);
+  
 
     if (!request) {
       return res.status(404).json({
@@ -348,7 +349,7 @@ const handleJoinRequest = async (req, res) => {
     // If action is ACCEPT, add the user as a member
     if (action.toUpperCase() === "ACCEPT") {
       channel.members.push({
-        ['user']: userId,
+        [memberKey]: userId,
         role: "MEMBER"
       });
     }

@@ -16,7 +16,7 @@ const Channel_Schema = new mongoose.Schema({
   },
   members: [{
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
-    // customer: { type: mongoose.Schema.Types.ObjectId, ref: 'customers' },
+    customer: { type: mongoose.Schema.Types.ObjectId, ref: 'customers' },
     role: { 
       type: String, 
       enum: ['ADMIN', 'MEMBER'],
@@ -26,7 +26,7 @@ const Channel_Schema = new mongoose.Schema({
   }],
   pendingRequests: [{
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
-    // customer: { type: mongoose.Schema.Types.ObjectId, ref: 'customers' },
+    customer: { type: mongoose.Schema.Types.ObjectId, ref: 'customers' },
     requestedAt: { type: Date, default: Date.now }
   }],
   active: { type: Boolean, default: true },
