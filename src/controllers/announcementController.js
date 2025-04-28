@@ -288,26 +288,59 @@ const record_shared_announcement_visit = async (req, res) => {
 };
 
 const list_top_shares = async (req, res) => {
+  var leaders;
+  const { customer_type } = req.query;
+  console.log(customer_type);
+
   try {
-    const leaders = await sharedAnnouncements
-      .find()
-      .sort({ leadConvertCount: -1 })
-      .limit(10)
-      .populate("announcement")
-      .populate("user")
-      .populate("customer")
-      .exec();
+    if (customer_type && customer_type == "sme") {
+      leaders = await sharedAnnouncements
+        .find({
+          $and: [
+            { "customer.businessName": { $exists: true } },
+            { "customer.businessName": { $ne: null } },
+            { "customer.businessName": { $ne: "" } },
+          ],
+        })
+        .sort({ leadConvertCount: -1 })
+        .limit(10)
+        .populate("announcement")
+        .populate("customer")
+        .exec();
+    } else if (customer_type && customer_type == "individuals") {
+      leaders = await sharedAnnouncements
+        .find({
+          $or: [
+            { "customer.businessName": { $exists: false } },
+            { "customer.businessName": null },
+            { "customer.businessName": "" },
+          ],
+        })
+        .sort({ leadConvertCount: -1 })
+        .limit(10)
+        .populate("announcement")
+        .populate("customer")
+        .exec();
+    } else if (!customer_type) {
+      leaders = await sharedAnnouncements
+        .find()
+        .sort({ leadConvertCount: -1 })
+        .limit(10)
+        .populate("announcement")
+        .populate("customer")
+        .exec();
+    }
 
     if (leaders.length == 0) {
       return res.status(404).send({
         status: false,
-        message: "",
+        message: "No record found!",
       });
     }
 
     return res.status(200).send({
       status: true,
-      message: "",
+      message: "List of top 10 referrals",
       announcement_leaderboard: leaders,
     });
   } catch (error) {
@@ -318,6 +351,8 @@ const list_top_shares = async (req, res) => {
     });
   }
 };
+
+const list_top_shares_sme = async (req, res) => {};
 
 const get_featured_announcement = async (req, res) => {
   try {

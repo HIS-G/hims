@@ -13,11 +13,10 @@ const {
   announcements,
   comments,
 } = require("../models/Announcements");
-const {
-  generateQRCode,
-  generatePdfWithQrCode,
-} = require("../utils/qr_generator");
+const { generateQRCode, generateQrCodePdf } = require("../utils/qr_generator");
 const path = require("path");
+const { referrals } = require("../models/Referrals");
+const axios = require("axios");
 
 const get_customers = async (req, res) => {
   try {
@@ -91,6 +90,7 @@ const my_profile = async (req, res) => {
 };
 
 const create_customer = async (req, res) => {
+  console.log(req.body);
   const {
     firstname,
     lastname,
@@ -110,7 +110,6 @@ const create_customer = async (req, res) => {
   } = req.body;
 
   let referrer_id;
-  let refferer_role;
   let reffered_user;
 
   try {
@@ -156,22 +155,20 @@ const create_customer = async (req, res) => {
       const referral_vin = await vins.findOne({ vin: referedBy });
 
       if (!referral_vin) {
-        return res.status(400).send({
-          status: false,
-          message: "Invalid Refferal ID!",
-        });
+        const referral_customer = await customers.findById(referedBy);
+
+        if (referral_customer) {
+          referrer_id = referral_customer._id;
+          reffered_user = referral_customer;
+          customer.referedBy = referral_customer._id;
+        }
       }
 
       if (referral_vin.customer) {
-        refferer_role = "customer";
         referrer_id = referral_vin.customer;
         reffered_user = await customers.findOne(referral_vin.customer);
-      } else if (referral_vin.user) {
-        referrer_id = referral_vin.user;
-        refferer_role = "user";
-        reffered_user = await customers.findOne(referral_vin.user);
+        customer.referedBy = reffered_user._id;
       }
-      customer.referedBy = referral_vin._id;
     }
 
     if (password) {
@@ -186,7 +183,7 @@ const create_customer = async (req, res) => {
     if (new_customer) {
       new_customer.verificationToken = await generateVerificationToken();
       const qrCode = await generateQRCode(
-        `https://hism.hismobiles.com/auth/customer/login?referral_id=${new_customer._id}`
+        `https://hism.hismobiles.com/auth/customer/register?referral_id=${new_customer._id}`
       );
       new_customer.qrCode = qrCode.split(",")[1];
 
@@ -199,56 +196,69 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
-        const pdf = await generatePdfWithQrCode(
-          new_customer,
-          qrCode.split(",")[1]
-        );
+        const pdf = await generateQrCodePdf(new_customer);
 
-        mail.sendMail(
-          {
-            from: process.env.MAIL_FROM,
-            to: `${new_customer.email}`, // list of receivers
-            subject: "Welcome to HIS!!!✔", // Subject line
-            text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`,
-            html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`, // html body
-            attachments: [
-              {
-                filename: "hism-referral-code.pdf",
-                content: pdf,
-                contentType: "application/pdf",
-              },
-            ],
-          },
-          async (err, result) => {
-            if (err) {
-              console.log(err);
-              logger.error(err);
-              return res.status(500).send({
-                status: true,
-                message: "Internal server error",
-                error: err,
-              });
-            }
+        if (pdf) {
+          const pdfBuffer = await axios.get(pdf.download_url, {
+            responseType: "arraybuffer",
+          });
 
-            if (announcement) {
-              await sharedAnnouncements.findOneAndUpdate(
-                { vin: referedBy },
+          new_customer.referral_doc = pdf.download_url;
+          await new_customer.save();
+          mail.sendMail(
+            {
+              from: process.env.MAIL_FROM,
+              to: `${new_customer.email}`, // list of receivers
+              subject: "Welcome to HIS!!!✔", // Subject line
+              text: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`,
+              html: `Congratulations!!! Your account has been created successfully. HIS, welcomes you to it's community. Kindly, watch out for our emails giving you updates on new products and activities of HIS which you can participate to win amazing prices.<br/>.Meanwhile, here is your unique virtual identification number<br/><b>${saved_fin.vin}</b><br/><br/>Kindly, click this link to activate and verify your account <a href=https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}>https://hism.hismobiles.com/auth/activate_account?verification_token=${new_customer.verificationToken}&uid=${new_customer._id}</a>`, // html body
+              attachments: [
                 {
-                  $inc: { leadConvertCount: 1 },
-                  shareLink: referral_link,
-                  vin: referedBy,
-                  user: refferer_role === "user" ? referrer_id : null,
-                  customer: refferer_role === "customer" ? referrer_id : null,
-                  announcement: announcement,
+                  filename: "hism-referral-code.pdf",
+                  content: Buffer.from(pdfBuffer.data),
+                  contentType: "application/pdf",
                 },
-                { upsert: true, new: true }
-              );
+              ],
+            },
+            async (err, result) => {
+              if (err) {
+                console.log(err);
+                logger.error(err);
+                return res.status(500).send({
+                  status: true,
+                  message: "Internal server error",
+                  error: err,
+                });
+              }
 
-              mail.sendMail(
+              if (announcement) {
+                await referrals.findOneAndUpdate(
+                  { customer: reffered_user._id },
+                  {
+                    $inc: { referralCount: 1 },
+                    customer: referred_user._id,
+                    announcement: announcement,
+                    announcement_link: referral_link
+                  },
+                  { upsert: true, new: true }
+                );
+              } else if (!announcement && referred_user) {
+                await referrals.findOneAndUpdate(
+                  { customer: reffered_user._id },
+                  {
+                    $inc: { referralCount: 1 },
+                    referral_link: referral_link,
+                    customer: referred_user._id,
+                  },
+                  { upsert: true, new: true }
+                );
+              }
+
+              await mail.sendMail(
                 {
-                  from: "his-quiz@edspare.com",
+                  from: process.env.MAIL_FROM,
                   to: `${reffered_user.email}`, // list of receivers
-                  subject: "Welcome to HIS!!!✔", // Subject line
+                  subject: "Referral Notification", // Subject line
                   text: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${
                     new_customer.firstname + " " + new_customer.lastname
                   }</b><br/><br/>`,
@@ -257,26 +267,28 @@ const create_customer = async (req, res) => {
                   }</b><br/><br/>`, // html body
                 },
                 async (err, result) => {
+                  console.log(err);
                   if (err) {
                     logger.error(err);
                   }
                 }
               );
-            }
 
-            return res.status(200).send({
-              status: true,
-              message:
-                "Congratulations! Kindly, check your email to verify your account",
-              //vin: saved_vin._id,
-              fin: saved_fin._id,
-              customer_id: new_customer._id,
-            });
-          }
-        );
+              return res.status(200).send({
+                status: true,
+                message:
+                  "Congratulations! Kindly, check your email to verify your account",
+                //vin: saved_vin._id,
+                fin: saved_fin._id,
+                customer_id: new_customer._id,
+              });
+            }
+          );
+        }
       }
     }
   } catch (error) {
+    console.log(error);
     logger.error(error);
     return res.status(500).send({
       status: false,

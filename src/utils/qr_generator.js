@@ -2,6 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const { PDFDocument, StandardFonts, rgb } = require("pdf-lib");
 const QRCode = require("qrcode");
+const https = require("https");
+const http = require("http");
+const { URL } = require("url");
 
 const generateQRCode = async (url) => {
   const qrCode = await QRCode.toDataURL(url);
@@ -83,7 +86,51 @@ const generatePdfWithQrCode = async (customer, qrCode) => {
   return Buffer.from(pdfBytes); // Return as a Buffer
 };
 
+const generateQrCodePdf = async (customer) => {
+  let data = {
+    referral_link: `https://hism.hismobiles.com/auth/customers/register?referral_id=${customer._id}`,
+  };
+
+  let resp = await httpPost(
+    "https://rest.apitemplate.io/v2/create-pdf?template_id=de277b2391a101aa",
+    JSON.stringify(data), //'{ "qrCode": "INV38379", "date": "2021-09-30", "currency": "USD", "total_amount": 82542.56 }',
+    "cc68Mjg0MjE6MjU1ODY6SWd0R09IR0pITlVqUWxudg="
+  );
+  return JSON.parse(resp);
+};
+
+async function httpPost(url_api, data, apiKey) {
+  const uri = new URL(url_api);
+  const fx = uri.protocol === "https:" ? https : http;
+  const opts = {
+    method: "POST",
+    hostname: uri.hostname,
+    port: uri.port,
+    path: `${uri.pathname}${uri.search == null ? "" : uri.search}`,
+    protocol: uri.protocol,
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": data.length,
+      "X-API-KEY": apiKey,
+    },
+  };
+
+  return new Promise((resolve, reject) => {
+    const req = fx.request(opts, (res) => {
+      res.setEncoding("utf8");
+      let responseBody = "";
+      res.on("data", (chunk) => (responseBody += chunk));
+      res.on("end", () => resolve(responseBody));
+    });
+
+    req.on("error", (err) => reject(err));
+    req.write(data);
+    req.end();
+  });
+}
+
 module.exports = {
   generateQRCode,
   generatePdfWithQrCode,
+  generateQrCodePdf,
 };

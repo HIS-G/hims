@@ -4756,3 +4756,33 @@
 2025-04-21T10:57:00.045Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-21T10:57:13.167Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-21T11:02:13.968Z error: connect ETIMEDOUT 89.192.235.209:27017
+2025-04-22T09:58:05.659Z error: connect ETIMEDOUT 40.99.204.18:587
+2025-04-25T23:24:22.620Z error: read ECONNRESET
+2025-04-28T08:33:56.326Z error: generateQrCodePdf is not defined
+2025-04-28T08:35:29.809Z error: generateQrCodePdf is not defined
+2025-04-28T08:46:15.018Z error: axios is not defined
+2025-04-28T08:48:51.967Z error: customers validation failed: referral_doc: Path `referral_doc` is required.
+2025-04-28T08:49:59.846Z error: Invalid URL
+2025-04-28T08:51:27.081Z error: Invalid URL
+2025-04-28T08:52:45.288Z error: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. Received an instance of Object
+2025-04-28T17:25:39.628Z error: connect ETIMEDOUT 52.97.250.242:587
+2025-04-28T17:30:41.909Z error: connect ETIMEDOUT 40.101.81.162:587
+2025-04-28T17:34:11.270Z error: connect ETIMEDOUT 40.101.121.34:587
+2025-04-28T17:43:02.753Z error: connect ETIMEDOUT 40.99.204.242:587
+2025-04-28T17:51:33.062Z error: connect ETIMEDOUT 52.98.23.242:587
+2025-04-28T17:53:17.353Z error: read ECONNRESET
+2025-04-28T17:53:17.377Z error: read ECONNRESET
+2025-04-28T17:53:47.380Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T17:53:47.389Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:29:42.800Z error: read ECONNRESET
+2025-04-28T18:29:46.374Z error: read ECONNRESET
+2025-04-28T18:29:46.931Z error: read ECONNRESET
+2025-04-28T18:29:52.974Z error: read ECONNRESET
+2025-04-28T18:30:06.631Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:06.644Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:24.039Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:24.042Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:30.095Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:30.097Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:50.116Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-04-28T18:30:50.120Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
