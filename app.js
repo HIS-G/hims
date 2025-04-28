@@ -4,14 +4,40 @@ const https = require("https");
 const { default: mongoose } = require("mongoose");
 const cors = require("cors");
 const fs = require("fs");
+const { Server } = require("socket.io");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
+const mongoSanitize = require("express-mongo-sanitize");
+const xss = require("xss-clean");
 
 const app = express();
 
-const options = {
-  key: fs.readFileSync("./private.key"),
-  cert: fs.readFileSync("./certificate.crt"),
-};
+// Security Middleware
+app.use(helmet()); // Set security HTTP headers
+app.use(mongoSanitize()); // Data sanitization against NoSQL query injection
+app.use(xss()); // Data sanitization against XSS
+app.use(hpp()); // Prevent HTTP Parameter Pollution
 
+// Rate limiting
+const limiter = rateLimit({
+  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 60 * 60 * 1000, // 1 hour
+  message: "Too many requests from this IP, please try again in an hour!",
+});
+app.use("/api", limiter);
+
+// Middleware to log requests
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+  next();
+});
+
+// Middleware to log errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
 const corsOptions = {
   origin: [
     "https://hism.hismobiles.com",
@@ -24,7 +50,8 @@ const corsOptions = {
   ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,
-  //allowedHeaders: 'Content-Type,Authorization', // Allow only specific headers
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
 };
 
 const file = fs.readFileSync("./DBE36D85EE856E805997FAD9F0105A8A.txt");
@@ -41,6 +68,7 @@ const announcementRoutes = require("./src/routes/announcementRoute");
 const ticketRoutes = require("./src/routes/ticketRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
 const careerRoute = require("./src/routes/careerRoute");
+const channelRoute = require("./src/routes/channelRoute");
 
 // middlewares
 app.options("*", cors());
@@ -59,6 +87,7 @@ app.use("/api/v1/announcements", announcementRoutes);
 app.use("/api/v1/tickets", ticketRoutes);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
+app.use("/api/v1/channels", channelRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
@@ -81,9 +110,36 @@ mongoose
     console.log(error);
   });
 
-const server = https.createServer(options, app).listen(process.env.PORT, () => {
-  console.log(`Server listening on PORT: ${process.env.PORT}`);
+
+// Server Configuration
+// todo: setup process.env for production
+let server;
+// if (process.env.NODE_ENV === "production") {
+ console.log(process.env.NODE_ENV)
+  const options = {
+    key: fs.readFileSync("./private.key"),
+    cert: fs.readFileSync("./certificate.crt"),
+  };
+  server = https.createServer(options, app).listen(process.env.PORT, () => {
+    console.log(`HTTPS Server listening on PORT: ${process.env.PORT}`);
+  });
+// } 
+
+// else {
+//   server = app.listen(process.env.PORT, () => {
+//     console.log(`HTTP Server listening on PORT: ${process.env.PORT}`);
+//   });
+//   console.log(process.env.NODE_ENV)
+// }
+
+const io = new Server(server, {
+  cors: {
+    origin: corsOptions.origin,
+    methods: ["GET", "POST"],
+  },
 });
+
+require("./src/utils/socket")(io);
 
 const shutdown = () => {
   server.close;
