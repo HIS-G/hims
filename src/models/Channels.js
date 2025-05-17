@@ -10,9 +10,13 @@ const Channel_Schema = new mongoose.Schema({
     required: true 
   },
   creator: { 
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
-    required: true 
+    type: { 
+      type: String, 
+      enum: ['USER', 'CUSTOMER'],
+      required: true 
+    },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+    customer: { type: mongoose.Schema.Types.ObjectId, ref: 'customers' }
   },
   members: [{
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },

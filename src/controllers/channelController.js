@@ -5,6 +5,7 @@ const { logger } = require("../utils/logger");
 const { RtcTokenBuilder, RtcRole } = require("agora-access-token");
 
 const createChannel = async (req, res) => {
+ 
   const { name, description, type, creator, customerType } = req.body;
 
   try {
@@ -17,13 +18,15 @@ const createChannel = async (req, res) => {
         message: "Channel name already exists",
       });
     }
+
     const memberKey = customerType === "USER" ? "user" : "customer";
     const newChannel = new channels({
       name,
       description,
       type,
       creator: {
-        [memberKey]: creator,
+        type: customerType,
+        [memberKey]: creator
       },
       members: [
         {
@@ -251,7 +254,7 @@ const editChannel = async (req, res) => {
     });
   }
 };
-
+ //todo: accept all pending request
 const approveJoinRequest = async (req, res) => {
   const { channelId, userId, customerType } = req.body;
 
@@ -410,6 +413,7 @@ const getJoinRequests = async (req, res) => {
   }
 };
 
+ //todo: accept all pending request
 const handleJoinRequest = async (req, res) => {
   const { channelId, userId, customerType, requestId, action } = req.body;
 
