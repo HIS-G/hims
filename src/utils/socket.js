@@ -10,36 +10,32 @@ module.exports = (io) => {
       console.log(`User ${socket.id} joined channel ${channelId}`);
     });
 
-    socket.on("send_message", async (messageData) => {
-      try {
-        console.log(messageData, 'msg data')
-        const newMessage = new messages({
-          channel: messageData.channelId,
-          sender: {
-            type: messageData.senderType,
-            [messageData.senderType.toLowerCase()]: messageData.senderId,
-            user: messageData.sender.user
-          },
-          content: messageData.content,
-          attachments: messageData.attachments || [],
-          createdAt: messageData.createdAt
-        });
+    socket.on("send_message", async (messageData) => { 
+      try { 
+        console.log(messageData, 'msg data') 
+        const newMessage = new messages({ 
+          channel: messageData.channelId, 
+          sender: { 
+            type: messageData.senderType, 
+            [messageData.senderType.toLowerCase()]: messageData.sender[messageData.senderType.toLowerCase()],
+          }, 
+          content: messageData.content, 
+          attachments: messageData.attachments || [], 
+          createdAt: messageData.createdAt 
+        }); 
     
-        const savedMessage = await newMessage.save();
+        const savedMessage = await newMessage.save(); 
         
-        // Send back the complete message with user information
-        io.to(messageData.channelId).emit("receive_message", {
-          ...savedMessage.toObject(),
-          sender: {
-            ...savedMessage.sender,
-            user: messageData.sender.user
-          }
-        });
-        console.log("receive_message", savedMessage)
-      } catch (error) {
-        logger.error("Message save error:", error);
-        socket.emit("message_error", { error: error.message });
-      }
+        // Send back the complete message with user information 
+        io.to(messageData.channelId).emit("receive_message", { 
+          ...savedMessage.toObject(), 
+          sender: messageData.sender 
+        }); 
+        console.log("receive_message", savedMessage) 
+      } catch (error) { 
+        logger.error("Message save error:", error); 
+        socket.emit("message_error", { error: error.message }); 
+      } 
     });
 
     socket.on("typing", (data) => {
