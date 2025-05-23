@@ -31,7 +31,7 @@ const create = async (req, res) => {
 
     const saved = await publicize.save();
 
-    return res.status().send({
+    return res.status(200).send({
       status: true,
       message: `Information saved successfully @${saved._id}`,
     });
@@ -45,12 +45,38 @@ const create = async (req, res) => {
   }
 };
 
-const read = async (req, res) => {};
+const read = async (req, res) => {
+  try {
+    const publications = await publicity.find();
+
+    if (publications.length == 0) {
+      return res.status(404).send({
+        status: "Not found",
+        message: "No result found",
+      });
+    }
+
+    const result = {
+      status: "true",
+      message: "List of publications",
+      data: publications,
+    };
+
+    return res.status(200).send(result);
+  } catch (error) {
+    logger.error(error);
+    return res.status(500).send({
+      status: false,
+      message: "Oops, you have encountered a server error",
+      error: error,
+    });
+  }
+};
 
 const read_one = async (req, res) => {};
 
 const search = async (req, res) => {
-    const {} = req.query;
+  const {} = req.query;
 };
 
 const update = async (req, res) => {};

@@ -4786,3 +4786,6 @@
 2025-04-28T18:30:30.097Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-28T18:30:50.116Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-28T18:30:50.120Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-05-21T22:40:38.147Z error: Invalid status code: undefined
+2025-05-21T22:40:59.663Z error: Invalid status code: undefined
+2025-05-22T06:20:43.283Z error: Invalid status code: undefined
