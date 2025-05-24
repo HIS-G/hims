@@ -47,6 +47,7 @@ const corsOptions = {
     "http://127.0.0.1:5173",
     "http://hism.edspare.com",
     "https://hism.edspare.com",
+    "http://his-marketplace.s3-website-us-east-1.amazonaws.com/",
   ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,

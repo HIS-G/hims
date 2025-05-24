@@ -55,7 +55,7 @@ module.exports = (io) => {
       console.log("User disconnected:", socket.id);
     });
 
-    // meeting
+    /* meeting
     socket.on("start meeting", async ({ channelId, hostUser }) => {
       console.log(`Meeting started by ${hostUser.id} in channel ${channelId}`);
 
@@ -108,6 +108,6 @@ module.exports = (io) => {
       io.to(meetingId).emit("meeting_ended", { meetingId });
       // Optionally leave room
       socket.leave(meetingId);
-    });
+    }); */
   });
 };
