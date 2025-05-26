@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const types = ["person", "company", "partners", "ads"];
+const types = ["winner", "team_lead", "company", "partners", "ads", "person"];
 
 const Publicize_Schema = new mongoose.Schema(
   {
