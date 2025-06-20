@@ -10,7 +10,6 @@ const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
-
 const app = express();
 
 // Security Middleware
@@ -25,7 +24,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   message: "Too many requests from this IP, please try again in an hour!",
 });
-app.use("/api", limiter);
+// app.use("/api", limiter);
 
 // Middleware to log requests
 app.use((req, res, next) => {
@@ -69,6 +68,8 @@ const ticketRoutes = require("./src/routes/ticketRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
 const careerRoute = require("./src/routes/careerRoute");
 const channelRoute = require("./src/routes/channelRoute");
+const directMessageRoutes = require("./src/routes/directMessageRoutes");
+const uploadRoutes = require("./src/routes/uploadRoute");
 
 // middlewares
 app.options("*", cors());
@@ -88,6 +89,8 @@ app.use("/api/v1/tickets", ticketRoutes);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
 app.use("/api/v1/channels", channelRoute);
+app.use("/api/v1/direct-messages", directMessageRoutes);
+app.use("/api/v1/uploads", uploadRoutes);
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
@@ -110,12 +113,11 @@ mongoose
     console.log(error);
   });
 
-
 // Server Configuration
 // todo: setup process.env for production
 let server;
 if (process.env.NODE_ENV === "production") {
-  console.log(process.env.NODE_ENV)
+  console.log(process.env.NODE_ENV);
   const options = {
     key: fs.readFileSync("./private.key"),
     cert: fs.readFileSync("./certificate.crt"),
@@ -123,9 +125,7 @@ if (process.env.NODE_ENV === "production") {
   server = https.createServer(options, app).listen(process.env.PORT, () => {
     console.log(`HTTPS Server listening on PORT: ${process.env.PORT}`);
   });
-}
-
-else {
+} else {
   server = app.listen(process.env.PORT, () => {
     console.log(`HTTP Server listening on PORT: ${process.env.PORT}`);
   });
@@ -136,6 +136,7 @@ const io = new Server(server, {
   cors: {
     origin: corsOptions.origin,
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
