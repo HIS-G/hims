@@ -92,7 +92,7 @@ app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
 app.use("/api/v1/channels", channelRoute);
 app.use("/api/v1/direct-messages", directMessageRoutes);
-app.use("/api/v1/uploads", uploadRoutes);
+app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/publications", publicationRoute);
 
 app.get("/", (req, res) => {
