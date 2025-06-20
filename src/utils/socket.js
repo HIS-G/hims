@@ -1,5 +1,6 @@
 const { messages } = require("../models/Messages");
 const { directMessages } = require("../models/DirectMessages");
+// const { meetings } = require("../models/Meetings");
 const { logger } = require("./logger");
 
 module.exports = (io) => {
@@ -13,6 +14,7 @@ module.exports = (io) => {
 
     socket.on("send_message", async (messageData) => {
       try {
+        console.log(messageData, "msg data");
         const newMessage = new messages({
           channel: messageData.channelId,
           sender: {
@@ -32,6 +34,7 @@ module.exports = (io) => {
           ...savedMessage.toObject(),
           sender: messageData.sender,
         });
+        console.log("receive_message", savedMessage);
       } catch (error) {
         logger.error("Message save error:", error);
         socket.emit("message_error", { error: error.message });
@@ -155,5 +158,60 @@ module.exports = (io) => {
     socket.on("disconnect", () => {
       console.log("User disconnected:", socket.id);
     });
+
+    /* meeting
+    socket.on("start meeting", async ({ channelId, hostUser }) => {
+      console.log(`Meeting started by ${hostUser.id} in channel ${channelId}`);
+
+      try {
+        const newMeeting = new meetings({
+          channelId: channelId,
+          host: hostUser._id,
+          isActive: true,
+        });
+
+        const savedMeeting = await newMeeting.save();
+      } catch (error) {
+        logger.error(error);
+        console.log(error);
+      }
+    });
+
+    // Notify all channel members (except sender)
+    socket.to(channelId).emit("meeting_started", {
+      channelId,
+      hostUser,
+      meetingId: `meeting-${channelId}`, // Generate meeting ID (can be UUID/db ID)
+    });
+
+    // User joins the meeting — establish peer connection
+    socket.on("join_meeting", ({ meetingId, userId }) => {
+      socket.join(meetingId);
+      console.log(`${userId} joined meeting room: ${meetingId}`);
+
+      socket.to(meetingId).emit("user_joined_meeting", { userId });
+    });
+
+    // WebRTC Signaling: Offer
+    socket.on("offer", ({ meetingId, offer, from }) => {
+      socket.to(meetingId).emit("offer", { offer, from });
+    });
+
+    // WebRTC Signaling: Answer
+    socket.on("answer", ({ meetingId, answer, from }) => {
+      socket.to(meetingId).emit("answer", { answer, from });
+    });
+
+    // WebRTC Signaling: ICE Candidate
+    socket.on("ice_candidate", ({ meetingId, candidate, from }) => {
+      socket.to(meetingId).emit("ice_candidate", { candidate, from });
+    });
+
+    // Optional: end meeting
+    socket.on("end_meeting", ({ meetingId }) => {
+      io.to(meetingId).emit("meeting_ended", { meetingId });
+      // Optionally leave room
+      socket.leave(meetingId);
+    }); */
   });
 };

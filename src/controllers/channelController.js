@@ -3,7 +3,7 @@ const { messages } = require("../models/Messages");
 const { logger } = require("../utils/logger");
 const mongoose = require("mongoose");
 
-const { RtcTokenBuilder, RtcRole } = require("agora-access-token");
+// const { RtcTokenBuilder, RtcRole } = require("agora-access-token");
 
 const createChannel = async (req, res) => {
   const { name, description, type, creator, customerType, members } = req.body;

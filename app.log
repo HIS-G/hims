@@ -4786,3 +4786,15 @@
 2025-04-28T18:30:30.097Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-28T18:30:50.116Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
 2025-04-28T18:30:50.120Z error: getaddrinfo ENOTFOUND hims-shard-00-01.6jlmt.mongodb.net
+2025-05-21T22:40:38.147Z error: Invalid status code: undefined
+2025-05-21T22:40:59.663Z error: Invalid status code: undefined
+2025-05-22T06:20:43.283Z error: Invalid status code: undefined
+2025-05-26T00:12:07.699Z error: publicize is not defined
+2025-05-26T00:18:00.879Z error: publicity.findOneByIdAndUpdate is not a function
+2025-05-26T00:40:16.832Z error: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "publicized"
+2025-05-26T00:48:09.929Z error: read ECONNRESET
+2025-05-26T00:48:47.853Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-05-26T00:48:47.865Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-05-26T00:48:54.663Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-05-26T00:48:58.498Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-05-26T00:49:45.062Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net

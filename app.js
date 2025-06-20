@@ -46,6 +46,7 @@ const corsOptions = {
     "http://127.0.0.1:5173",
     "http://hism.edspare.com",
     "https://hism.edspare.com",
+    "http://his-marketplace.s3-website-us-east-1.amazonaws.com/",
   ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods
   maxAge: 3600,
@@ -70,6 +71,7 @@ const careerRoute = require("./src/routes/careerRoute");
 const channelRoute = require("./src/routes/channelRoute");
 const directMessageRoutes = require("./src/routes/directMessageRoutes");
 const uploadRoutes = require("./src/routes/uploadRoute");
+const publicationRoute = require("./src/routes/publicityRoute");
 
 // middlewares
 app.options("*", cors());
@@ -91,6 +93,7 @@ app.use("/api/v1/careers", careerRoute);
 app.use("/api/v1/channels", channelRoute);
 app.use("/api/v1/direct-messages", directMessageRoutes);
 app.use("/api/v1/uploads", uploadRoutes);
+app.use("/api/v1/publications", publicationRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");

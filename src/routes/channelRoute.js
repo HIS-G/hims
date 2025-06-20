@@ -36,5 +36,9 @@ router.get(
   channelController.fetchAllRequestSentByUser
 );
 router.get("/agora/token", channelController.generateAgoraToken);
+/* router.get("/agora/token", channelController.generateAgoraToken);
+router.get("/:channelId/meetings", channelController.getMeetings);
+router.get("/:channelId/meetings/active", channelController.getActiveMeetings);
+router.post("/:channelId/meetings", channelController.createMeeting); */
 
 module.exports = router;

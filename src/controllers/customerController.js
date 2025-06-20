@@ -238,11 +238,11 @@ const create_customer = async (req, res) => {
                     $inc: { referralCount: 1 },
                     customer: referred_user._id,
                     announcement: announcement,
-                    announcement_link: referral_link
+                    announcement_link: referral_link,
                   },
                   { upsert: true, new: true }
                 );
-              } else if (!announcement && referred_user) {
+              } else if (!announcement && reffered_user) {
                 await referrals.findOneAndUpdate(
                   { customer: reffered_user._id },
                   {
