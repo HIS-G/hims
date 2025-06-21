@@ -278,12 +278,12 @@ const create_customer_password = async (req, res) => {
     });
   }
 
-  if (!password_reset_token) {
+  /* if (!password_reset_token) {
     return res.status(400).send({
       status: false,
       message: `Invalid reset token!`,
     });
-  }
+  } */
 
   try {
     if (password == confirmation) {

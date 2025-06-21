@@ -4798,3 +4798,9 @@
 2025-05-26T00:48:54.663Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
 2025-05-26T00:48:58.498Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
 2025-05-26T00:49:45.062Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-06-02T19:00:01.493Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-06-06T10:51:28.501Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-06-06T10:51:28.523Z error: Cast to ObjectId failed for value "null" (type string) at path "_id" for model "announcements"
+2025-06-06T14:01:44.999Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-06-06T15:23:04.758Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-06-06T18:03:23.985Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
