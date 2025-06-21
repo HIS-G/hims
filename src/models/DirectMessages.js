@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
-const { AttachmentSchema } = require("./DirectMessages");
 
-const Message_Schema = new mongoose.Schema(
+const AttachmentSchema = new mongoose.Schema(
   {
-    channel: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "channels",
-      required: true,
-    },
+    url: { type: String, required: true },
+    type: { type: String, required: true },
+    name: { type: String, required: true },
+  },
+  { _id: false } // avoid adding _id for each attachment
+);
+
+const MessageSchema = new mongoose.Schema(
+  {
     sender: {
       type: {
         type: String,
@@ -28,17 +31,32 @@ const Message_Schema = new mongoose.Schema(
       },
     },
     attachments: [AttachmentSchema],
-    readBy: [
+    read: { type: Boolean, default: false },
+    createdAt: { type: Date, default: Date.now },
+  },
+  { _id: false }
+);
+
+const DirectMessageSchema = new mongoose.Schema(
+  {
+    participants: [
       {
+        type: {
+          type: String,
+          enum: ["USER", "CUSTOMER"],
+          required: true,
+        },
         user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
         customer: { type: mongoose.Schema.Types.ObjectId, ref: "customers" },
-        readAt: { type: Date, default: Date.now },
       },
     ],
+    messages: [MessageSchema],
+    lastMessage: { type: Date },
+    active: { type: Boolean, default: true },
   },
   { timestamps: true }
 );
 
-const messages = mongoose.model("messages", Message_Schema);
+const directMessages = mongoose.model("directMessages", DirectMessageSchema);
 
-module.exports = { Message_Schema, messages };
+module.exports = { DirectMessageSchema, directMessages, AttachmentSchema };

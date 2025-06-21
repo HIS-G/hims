@@ -21,6 +21,6 @@ const Vin_Schema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const vins = mongoose.model("vins", Vin_Schema);
+const vins = mongoose.models.vins || mongoose.model("vins", Vin_Schema);
 
 module.exports = { vins, Vin_Schema, vin_types };

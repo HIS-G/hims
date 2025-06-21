@@ -10,7 +10,6 @@ const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
-
 const app = express();
 
 // Security Middleware
@@ -25,7 +24,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   message: "Too many requests from this IP, please try again in an hour!",
 });
-app.use("/api", limiter);
+// app.use("/api", limiter);
 
 // Middleware to log requests
 app.use((req, res, next) => {
@@ -72,6 +71,8 @@ const ticketRoutes = require("./src/routes/ticketRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
 const careerRoute = require("./src/routes/careerRoute");
 const channelRoute = require("./src/routes/channelRoute");
+const directMessageRoutes = require("./src/routes/directMessageRoutes");
+const uploadRoutes = require("./src/routes/uploadRoute");
 const publicationRoute = require("./src/routes/publicityRoute");
 
 // middlewares
@@ -92,6 +93,8 @@ app.use("/api/v1/tickets", ticketRoutes);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/careers", careerRoute);
 app.use("/api/v1/channels", channelRoute);
+app.use("/api/v1/direct-messages", directMessageRoutes);
+app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/publications", publicationRoute);
 
 app.get("/", (req, res) => {
@@ -138,6 +141,7 @@ const io = new Server(server, {
   cors: {
     origin: corsOptions.origin,
     methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
