@@ -152,7 +152,7 @@ const create_customer = async (req, res) => {
     if (referral_link) customer.referralLink = referral_link;
 
     if (referedBy) {
-      const referral_vin = await vins.findOne({ vin: referedBy });
+      const referral_vin = await vins.findOne({ customer: referedBy });
 
       if (!referral_vin) {
         const referral_customer = await customers.findById(referedBy);
@@ -162,14 +162,14 @@ const create_customer = async (req, res) => {
           reffered_user = referral_customer;
           customer.referedBy = referral_customer._id;
         }
-      }
-
-      if (referral_vin.customer) {
+      } else {
         referrer_id = referral_vin.customer;
         reffered_user = await customers.findOne(referral_vin.customer);
         customer.referedBy = reffered_user._id;
       }
     }
+
+    console.log("referred_user", reffered_user);
 
     if (password) {
       bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
@@ -183,7 +183,7 @@ const create_customer = async (req, res) => {
     if (new_customer) {
       new_customer.verificationToken = await generateVerificationToken();
       const qrCode = await generateQRCode(
-        `https://hism.hismobiles.com/auth/customer/register?referral_id=${new_customer._id}`
+        `https://hism.hismobiles.com/auth/customers/register?referral_id=${new_customer._id}`
       );
       new_customer.qrCode = qrCode.split(",")[1];
 
@@ -248,31 +248,37 @@ const create_customer = async (req, res) => {
                   {
                     $inc: { referralCount: 1 },
                     referral_link: referral_link,
-                    customer: referred_user._id,
+                    customer: reffered_user._id,
                   },
                   { upsert: true, new: true }
                 );
               }
 
-              await mail.sendMail(
-                {
-                  from: process.env.MAIL_FROM,
-                  to: `${reffered_user.email}`, // list of receivers
-                  subject: "Referral Notification", // Subject line
-                  text: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${
-                    new_customer.firstname + " " + new_customer.lastname
-                  }</b><br/><br/>`,
-                  html: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${
-                    new_customer.firstname + " " + new_customer.lastname
-                  }</b><br/><br/>`, // html body
-                },
-                async (err, result) => {
-                  console.log(err);
-                  if (err) {
-                    logger.error(err);
+              if (reffered_user) {
+                await mail.sendMail(
+                  {
+                    from: process.env.MAIL_FROM,
+                    to: `${reffered_user.email}`, // list of receivers
+                    subject: "Referral Notification", // Subject line
+                    text: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${
+                      new_customer.firstname + " " + new_customer.lastname
+                    }</b><br/><br/>`,
+                    html: `Congratulations!!! A new account was just created using your referral link ${referral_link}. Thank you for the referral.<br/><br/> Keep referring to increase your chances of winning the reward.<br/><br/>The new registered user is <b>${
+                      new_customer.firstname + " " + new_customer.lastname
+                    }</b><br/><br/>`, // html body
+                  },
+                  async (err, result) => {
+                    console.log(err);
+                    if (err) {
+                      logger.error(err);
+                      return res.status(500).send({
+                        status: false,
+                        message: error,
+                      });
+                    }
                   }
-                }
-              );
+                );
+              }
 
               return res.status(200).send({
                 status: true,

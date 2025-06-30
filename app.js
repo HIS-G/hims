@@ -44,8 +44,10 @@ const corsOptions = {
     "http://localhost:5174",
     "http://127.0.0.1:5174",
     "http://127.0.0.1:5173",
+    "http://172.20.10.7:8000",
     "http://hism.edspare.com",
     "https://hism.edspare.com",
+    "https://3b009260534c.ngrok.app",
     "http://his-marketplace.s3-website-us-east-1.amazonaws.com/",
   ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods

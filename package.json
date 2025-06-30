@@ -27,6 +27,7 @@
     "fs": "^0.0.1-security",
     "helmet": "^8.1.0",
     "hpp": "^0.2.3",
+    "html-pdf-node": "^1.0.8",
     "https": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",

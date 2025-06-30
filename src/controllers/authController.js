@@ -11,6 +11,7 @@ const { mail } = require("../utils/nodemailerConfig");
 const { generateVerificationToken } = require("../utils/helpers");
 
 const customer_login = async (req, res) => {
+  console.log(req.body);
   var vin;
   const { is_school, email, password } = req.body;
 
@@ -278,12 +279,12 @@ const create_customer_password = async (req, res) => {
     });
   }
 
-  if (!password_reset_token) {
+  /* if (!password_reset_token) {
     return res.status(400).send({
       status: false,
       message: `Invalid reset token!`,
     });
-  }
+  } */
 
   try {
     if (password == confirmation) {
