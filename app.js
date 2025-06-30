@@ -47,7 +47,7 @@ const corsOptions = {
     "http://172.20.10.7:8000",
     "http://hism.edspare.com",
     "https://hism.edspare.com",
-    "https://ad5e-105-112-234-43.ngrok-free.app",
+    "https://3b009260534c.ngrok.app",
     "http://his-marketplace.s3-website-us-east-1.amazonaws.com/",
   ], // Allow requests only from this domain
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], // Allow only specific HTTP methods

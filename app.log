@@ -4804,3 +4804,12 @@
 2025-06-06T14:01:44.999Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
 2025-06-06T15:23:04.758Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
 2025-06-06T18:03:23.985Z error: getaddrinfo ENOTFOUND hims-shard-00-00.6jlmt.mongodb.net
+2025-06-22T09:13:46.373Z error: Operation `messages.find()` buffering timed out after 10000ms
+2025-06-22T10:27:28.962Z error: read ECONNRESET
+2025-06-22T10:29:54.826Z error: read ECONNRESET
+2025-06-22T10:30:55.587Z error: read ECONNRESET
+2025-06-30T08:44:32.839Z error: Cannot read properties of null (reading 'customer')
+2025-06-30T08:49:08.019Z error: Cannot read properties of null (reading 'customer')
+2025-06-30T09:08:35.944Z error: read ECONNRESET
+2025-06-30T09:24:45.665Z error: read ECONNRESET
+2025-06-30T11:47:11.566Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
