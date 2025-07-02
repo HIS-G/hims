@@ -31,7 +31,7 @@ const generatePdfWithQrCode = async (customer, qrCode) => {
 
     await browser.close();
 
-    fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
+    // fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
     return pdfBuffer;
   } catch (error) {
     console.error("Error generating PDF:", error);
@@ -54,7 +54,7 @@ const generateQrCodePdf = async (qrCode) => {
 
     await browser.close();
 
-    fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
+    // fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
     return pdfBuffer;
   } catch (error) {
     console.error("Error generating PDF:", error);
