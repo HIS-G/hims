@@ -169,8 +169,6 @@ const create_customer = async (req, res) => {
       }
     }
 
-    console.log("referred_user", reffered_user);
-
     if (password) {
       bcrypt.setRandomFallback((len) => crypto.randomBytes(len));
 
@@ -199,11 +197,6 @@ const create_customer = async (req, res) => {
         const pdf = await generateQrCodePdf(new_customer);
 
         if (pdf) {
-          const pdfBuffer = await axios.get(pdf.download_url, {
-            responseType: "arraybuffer",
-          });
-
-          new_customer.referral_doc = pdf.download_url;
           await new_customer.save();
           mail.sendMail(
             {
@@ -215,7 +208,8 @@ const create_customer = async (req, res) => {
               attachments: [
                 {
                   filename: "hism-referral-code.pdf",
-                  content: Buffer.from(pdfBuffer.data),
+                  content: pdf,
+                  contentDisposition: "attachment",
                   contentType: "application/pdf",
                 },
               ],
@@ -538,10 +532,50 @@ const generateQrCode = async (req, res) => {
   }
 };
 
+const downloadQrCode = async (req, res) => {
+  const { customer_id } = req.params;
+
+  if (!customer_id) {
+    return res.status(400).json({
+      status: false,
+      message: "Invalid customer ID",
+    });
+  }
+
+  try {
+    const customer = await customers.findById(customer_id);
+
+    if (!customer || !customer.qrCode) {
+      return res.status(404).json({
+        status: false,
+        message: "Customer or QR code not found",
+      });
+    }
+
+    const pdfBuffer = await generateQrCodePdf(customer.qrCode);
+    console.log("PDF Buffer Length:", pdfBuffer);
+    res.set({
+      "Content-Type": "application/pdf",
+      "Content-Disposition": `attachment; filename="qr_code_${customer_id}.pdf"`,
+      "Content-Length": pdfBuffer.length,
+    });
+
+    res.send(pdfBuffer);
+  } catch (error) {
+    console.error("Error downloading QR code PDF:", error);
+    return res.status(500).json({
+      status: false,
+      message: "Internal server error",
+      error: error.message || error,
+    });
+  }
+};
+
 module.exports = {
   get_customers,
   get_single_customer,
   get_customer_referrals,
+  downloadQrCode,
   generateQrCode,
   submit_sla,
   my_profile,
