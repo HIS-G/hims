@@ -74,10 +74,11 @@ const channelRoute = require("./src/routes/channelRoute");
 const directMessageRoutes = require("./src/routes/directMessageRoutes");
 const uploadRoutes = require("./src/routes/uploadRoute");
 const publicationRoute = require("./src/routes/publicityRoute");
+const leaderboardRoute = require("./src/routes/leaderboardRoute");
 
 // middlewares
 app.options("*", cors());
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));   
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
@@ -96,6 +97,7 @@ app.use("/api/v1/channels", channelRoute);
 app.use("/api/v1/direct-messages", directMessageRoutes);
 app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/publications", publicationRoute);
+app.use("/api/v1/leaderboard", leaderboardRoute)
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
