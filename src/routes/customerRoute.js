@@ -15,7 +15,8 @@ router.get(
   "/:customer_id/referrals",
   customerController.get_customer_referrals
 );
-router.get("/:customer_id/generate_qrCode", customerController.generateQrCode)
+router.get("/:customer_id/download_qrCode", customerController.downloadQrCode);
+router.get("/:customer_id/generate_qrCode", customerController.generateQrCode);
 router.get("/:customer_id/generate_vin", customerController.generate_vin);
 router.post("/create_customer", customerController.create_customer);
 router.post("/delete", customerController.delete_customer);

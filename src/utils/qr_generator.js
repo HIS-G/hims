@@ -1,10 +1,14 @@
 const fs = require("fs");
 const path = require("path");
-const { PDFDocument, StandardFonts, rgb } = require("pdf-lib");
 const QRCode = require("qrcode");
-const https = require("https");
-const http = require("http");
-const { URL } = require("url");
+const puppeteer = require("puppeteer");
+
+const hismLogo = fs.readFileSync(path.join(__dirname, "hism.png"), {
+  encoding: "base64",
+});
+const hisLogo = fs.readFileSync(path.join(__dirname, "his.png"), {
+  encoding: "base64",
+});
 
 const generateQRCode = async (url) => {
   const qrCode = await QRCode.toDataURL(url);
@@ -13,121 +17,93 @@ const generateQRCode = async (url) => {
 
 const generatePdfWithQrCode = async (customer, qrCode) => {
   // Create a new PDF
-  const pdfDoc = await PDFDocument.create();
-  const page = pdfDoc.addPage([595.28, 841.89]);
-  /* const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-  const fontSize = 20; */
-  // Embed QR image
-  // const qrImageBytes = qrCode.split(',')[1]; // remove data:image/...;base64,
-  const qrImage = await pdfDoc.embedPng(qrCode);
-  const qrDims = qrImage.scale(2.5);
+  const htmlContent = createHtmlTemplate(qrCode, true);
 
-  const headerText = `Join, Share and Win £500 cash Scan the QR code below`;
-
-  const hism_logo_path = path.resolve(__dirname, "hism.png");
-  const hism_logo_bytes = fs.readFileSync(hism_logo_path);
-
-  const his_logo_path = path.resolve(__dirname, "his.png");
-  const his_logo_bytes = fs.readFileSync(his_logo_path);
-
-  const FooterText = `Whats HISM for?
-  HISM is for promoting products and services at the same time creating opportunities for all players or members to earn money and other opportunities or rewards.
-  Building New Celebrities and Influencers
-  An Assemblage of Celebrities and Influencers
-  Connects all Social Media Platforms in one Hub
-  A Marketplace for Promoting Products & Services`;
-
-  const embedded_hism_logo = await pdfDoc.embedPng(hism_logo_bytes);
-
-  page.drawImage(embedded_hism_logo, {
-    x: page.getWidth() - embedded_hism_logo.width - 50,
-    y: 50,
-    width: embedded_hism_logo.width,
-    height: embedded_hism_logo.height,
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
-  page.drawText(headerText, {
-    x: page.width,
-    y: headerText > 50 ? headerText : 50, // keep within page bounds
-    size: 12,
-    color: rgb(0, 0, 0),
-    lineHeight: 16,
-    maxWidth: 500,
-  });
+  try {
+    const page = await browser.newPage();
+    await page.setContent(htmlContent, { waitUntil: "networkidle0" });
+    const pdfBuffer = await page.pdf({ format: "A4" });
 
-  // Draw the QR code on the PDF
-  page.drawImage(qrImage, {
-    x: 50,
-    y: 200,
-    width: qrDims.width,
-    height: qrDims.height,
-  });
+    await browser.close();
 
-  page.drawText(FooterText, {
-    x: page.width,
-    y: 400, // keep within page bounds
-    size: 12,
-    color: rgb(0, 0, 0),
-    lineHeight: 16,
-    maxWidth: 500,
-  });
-
-  const embedded_his_logo = await pdfDoc.embedPng(his_logo_bytes);
-
-  page.drawImage(embedded_his_logo, {
-    x: page.getWidth() - embedded_his_logo.width - 50,
-    y: 50,
-    width: embedded_his_logo.width,
-    height: embedded_his_logo.height,
-  });
-
-  // Save PDF
-  const pdfBytes = await pdfDoc.save();
-  return Buffer.from(pdfBytes); // Return as a Buffer
+    fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
+    return pdfBuffer;
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    throw new Error("Failed to generate PDF");
+  }
 };
 
-const generateQrCodePdf = async (customer) => {
-  let data = {
-    referral_link: `https://hism.hismobiles.com/auth/customers/register?referral_id=${customer._id}`,
-  };
+const generateQrCodePdf = async (qrCode) => {
+  const htmlContent = createHtmlTemplate(qrCode, false);
 
-  let resp = await httpPost(
-    "https://rest.apitemplate.io/v2/create-pdf?template_id=de277b2391a101aa",
-    JSON.stringify(data), //'{ "qrCode": "INV38379", "date": "2021-09-30", "currency": "USD", "total_amount": 82542.56 }',
-    "cc68Mjg0MjE6MjU1ODY6SWd0R09IR0pITlVqUWxudg="
-  );
-  return JSON.parse(resp);
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+
+  try {
+    const page = await browser.newPage();
+    await page.setContent(htmlContent, { waitUntil: "networkidle0" });
+    const pdfBuffer = await page.pdf({ format: "A4" });
+
+    await browser.close();
+
+    fs.writeFileSync("puppeteer_test.pdf", pdfBuffer);
+    return pdfBuffer;
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    throw new Error("Failed to generate PDF");
+  }
 };
 
-async function httpPost(url_api, data, apiKey) {
-  const uri = new URL(url_api);
-  const fx = uri.protocol === "https:" ? https : http;
-  const opts = {
-    method: "POST",
-    hostname: uri.hostname,
-    port: uri.port,
-    path: `${uri.pathname}${uri.search == null ? "" : uri.search}`,
-    protocol: uri.protocol,
-    headers: {
-      "Content-Type": "application/json",
-      "Content-Length": data.length,
-      "X-API-KEY": apiKey,
-    },
-  };
-
-  return new Promise((resolve, reject) => {
-    const req = fx.request(opts, (res) => {
-      res.setEncoding("utf8");
-      let responseBody = "";
-      res.on("data", (chunk) => (responseBody += chunk));
-      res.on("end", () => resolve(responseBody));
-    });
-
-    req.on("error", (err) => reject(err));
-    req.write(data);
-    req.end();
-  });
-}
+const createHtmlTemplate = (qrCode, showFull = true) => {
+  return `<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>QR Code Document</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      h1 { color: #333; }
+      .qr-container { margin: 20px 0; }
+      .nav { background-color: #f8f8f8; padding: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+      footer { margin-top: 40px; font-size: 12px; color: #777; }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <img src="data:image/png;base64,${hisLogo}" alt="HIS" style="height: 50px;" />
+      <img src="data:image/png;base64,${hismLogo}" alt="HISM Logo" style="height: 50px;" />
+    </div>
+    <h1>Welcome to HISM</h1>
+    <p>Join, Share and Win £500 cash!</p>
+    <div class="qr-container">
+      <img src="data:image/png;base64,${qrCode}" alt="QR Code" />
+    </div>
+    <p>Scan the QR code to join HISM and start earning rewards!</p>
+    ${
+      showFull
+        ? `<div>
+            <p>What’s HISM for?</p>
+            <ul>
+              <li>Promoting products and services while creating income opportunities.</li>
+              <li>Building new celebrities and influencers.</li>
+              <li>An assemblage of celebrities and influencers.</li>
+              <li>Connecting all social media platforms in one hub.</li>
+              <li>A marketplace for promoting products & services.</li>
+            </ul>
+          </div>`
+        : ""
+    }
+  </body>
+  </html>`;
+};
 
 module.exports = {
   generateQRCode,
