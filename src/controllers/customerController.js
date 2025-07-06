@@ -545,22 +545,37 @@ const downloadQrCode = async (req, res) => {
   try {
     const customer = await customers.findById(customer_id);
 
-    if (!customer || !customer.qrCode) {
+    if (!customer) {
       return res.status(404).json({
         status: false,
-        message: "Customer or QR code not found",
+        message: "Customer not found",
       });
     }
 
-    const pdfBuffer = await generateQrCodePdf(customer.qrCode);
-    console.log("PDF Buffer Length:", pdfBuffer);
-    res.set({
-      "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="qr_code_${customer_id}.pdf"`,
-      "Content-Length": pdfBuffer.length,
-    });
+    let qrCodeData;
+    if (!customer.qrCode) {
+      const qrCode = await generateQRCode(
+        `https://hism.hismobiles.com/auth/customers/register?referral_id=${customer._id}`
+      );
+      customer.qrCode = qrCode.split(",")[1];
+      await customer.save();
+      qrCodeData = qrCode;
+    } else {
+      qrCodeData = `data:image/png;base64,${customer.qrCode}`;
+    }
 
+    const pdfBuffer = await generateQrCodePdf(qrCodeData);
+
+  
+
+    // Set headers for PDF streaming
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="HISM_QRCode_${customer_id}.pdf"`);
+    res.setHeader('Content-Length', pdfBuffer.length);
+
+    // Pipe the stream to response
     res.send(pdfBuffer);
+
   } catch (error) {
     console.error("Error downloading QR code PDF:", error);
     return res.status(500).json({

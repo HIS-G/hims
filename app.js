@@ -11,6 +11,11 @@ const hpp = require("hpp");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const app = express();
+const { customers } = require("./src/models/Customers");
+const {
+  generateQRCode,
+  generateQrCodePdf,
+} = require("./src/utils/qr_generator");
 
 // Security Middleware
 app.use(helmet()); // Set security HTTP headers
@@ -78,7 +83,7 @@ const leaderboardRoute = require("./src/routes/leaderboardRoute");
 
 // middlewares
 app.options("*", cors());
-app.use(cors(corsOptions));   
+app.use(cors(corsOptions));
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
@@ -97,7 +102,7 @@ app.use("/api/v1/channels", channelRoute);
 app.use("/api/v1/direct-messages", directMessageRoutes);
 app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/publications", publicationRoute);
-app.use("/api/v1/leaderboard", leaderboardRoute)
+app.use("/api/v1/leaderboard", leaderboardRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");
@@ -109,6 +114,59 @@ app.get(
     res.sendFile(file);
   }
 );
+app.get("/api/v1/customers/:customer_id/download_qrCode", async (req, res) => {
+  const { customer_id } = req.params;
+  if (!customer_id) {
+    return res.status(400).json({
+      status: false,
+      message: "Invalid customer ID",
+    });
+  }
+
+  try {
+    const customer = await customers.findById(customer_id);
+
+    if (!customer) {
+      return res.status(404).json({
+        status: false,
+        message: "Customer not found",
+      });
+    }
+
+    let qrCodeData;
+    if (!customer.qrCode) {
+      const qrCode = await generateQRCode(
+        `https://hism.hismobiles.com/auth/customers/register?referral_id=${customer._id}`
+      );
+      customer.qrCode = qrCode.split(",")[1];
+      await customer.save();
+      qrCodeData = qrCode;
+    } else {
+      qrCodeData = customer.qrCode.startsWith("data:image")
+        ? customer.qrCode
+        : `data:image/png;base64,${customer.qrCode}`;
+    }
+
+    const pdfBuffer = await generateQrCodePdf(qrCodeData);
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="HISM_QRCode_${customer_id}.pdf"`
+    );
+    res.setHeader("Content-Length", pdfBuffer.length);
+
+    // Send  buffer
+    return res.send(pdfBuffer);
+  } catch (error) {
+    console.error("Error downloading QR code PDF:", error);
+    return res.status(500).json({
+      status: false,
+      message: "Internal server error",
+      error: error.message || error,
+    });
+  }
+});
 
 // Connect to Database
 mongoose
