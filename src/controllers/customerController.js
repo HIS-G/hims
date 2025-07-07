@@ -544,61 +544,37 @@ const downloadQrCode = async (req, res) => {
   try {
     const customer = await customers.findById(customer_id);
 
-    if (!customer || !customer.qrCode) {
+    if (!customer) {
       return res.status(404).json({
         status: false,
-        message: "Customer or QR code not found",
+        message: "Customer not found",
       });
     }
 
-    /* const filePath = path.join(
-      __dirname,
-      "../../qr_codes",
-      `${customer._id}.pdf`
-    ); */
-
-    /* if (!fs.existsSync(filePath)) {
-      return res.status(404).send("PDF not found");
+    let qrCodeData;
+    if (!customer.qrCode) {
+      const qrCode = await generateQRCode(
+        `https://hism.hismobiles.com/auth/customers/register?referral_id=${customer._id}`
+      );
+      customer.qrCode = qrCode.split(",")[1];
+      await customer.save();
+      qrCodeData = qrCode;
+    } else {
+      qrCodeData = `data:image/png;base64,${customer.qrCode}`;
     }
 
-    const stats = fs.statSync(filePath);
-    if (stats.size === 0) {
-      return res.status(500).send("PDF file is empty");
-    }
+    const pdfBuffer = await generateQrCodePdf(qrCodeData);
 
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader(
-      "Content-Disposition",
-      `attachment; filename="${customer._id}.pdf"`
-    );
-    res.sendFile(filePath, (err) => {
-      if (err) {
-        console.error("Error sending file:", err);
-        res.status(500).send("Failed to send file");
-      }
-    }); */
+  
 
-    /* res.download(filePath, `${customer._id}.pdf`, (err) => {
-      if (err) {
-        console.error("Error sending file:", err);
-        res.status(500).send("File download failed");
-      }
-    }); */
+    // Set headers for PDF streaming
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="HISM_QRCode_${customer_id}.pdf"`);
+    res.setHeader('Content-Length', pdfBuffer.length);
 
-    const pdfBuffer = await generatePdfWithQrCode(customer, customer.qrCode);
+    // Pipe the stream to response
+    res.send(pdfBuffer);
 
-    if (!pdfBuffer) {
-      return res.status(500).json({
-        status: false,
-        message: "Failed to generate PDF",
-      });
-    }
-
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", 'attachment; filename="qr-code.pdf"');
-    res.setHeader("Content-Length", pdfBuffer.length);
-
-    return res.status(200).send(pdfBuffer);
   } catch (error) {
     console.error("Error downloading QR code PDF:", error);
     return res.status(500).json({
