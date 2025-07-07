@@ -80,6 +80,7 @@ const directMessageRoutes = require("./src/routes/directMessageRoutes");
 const uploadRoutes = require("./src/routes/uploadRoute");
 const publicationRoute = require("./src/routes/publicityRoute");
 const leaderboardRoute = require("./src/routes/leaderboardRoute");
+const activitiesRoute = require("./src/routes/activitiesRoute");
 
 // middlewares
 app.options("*", cors());
@@ -103,6 +104,7 @@ app.use("/api/v1/direct-messages", directMessageRoutes);
 app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/publications", publicationRoute);
 app.use("/api/v1/leaderboard", leaderboardRoute);
+app.use("/api/v1/activity-logs", activitiesRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to HIS-Identity Management Systems (HIMS)</h1>");

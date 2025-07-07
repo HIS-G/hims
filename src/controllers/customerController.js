@@ -8,15 +8,11 @@ const bcrypt = require("bcryptjs");
 const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require("../utils/nodemailerConfig");
-const {
-  sharedAnnouncements,
-  announcements,
-  comments,
-} = require("../models/Announcements");
-const { generateQRCode, generateQrCodePdf } = require("../utils/qr_generator");
-const path = require("path");
+const { sharedAnnouncements, comments } = require("../models/Announcements");
+const { generatePdfWithQrCode } = require("../utils/qr_generator");
 const { referrals } = require("../models/Referrals");
-const axios = require("axios");
+const path = require("path");
+const fs = require("fs");
 
 const get_customers = async (req, res) => {
   try {
@@ -194,7 +190,10 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
-        const pdf = await generateQrCodePdf(new_customer);
+        const pdf = await generatePdfWithQRCode(
+          new_customer,
+          new_customer.qrCode
+        );
 
         if (pdf) {
           await new_customer.save();

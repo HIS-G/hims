@@ -4814,3 +4814,10 @@
 2025-06-30T09:08:35.944Z error: read ECONNRESET
 2025-06-30T09:24:45.665Z error: read ECONNRESET
 2025-06-30T11:47:11.566Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-07-03T14:51:21.733Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-07-03T14:51:21.801Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-07-04T02:27:16.268Z error: read ECONNRESET
+2025-07-04T02:27:16.332Z error: read ECONNRESET
+2025-07-06T19:18:53.564Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-07-06T19:18:53.975Z error: getaddrinfo ENOTFOUND hims-shard-00-02.6jlmt.mongodb.net
+2025-07-06T21:00:38.883Z error: action is not defined
