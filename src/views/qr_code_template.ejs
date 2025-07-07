@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>QR Code Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .qr-container {
+            margin: 20px 0;
+        }
+
+        .nav {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <img src="<%= hisLogo %>" alt="HIS" style="height: 50px;" />
+        <img src="<%= hismLogo %>" alt="HISM Logo" style="height: 50px;" />
+    </div>
+    <h1>Welcome to HISM</h1>
+    <p>Join, Share and Win £500 cash!</p>
+
+    <div class="qr-container">
+        <img src="data:image/png;base64,<%= qrCode %>" alt="QR Code" />
+    </div>
+
+    <p>Scan the QR code to join HISM and start earning rewards!</p>
+
+    <div>
+        <p>What’s HISM for?</p>
+        <ul>
+            <li>Promoting products and services while creating income opportunities.</li>
+            <li>Building new celebrities and influencers.</li>
+            <li>An assemblage of celebrities and influencers.</li>
+            <li>Connecting all social media platforms in one hub.</li>
+            <li>A marketplace for promoting products & services.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

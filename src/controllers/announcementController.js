@@ -5,6 +5,8 @@ const {
 } = require("../models/Announcements");
 const { vins } = require("../models/vins");
 const { logger } = require("../utils/logger");
+const { log_activity } = require("./activityLogs");
+const { actions } = require("../models/Activities");
 
 const post_announcement = async (req, res) => {
   const {
@@ -71,10 +73,26 @@ const list_announcements = async (req, res) => {
       });
     }
 
+    const found_announcements = [];
+    for (const announcement of all_announcements) {
+      const comments_count = await comments.countDocuments({
+        announcement: announcement._id,
+      });
+      const modified_announcement = {
+        _id: announcement._id,
+        title: announcement.title,
+        instructions: announcement.instructions,
+        annnouncement: announcement.announcement,
+        total_comments: comments_count,
+        featured: announcement.featured,
+      };
+      found_announcements.push(modified_announcement);
+    }
+
     return res.status(200).send({
       status: true,
-      message: ``,
-      announcements: all_announcements,
+      message: `List of announcements`,
+      announcements: found_announcements,
     });
   } catch (error) {
     logger.error(error);
@@ -217,6 +235,7 @@ const comment_on_announcement = async (req, res) => {
 
     const saved_comment = await new_comment.save();
 
+    await log_activity(actions[12], customer._id, "CUSTOMER");
     return res.status(200).send({
       status: true,
       message: "comment saved successfully.",

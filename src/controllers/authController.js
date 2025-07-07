@@ -9,6 +9,8 @@ const { logger } = require("../utils/logger");
 const { vins } = require("../models/vins");
 const { mail } = require("../utils/nodemailerConfig");
 const { generateVerificationToken } = require("../utils/helpers");
+const { log_activity } = require("./activityLogs");
+const { actions } = require("../models/Activities");
 
 const customer_login = async (req, res) => {
   console.log(req.body);
@@ -100,12 +102,13 @@ const customer_login = async (req, res) => {
     }
 
     const access_token = await jwt.sign(
-      { email: user.email, sub: user._id },
+      { email: user.email, sub: user._id, role: user.role.role },
       process.env.SECRET_KEY,
       { algorithm: "HS512", expiresIn: "7d" }
     );
 
     vin = await vins.findOne({ customer: user }).select("type vin");
+    await log_activity(actions[0], user._id, user.role.role);
 
     return res.status(200).send({
       status: true,
@@ -308,6 +311,7 @@ const create_customer_password = async (req, res) => {
       );
 
       if (password_updated) {
+        await log_activity(actions[9], customer_id, "CUSTOMER");
         return res.status(200).send({
           status: true,
           message: "Password updated successfully!",
@@ -400,12 +404,13 @@ const send_password_reset_link = async (req, res) => {
         text: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
         html: `Congratulations!!! Your request to reset your password was recieved successfully.<br/><br/> If you did not initiate this request kindly ignore this mail. <br/><br/>However, If you did, kindly click the link below to reset your password.<br/><br/><a href=https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}>https://hism.hismobiles.com/auth/customers/password_reset?password_reset_token=${password_reset_token}&uid=${customer._id}</a>`,
       },
-      (err, result) => {
+      async (err, result) => {
         if (err) {
           logger.error(err);
           res.status(500).json({ status: true, message: err });
         }
 
+        await log_activity(actions[8], customer._id, "CUSTOMER");
         return res.status(200).send({
           status: true,
           message: "A password reset link has been sent to your email",
@@ -435,6 +440,7 @@ const verify_account = async (req, res) => {
       { upsert: true, new: true }
     );
 
+    await log_activity(actions[11], customer._id, "CUSTOMER");
     return res.status(200).send({
       status: true,
       message: "Account verified successfully!",
@@ -451,7 +457,17 @@ const verify_account = async (req, res) => {
 
 const admin_logout = async (req, res) => {};
 
-const customer_logout = async (req, res) => {};
+const customer_logout = async (req, res) => {
+  try {
+
+  } catch(error) {
+    logger.error(error);
+    return res.status(500).send({
+      status: "internal server error",
+      message: "Oops, you have encountered an internal server error"
+    });
+  }
+};
 
 module.exports = {
   customer_login,

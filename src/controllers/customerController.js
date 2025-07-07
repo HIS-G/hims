@@ -8,15 +8,11 @@ const bcrypt = require("bcryptjs");
 const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require("../utils/nodemailerConfig");
-const {
-  sharedAnnouncements,
-  announcements,
-  comments,
-} = require("../models/Announcements");
-const { generateQRCode, generateQrCodePdf } = require("../utils/qr_generator");
-const path = require("path");
+const { sharedAnnouncements, comments } = require("../models/Announcements");
+const { generatePdfWithQrCode } = require("../utils/qr_generator");
 const { referrals } = require("../models/Referrals");
-const axios = require("axios");
+const path = require("path");
+const fs = require("fs");
 
 const get_customers = async (req, res) => {
   try {
@@ -194,7 +190,10 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
-        const pdf = await generateQrCodePdf(new_customer);
+        const pdf = await generatePdfWithQRCode(
+          new_customer,
+          new_customer.qrCode
+        );
 
         if (pdf) {
           await new_customer.save();
@@ -552,15 +551,54 @@ const downloadQrCode = async (req, res) => {
       });
     }
 
-    const pdfBuffer = await generateQrCodePdf(customer.qrCode);
-    console.log("PDF Buffer Length:", pdfBuffer);
-    res.set({
-      "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="qr_code_${customer_id}.pdf"`,
-      "Content-Length": pdfBuffer.length,
-    });
+    /* const filePath = path.join(
+      __dirname,
+      "../../qr_codes",
+      `${customer._id}.pdf`
+    ); */
 
-    res.send(pdfBuffer);
+    /* if (!fs.existsSync(filePath)) {
+      return res.status(404).send("PDF not found");
+    }
+
+    const stats = fs.statSync(filePath);
+    if (stats.size === 0) {
+      return res.status(500).send("PDF file is empty");
+    }
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="${customer._id}.pdf"`
+    );
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        console.error("Error sending file:", err);
+        res.status(500).send("Failed to send file");
+      }
+    }); */
+
+    /* res.download(filePath, `${customer._id}.pdf`, (err) => {
+      if (err) {
+        console.error("Error sending file:", err);
+        res.status(500).send("File download failed");
+      }
+    }); */
+
+    const pdfBuffer = await generatePdfWithQrCode(customer, customer.qrCode);
+
+    if (!pdfBuffer) {
+      return res.status(500).json({
+        status: false,
+        message: "Failed to generate PDF",
+      });
+    }
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", 'attachment; filename="qr-code.pdf"');
+    res.setHeader("Content-Length", pdfBuffer.length);
+
+    return res.status(200).send(pdfBuffer);
   } catch (error) {
     console.error("Error downloading QR code PDF:", error);
     return res.status(500).json({
