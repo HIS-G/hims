@@ -194,11 +194,13 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
+        const qrCodeData = new_customer.qrCode.startsWith("data:image")
+          ? new_customer.qrCode
+          : `data:image/png;base64,${new_customer.qrCode}`;
         const pdf = await generateQrCodePdf(
           // new_customer,
-          new_customer.qrCode
+          qrCodeData
         );
-
         if (pdf) {
           await new_customer.save();
           mail.sendMail(
