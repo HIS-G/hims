@@ -9,7 +9,7 @@ const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require("../utils/nodemailerConfig");
 const { sharedAnnouncements, comments } = require("../models/Announcements");
-const { generatePdfWithQrCode, generateQrCodePdf, generateQRCode } = require("../utils/qr_generator");
+const {  generateQrCodePdf, generateQRCode, generatePdfWithQRCode } = require("../utils/qr_generator");
 const { referrals } = require("../models/Referrals");
 const path = require("path");
 const fs = require("fs");
@@ -190,8 +190,8 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
-        const pdf = await generateQrCodePdf(
-          // new_customer,
+        const pdf = await generatePdfWithQRCode(
+          new_customer,
           new_customer.qrCode
         );
 
