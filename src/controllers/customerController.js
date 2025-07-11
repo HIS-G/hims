@@ -9,7 +9,11 @@ const { logger } = require("../utils/logger");
 const crypto = require("crypto");
 const { mail } = require("../utils/nodemailerConfig");
 const { sharedAnnouncements, comments } = require("../models/Announcements");
-const {  generateQrCodePdf, generateQRCode, generatePdfWithQRCode } = require("../utils/qr_generator");
+const {
+  generateQrCodePdf,
+  generateQRCode,
+  generatePdfWithQRCode,
+} = require("../utils/qr_generator");
 const { referrals } = require("../models/Referrals");
 const path = require("path");
 const fs = require("fs");
@@ -190,8 +194,8 @@ const create_customer = async (req, res) => {
       const saved_fin = await new_fin.save();
 
       if (saved_fin) {
-        const pdf = await generatePdfWithQRCode(
-          new_customer,
+        const pdf = await generateQrCodePdf(
+          // new_customer,
           new_customer.qrCode
         );
 
@@ -565,16 +569,16 @@ const downloadQrCode = async (req, res) => {
 
     const pdfBuffer = await generateQrCodePdf(qrCodeData);
 
-  
-
     // Set headers for PDF streaming
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="HISM_QRCode_${customer_id}.pdf"`);
-    res.setHeader('Content-Length', pdfBuffer.length);
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="HISM_QRCode_${customer_id}.pdf"`
+    );
+    res.setHeader("Content-Length", pdfBuffer.length);
 
     // Pipe the stream to response
     res.send(pdfBuffer);
-
   } catch (error) {
     console.error("Error downloading QR code PDF:", error);
     return res.status(500).json({
